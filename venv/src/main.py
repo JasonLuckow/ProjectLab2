@@ -1,5 +1,6 @@
+from src.model.Name import Name
 
-def hello(name):
-    print("Hello, {}".format(name))
+example = Name("Jason")
+name = example.getName()
 
-hello("jason")
+print(name)
