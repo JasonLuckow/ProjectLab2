@@ -51,17 +51,17 @@ class MyWindow(QMainWindow):
         self.ui.jinglebtn.setEnabled(logic)
         self.ui.littlebtn.setEnabled(logic)
 
-
-def window():
-    stylesheet = """
+stylesheet = """
     MainWindow {
-        background-image: christmasbackground.jpg; 
+        background-image: url("christmasbackground.jpg"); 
         background-repeat: no-repeat; 
         background-position: center;
     }
 """
+
+def window():
     app = QApplication(sys.argv)
-    app.setStyleSheet(stylesheet)
+    app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
     win.showMaximized()
     sys.exit(app.exec_())
