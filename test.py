@@ -19,13 +19,13 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.carolbtn = QtWidgets.QPushButton(self.centralwidget)
-        self.carolbtn.setGeometry(QtCore.QRect(250, 390, 101, 51))
+        self.carolbtn.setGeometry(QtCore.QRect(250, 280, 101, 51))
         self.carolbtn.setObjectName("carolbtn")
         self.jinglebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.jinglebtn.setGeometry(QtCore.QRect(360, 390, 101, 51))
+        self.jinglebtn.setGeometry(QtCore.QRect(360, 280, 101, 51))
         self.jinglebtn.setObjectName("jinglebtn")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.littlebtn.setGeometry(QtCore.QRect(470, 390, 101, 51))
+        self.littlebtn.setGeometry(QtCore.QRect(470, 280, 101, 51))
         self.littlebtn.setObjectName("littlebtn")
         self.label1 = QtWidgets.QLabel(self.centralwidget)
         self.label1.setGeometry(QtCore.QRect(280, 90, 261, 141))
@@ -46,7 +46,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Bell Hoppers"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
         self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
         self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
