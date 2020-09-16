@@ -35,7 +35,7 @@ def window():
     app = QApplication(sys.argv)
     win = MyWindow()
 
-    win.show()
+    win.showMaximized()
     sys.exit(app.exec_())
 
 window()
