@@ -46,11 +46,27 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Bell Hoppers"))
+
         self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
+        self.carolbtn.clicked.connect(self.carolclicked)
+
         self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
+        self.jinglebtn.clicked.connect(self.jingleclicked)
+
         self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
+        self.littlebtn.clicked.connect(self.littleclicked)
+
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
+
+    def carolclicked(self):
+        print("Carol button was clicked")
+
+    def jingleclicked(self):
+        print("Jingle button was clicked")
+
+    def littleclicked(self):
+        print("Little button was clicked")
 
 
 if __name__ == "__main__":
