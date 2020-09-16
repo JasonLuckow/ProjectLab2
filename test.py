@@ -17,6 +17,7 @@ class Ui_MainWindow(object):
         MainWindow.resize(909, 670)
         MainWindow.setAcceptDrops(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setStyleSheet("background-image: url(\"pics/christmasbackground.jpg\"); background-repeat: no-repeat; background-position: center;")
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
