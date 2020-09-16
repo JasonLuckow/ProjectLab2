@@ -63,7 +63,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "The Bell Hoppers"))
         self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
         self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
-        self.label2.setText(_translate("MainWindow", "Click a button!"))
+        self.label2.setText(_translate("MainWindow", "Click button!"))
         self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
 
