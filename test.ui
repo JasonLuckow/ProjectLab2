@@ -21,29 +21,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="0">
-     <widget class="QPushButton" name="carolbtn">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(0, 85, 0);
-border: 0.5px green;
-color: rgb(255, 255, 255);</string>
-      </property>
-      <property name="text">
-       <string>Carol of the Bells</string>
-      </property>
-     </widget>
-    </item>
     <item row="3" column="1">
      <widget class="QPushButton" name="jinglebtn">
       <property name="sizePolicy">
@@ -77,6 +54,9 @@ color: rgb(255, 255, 255);</string>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
+      </property>
       <property name="text">
        <string>Choose a christmas song to play!</string>
       </property>
@@ -91,6 +71,9 @@ color: rgb(255, 255, 255);</string>
        <font>
         <pointsize>30</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Click button!</string>
@@ -114,6 +97,30 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Little Drummer Boy</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="carolbtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 85, 0);
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Carol of the Bells</string>
       </property>
      </widget>
     </item>
