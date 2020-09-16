@@ -46,7 +46,7 @@ class MyWindow(QMainWindow):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()
 
-    def songselectbtnsswitch(logic):
+    def songselectbtnsswitch(self, logic):
         self.ui.carolbtn.setEnabled(logic)
         self.ui.jinglebtn.setEnabled(logic)
         self.ui.littlebtn.setEnabled(logic)
