@@ -53,7 +53,15 @@ class MyWindow(QMainWindow):
 
 
 def window():
+    stylesheet = """
+    MainWindow {
+        background-image: ("christmasbackground.jpg"); 
+        background-repeat: no-repeat; 
+        background-position: center;
+    }
+"""
     app = QApplication(sys.argv)
+    app.setStyleSheet(stylesheet)
     win = MyWindow(app)
     win.showMaximized()
     sys.exit(app.exec_())
