@@ -25,11 +25,16 @@
      <widget class="QPushButton" name="littlebtn">
       <property name="font">
        <font>
+        <family>SantasSleighFull</family>
         <pointsize>20</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
 border: 0.5px green;
 color: rgb(255, 255, 255);</string>
       </property>
@@ -48,11 +53,16 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="font">
        <font>
+        <family>SantasSleighFull</family>
         <pointsize>20</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
 border: 0.5px green;
 color: rgb(255, 255, 255);</string>
       </property>
@@ -71,12 +81,16 @@ color: rgb(255, 255, 255);</string>
       </property>
       <property name="font">
        <font>
+        <family>SantasSleighFull</family>
         <pointsize>20</pointsize>
-        <kerning>true</kerning>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
 border: 0.5px green;
 color: rgb(255, 255, 255);</string>
       </property>

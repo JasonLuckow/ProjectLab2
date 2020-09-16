@@ -23,9 +23,14 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName("gridLayout")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
         font = QtGui.QFont()
+        font.setFamily("SantasSleighFull")
         font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.littlebtn.setFont(font)
         self.littlebtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.littlebtn.setObjectName("littlebtn")
@@ -37,9 +42,14 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.jinglebtn.sizePolicy().hasHeightForWidth())
         self.jinglebtn.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("SantasSleighFull")
         font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.jinglebtn.setFont(font)
         self.jinglebtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.jinglebtn.setObjectName("jinglebtn")
@@ -51,10 +61,14 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.carolbtn.sizePolicy().hasHeightForWidth())
         self.carolbtn.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
+        font.setFamily("SantasSleighFull")
         font.setPointSize(20)
-        font.setKerning(True)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
         self.carolbtn.setFont(font)
         self.carolbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.carolbtn.setObjectName("carolbtn")
