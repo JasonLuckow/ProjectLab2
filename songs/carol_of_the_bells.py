@@ -15,8 +15,8 @@ class NewCarolSong():
 
         for i in range(100):
             GPIO.output(24, True)
-            time.sleep(2)
+            sleep(2)
             GPIO.output(24, False)
-            time.sleep(2)
+            sleep(2)
 
         print("done")
