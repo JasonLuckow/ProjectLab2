@@ -64,7 +64,6 @@ def window():
     app = QApplication(sys.argv)
     app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
-    win.setAttribute(QtCore.Qt.WA_StyledBackground)  
     win.showMaximized()
     sys.exit(app.exec_())
 
