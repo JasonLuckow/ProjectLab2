@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1087</width>
-    <height>871</height>
+    <width>1020</width>
+    <height>664</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -20,139 +20,105 @@
    <string/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label1">
-    <property name="geometry">
-     <rect>
-      <x>240</x>
-      <y>130</y>
-      <width>586</width>
-      <height>48</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Choose a christmas song to play!</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="carolbtn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>810</y>
-      <width>341</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="2">
+     <widget class="QPushButton" name="littlebtn">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(9, 18, 27);
 border: 0.5px green;
 color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Carol of the Bells</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="jinglebtn">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>810</y>
-      <width>341</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);
+      </property>
+      <property name="text">
+       <string>Little Drummer Boy</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="jinglebtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(9, 18, 27);
 border: 0.5px green;
 color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Jingle Bells</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="littlebtn">
-    <property name="geometry">
-     <rect>
-      <x>729</x>
-      <y>810</y>
-      <width>341</width>
-      <height>33</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 85, 0);
+      </property>
+      <property name="text">
+       <string>Jingle Bells</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="carolbtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(9, 18, 27);
 border: 0.5px green;
 color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Little Drummer Boy</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label2">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>490</y>
-      <width>254</width>
-      <height>48</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Click a button!</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
+      </property>
+      <property name="text">
+       <string>Carol of the Bells</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label2">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 28pt &quot;SantasSleighFull&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Click a button!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label1">
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 28pt &quot;SantasSleighFull&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Choose a christmas song to play!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+   <zorder>jinglebtn</zorder>
+   <zorder>littlebtn</zorder>
+   <zorder>carolbtn</zorder>
+   <zorder>label2</zorder>
+   <zorder>label1</zorder>
   </widget>
  </widget>
  <resources/>
