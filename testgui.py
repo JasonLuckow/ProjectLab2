@@ -7,7 +7,6 @@ class MyWindow(QMainWindow):
     def __init__(self):
         super(MyWindow, self).__init__()
         self.setGeometry(200, 200, 300, 300)
-        self.setWindowTitle("Bell Hoppers")
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.ui.littlebtn.clicked.connect(self.littleclicked)
