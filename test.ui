@@ -36,7 +36,8 @@
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(0, 85, 0);
-border: 0.5px green;</string>
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Carol of the Bells</string>
@@ -58,7 +59,8 @@ border: 0.5px green;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(0, 85, 0);
-border: 0.5px green;</string>
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Jingle Bells</string>
@@ -69,7 +71,7 @@ border: 0.5px green;</string>
      <widget class="QLabel" name="label1">
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="autoFillBackground">
@@ -87,7 +89,7 @@ border: 0.5px green;</string>
      <widget class="QLabel" name="label2">
       <property name="font">
        <font>
-        <pointsize>14</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="text">
@@ -107,7 +109,8 @@ border: 0.5px green;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(0, 85, 0);
-border: 0.5px green;</string>
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Little Drummer Boy</string>

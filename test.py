@@ -31,7 +31,8 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.carolbtn.setFont(font)
         self.carolbtn.setStyleSheet("background-color: rgb(0, 85, 0);\n"
-"border: 0.5px green;")
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
         self.carolbtn.setObjectName("carolbtn")
         self.gridLayout.addWidget(self.carolbtn, 3, 0, 1, 1)
         self.jinglebtn = QtWidgets.QPushButton(self.centralwidget)
@@ -44,12 +45,13 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.jinglebtn.setFont(font)
         self.jinglebtn.setStyleSheet("background-color: rgb(0, 85, 0);\n"
-"border: 0.5px green;")
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
         self.jinglebtn.setObjectName("jinglebtn")
         self.gridLayout.addWidget(self.jinglebtn, 3, 1, 1, 1)
         self.label1 = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(30)
         self.label1.setFont(font)
         self.label1.setAutoFillBackground(False)
         self.label1.setAlignment(QtCore.Qt.AlignCenter)
@@ -57,7 +59,7 @@ class Ui_MainWindow(object):
         self.gridLayout.addWidget(self.label1, 0, 0, 1, 3)
         self.label2 = QtWidgets.QLabel(self.centralwidget)
         font = QtGui.QFont()
-        font.setPointSize(14)
+        font.setPointSize(30)
         self.label2.setFont(font)
         self.label2.setAlignment(QtCore.Qt.AlignCenter)
         self.label2.setObjectName("label2")
@@ -67,7 +69,8 @@ class Ui_MainWindow(object):
         font.setPointSize(20)
         self.littlebtn.setFont(font)
         self.littlebtn.setStyleSheet("background-color: rgb(0, 85, 0);\n"
-"border: 0.5px green;")
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
         self.littlebtn.setObjectName("littlebtn")
         self.gridLayout.addWidget(self.littlebtn, 3, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
