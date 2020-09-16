@@ -8,7 +8,7 @@ from songs import little_drummer_boy as drum
 from songs import carol_of_the_bells as carol
 
 class MyWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, app):
         super(MyWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -16,17 +16,18 @@ class MyWindow(QMainWindow):
         self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.carolbtn.clicked.connect(self.carolclicked)
         self.win = self
+        self.app = app
 
     def carolclicked(self):
-        carolsong = carol.NewCarolSong(self.win)
+        carolsong = carol.NewCarolSong(self.win, self.app)
         carolsong.startsong()
 
     def jingleclicked(self):
-        jinglesong = jingle.NewJingleSong(self.win)
+        jinglesong = jingle.NewJingleSong(self.win, self.app)
         jinglesong.startsong()
 
     def littleclicked(self):
-        drumsong = drum.NewDrumSong(self.win)
+        drumsong = drum.NewDrumSong(self.win, self.app)
         drumsong.startsong()
 
     def updatelabel2(self, text):
@@ -36,7 +37,7 @@ class MyWindow(QMainWindow):
 
 def window():
     app = QApplication(sys.argv)
-    win = MyWindow()
+    win = MyWindow(app)
     win.showMaximized()
     sys.exit(app.exec_())
 

@@ -3,8 +3,9 @@ import RPi.GPIO as GPIO
 
 class NewCarolSong():
 
-    def __init__(self, win):
+    def __init__(self, win, app):
         self.win = win
+        self.app = app
 
     def startsong(self):
         print("Carol button was clicked")
@@ -14,7 +15,7 @@ class NewCarolSong():
         print("hi")
 
         for i in range(5):
-            self.win.app.processEvents()
+            self.app.processEvents()
             self.win.updatelabel2("You clicked: Carol of the Bells {}".format(i))
             GPIO.output(24, True)
             sleep(1)
