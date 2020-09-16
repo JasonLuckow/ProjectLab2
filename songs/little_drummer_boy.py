@@ -1,5 +1,6 @@
 from time import sleep
-#import RPi.GPIO as GPIO
+# comment out below when working on windows 
+import RPi.GPIO as GPIO
 
 class NewDrumSong():
 

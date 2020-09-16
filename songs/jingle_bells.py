@@ -1,5 +1,6 @@
 from time import sleep
-#import RPi.GPIO as GPIO
+# comment out below when working on windows 
+import RPi.GPIO as GPIO
 
 class NewJingleSong():
 
@@ -11,7 +12,7 @@ class NewJingleSong():
         print("Jingle button was clicked")
         self.win.updatelabel2("You clicked: Jingle Bells")
         self.app.processEvents()
-        # comment out below when working on windows
+        # comment out below when working on windows 
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(24, GPIO.OUT)
         print("hi")
