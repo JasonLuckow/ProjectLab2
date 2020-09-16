@@ -65,7 +65,8 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(170, 0, 0);</string>
+       <string notr="true">background-color: rgb(170, 0, 0);
+border: 3px solid black;</string>
       </property>
       <property name="text">
        <string>Jingle Bells</string>

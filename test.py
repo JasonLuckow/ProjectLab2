@@ -43,7 +43,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.jinglebtn.setFont(font)
-        self.jinglebtn.setStyleSheet("background-color: rgb(170, 0, 0);")
+        self.jinglebtn.setStyleSheet("background-color: rgb(170, 0, 0);\n"
+"border: 3px solid black;")
         self.jinglebtn.setObjectName("jinglebtn")
         self.gridLayout.addWidget(self.jinglebtn, 3, 1, 1, 1)
         self.label1 = QtWidgets.QLabel(self.centralwidget)
