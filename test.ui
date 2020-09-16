@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>768</width>
-    <height>545</height>
+    <width>909</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="acceptDrops">
@@ -17,16 +17,73 @@
    <string>The Bell Hoppers</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(&quot;christmasbackground.jpg&quot;) contain;
-background-repeat: no-repeat; 
-background-position: center;</string>
+   <string notr="true">background-image: url(&quot;christmasbackground.jpg&quot;);background-repeat: no-repeat; background-position: center;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-image: url(&quot;cat.jpg&quot;); background-repeat: no-repeat; background-position: center;</string>
+   </property>
    <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="2">
+     <widget class="QPushButton" name="littlebtn">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Little Drummer Boy</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="carolbtn">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Carol of the Bells</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="label2">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Click a button!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="jinglebtn">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Jingle Bells</string>
+      </property>
+     </widget>
+    </item>
     <item row="1" column="0" colspan="3">
      <widget class="QLabel" name="label1">
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
       <property name="autoFillBackground">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="text">
        <string>Choose a christmas song to play!</string>
@@ -36,50 +93,8 @@ background-position: center;</string>
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="carolbtn">
-      <property name="text">
-       <string>Carol of the Bells</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="jinglebtn">
-      <property name="text">
-       <string>Jingle Bells</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="littlebtn">
-      <property name="text">
-       <string>Little Drummer Boy</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="label2">
-      <property name="text">
-       <string>Click a button!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>768</width>
-     <height>21</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
