@@ -14,10 +14,11 @@ class NewCarolSong():
         print("hi")
 
         for i in range(5):
-            self.win.updatelabel2("You clicked: Carol of the Bells")
+            self.win.app.processEvents()
+            self.win.updatelabel2("You clicked: Carol of the Bells {}".format(i))
             GPIO.output(24, True)
-            sleep(2)
+            sleep(1)
             GPIO.output(24, False)
-            sleep(2)
+            sleep(1)
 
         print("done")

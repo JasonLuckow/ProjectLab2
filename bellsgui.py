@@ -18,7 +18,6 @@ class MyWindow(QMainWindow):
         self.win = self
 
     def carolclicked(self):
-        self.updatelabel2("You clicked: Carol of the Bells")
         carolsong = carol.NewCarolSong(self.win)
         carolsong.startsong()
 
