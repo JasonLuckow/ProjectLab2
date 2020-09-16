@@ -12,21 +12,33 @@ class MyWindow(QMainWindow):
         super(MyWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        self.ui.littlebtn.clicked.connect(self.littleclicked)
-        self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.carolbtn.clicked.connect(self.carolclicked)
+        self.ui.jinglebtn.clicked.connect(self.jingleclicked)
+        self.ui.littlebtn.clicked.connect(self.littleclicked)
         self.win = self
         self.app = app
 
     def carolclicked(self):
+        self.ui.carolbtn.setEnabled(False)
+        self.ui.jinglebtn.setEnabled(False)
+        self.ui.littlebtn.setEnabled(False)
+
         carolsong = carol.NewCarolSong(self.win, self.app)
         carolsong.startsong()
 
     def jingleclicked(self):
+        self.ui.carolbtn.setEnabled(False)
+        self.ui.jinglebtn.setEnabled(False)
+        self.ui.littlebtn.setEnabled(False)
+
         jinglesong = jingle.NewJingleSong(self.win, self.app)
         jinglesong.startsong()
 
     def littleclicked(self):
+        self.ui.carolbtn.setEnabled(False)
+        self.ui.jinglebtn.setEnabled(False)
+        self.ui.littlebtn.setEnabled(False)
+        
         drumsong = drum.NewDrumSong(self.win, self.app)
         drumsong.startsong()
 
