@@ -87,9 +87,18 @@ color: rgb(255, 255, 255);</string>
     </item>
     <item row="2" column="2">
      <widget class="QLabel" name="label2">
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>32</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);
-font: 28pt &quot;SantasSleighFull&quot;;</string>
+font: 32pt &quot;SantasSleighFull&quot;;</string>
       </property>
       <property name="text">
        <string>Click a button!</string>
@@ -101,9 +110,18 @@ font: 28pt &quot;SantasSleighFull&quot;;</string>
     </item>
     <item row="2" column="0">
      <widget class="QLabel" name="label1">
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>32</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(255, 255, 255);
-font: 28pt &quot;SantasSleighFull&quot;;</string>
+font: 32pt &quot;SantasSleighFull&quot;;</string>
       </property>
       <property name="text">
        <string>Choose a christmas song to play!</string>

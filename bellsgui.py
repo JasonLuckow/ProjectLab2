@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets, QtCore
+from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 from test import Ui_MainWindow
@@ -6,6 +6,7 @@ from test import Ui_MainWindow
 from songs import jingle_bells as jingle
 from songs import little_drummer_boy as drum
 from songs import carol_of_the_bells as carol
+
 
 class MyWindow(QMainWindow):
     def __init__(self, app):
@@ -59,6 +60,7 @@ stylesheet = """
 
         border: 1px solid black;
     }
+
 """
 
 # #use below for Raspberry Pi and make sure file path mirrors the same.
@@ -73,6 +75,7 @@ stylesheet = """
 
 def window():
     app = QApplication(sys.argv)
+    QtGui.QFontDatabase.addApplicationFont("SantasSleighFull.ttf")
     app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
     win.showMaximized()
