@@ -55,7 +55,7 @@ class MyWindow(QMainWindow):
 def window():
     stylesheet = """
     MainWindow {
-        background-image: ("christmasbackground.jpg"); 
+        background-image: christmasbackground.jpg; 
         background-repeat: no-repeat; 
         background-position: center;
     }
