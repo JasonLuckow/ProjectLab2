@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>762</width>
+    <width>768</width>
     <height>545</height>
    </rect>
   </property>
@@ -16,18 +16,13 @@
   <property name="windowTitle">
    <string>The Bell Hoppers</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-image: url(&quot;christmasbackground.jpg&quot;);
+background-repeat: no-repeat; 
+background-position: center;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="1">
-     <widget class="QLabel" name="label2">
-      <property name="text">
-       <string>Click a button!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="0" colspan="3">
      <widget class="QLabel" name="label1">
       <property name="autoFillBackground">
@@ -38,6 +33,13 @@
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="carolbtn">
+      <property name="text">
+       <string>Carol of the Bells</string>
       </property>
      </widget>
     </item>
@@ -55,10 +57,13 @@
       </property>
      </widget>
     </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="carolbtn">
+    <item row="2" column="1">
+     <widget class="QLabel" name="label2">
       <property name="text">
-       <string>Carol of the Bells</string>
+       <string>Click a button!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -69,7 +74,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>762</width>
+     <width>768</width>
      <height>21</height>
     </rect>
    </property>
