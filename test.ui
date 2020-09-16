@@ -17,7 +17,7 @@
    <string>The Bell Hoppers</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(&quot;christmasbackground.jpg&quot;);
+   <string notr="true">background-image: url(&quot;christmasbackground.jpg&quot;) contain;
 background-repeat: no-repeat; 
 background-position: center;</string>
   </property>
