@@ -16,13 +16,7 @@
   <property name="windowTitle">
    <string>The Bell Hoppers</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-image: url(&quot;christmasbackground.jpg&quot;);background-repeat: no-repeat; background-position: center;</string>
-  </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string notr="true">background-image: url(&quot;cat.jpg&quot;); background-repeat: no-repeat; background-position: center;</string>
-   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="3" column="2">
      <widget class="QPushButton" name="littlebtn">

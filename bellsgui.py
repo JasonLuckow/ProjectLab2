@@ -52,7 +52,7 @@ class MyWindow(QMainWindow):
         self.ui.littlebtn.setEnabled(logic)
 
 stylesheet = """
-    MainWindow {
+    QMainWindow {
         background-image: url("christmasbackground.jpg"); 
         background-repeat: no-repeat; 
         background-position: center;
