@@ -53,7 +53,7 @@ class MyWindow(QMainWindow):
 
 stylesheet = """
     QMainWindow {
-        background-image: url("christmasbackground.jpg"); 
+        background-image: url("pics/christmasbackground.jpg"); 
         background-repeat: no-repeat; 
         background-position: center;
     }
