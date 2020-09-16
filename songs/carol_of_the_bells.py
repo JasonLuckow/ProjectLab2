@@ -14,6 +14,7 @@ class NewCarolSong():
         print("hi")
 
         for i in range(100):
+            self.win.updatelabel2("You clicked: Carol of the Bells")
             GPIO.output(24, True)
             sleep(2)
             GPIO.output(24, False)
