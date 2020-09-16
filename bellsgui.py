@@ -59,6 +59,15 @@ stylesheet = """
         border: 1px solid black;
     }
 """
+# use below for Raspberry Pi and make sure file path mirrors the same.
+# stylesheet = """
+#     QMainWindow {
+#         background-image: url("/home/pi/Pictures/christmasbackground.jpg"); 
+#         background-repeat: no-repeat; 
+#         background-position: center;
+#         border: 1px solid black;
+#     }
+# """
 
 def window():
     app = QApplication(sys.argv)
