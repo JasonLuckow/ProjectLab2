@@ -14,27 +14,29 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(855, 606)
+        MainWindow.resize(845, 365)
         MainWindow.setAcceptDrops(False)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.carolbtn = QtWidgets.QPushButton(self.centralwidget)
-        self.carolbtn.setGeometry(QtCore.QRect(250, 280, 101, 51))
-        self.carolbtn.setObjectName("carolbtn")
-        self.jinglebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.jinglebtn.setGeometry(QtCore.QRect(360, 280, 101, 51))
-        self.jinglebtn.setObjectName("jinglebtn")
-        self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.littlebtn.setGeometry(QtCore.QRect(470, 280, 101, 51))
-        self.littlebtn.setObjectName("littlebtn")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
         self.label1 = QtWidgets.QLabel(self.centralwidget)
-        self.label1.setGeometry(QtCore.QRect(280, 90, 261, 141))
         self.label1.setAutoFillBackground(True)
         self.label1.setAlignment(QtCore.Qt.AlignCenter)
         self.label1.setObjectName("label1")
+        self.gridLayout.addWidget(self.label1, 0, 0, 1, 3)
+        self.jinglebtn = QtWidgets.QPushButton(self.centralwidget)
+        self.jinglebtn.setObjectName("jinglebtn")
+        self.gridLayout.addWidget(self.jinglebtn, 1, 1, 1, 1)
+        self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
+        self.littlebtn.setObjectName("littlebtn")
+        self.gridLayout.addWidget(self.littlebtn, 1, 2, 1, 1)
+        self.carolbtn = QtWidgets.QPushButton(self.centralwidget)
+        self.carolbtn.setObjectName("carolbtn")
+        self.gridLayout.addWidget(self.carolbtn, 1, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 855, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 845, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -46,27 +48,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Bell Hoppers"))
-
-        self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
-        self.carolbtn.clicked.connect(self.carolclicked)
-
-        self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
-        self.jinglebtn.clicked.connect(self.jingleclicked)
-
-        self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
-        self.littlebtn.clicked.connect(self.littleclicked)
-
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
-
-    def carolclicked(self):
-        print("Carol button was clicked")
-
-    def jingleclicked(self):
-        print("Jingle button was clicked")
-
-    def littleclicked(self):
-        print("Little button was clicked")
+        self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
+        self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
+        self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
 
 
 if __name__ == "__main__":
