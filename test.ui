@@ -17,9 +17,6 @@
    <string>The Bell Hoppers</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <property name="styleSheet">
-    <string notr="true">background-image: url(&quot;pics/christmasbackground.jpg&quot;); background-repeat: no-repeat; background-position: center;</string>
-   </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="3" column="2">
      <widget class="QPushButton" name="littlebtn">
@@ -66,6 +63,9 @@
        <font>
         <pointsize>10</pointsize>
        </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 0, 0);</string>
       </property>
       <property name="text">
        <string>Jingle Bells</string>
