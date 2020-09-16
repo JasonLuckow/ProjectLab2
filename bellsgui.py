@@ -56,6 +56,7 @@ stylesheet = """
         background-image: url("pics/christmasbackground.jpg"); 
         background-repeat: no-repeat; 
         background-position: center;
+        border: 1px solid black;
     }
 """
 
