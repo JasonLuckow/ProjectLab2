@@ -1,4 +1,4 @@
-from PyQt5 import QtWidgets
+from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 from test import Ui_MainWindow
@@ -64,6 +64,7 @@ def window():
     app = QApplication(sys.argv)
     app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
+    win.setAttribute(QtCore.Qt.WA_StyledBackground)  
     win.showMaximized()
     sys.exit(app.exec_())
 
