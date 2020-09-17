@@ -115,7 +115,7 @@ color: rgb(255, 255, 255);</string>
 font: 32pt &quot;SantasSleighFull&quot;;</string>
       </property>
       <property name="text">
-       <string>Click a button!</string>
+       <string>Click a button!                     </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
