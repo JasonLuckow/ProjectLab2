@@ -83,7 +83,7 @@ class Ui_MainWindow(object):
         self.label2.setFont(font)
         self.label2.setStyleSheet("color: rgb(255, 255, 255);\n"
 "font: 32pt \"SantasSleighFull\";")
-        self.label2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label2.setObjectName("label2")
         self.gridLayout.addWidget(self.label2, 2, 2, 1, 1)
         self.label1 = QtWidgets.QLabel(self.centralwidget)
@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
         self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
         self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
         self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
-        self.label2.setText(_translate("MainWindow", "Click a button!                     "))
+        self.label2.setText(_translate("MainWindow", "Click a button!"))
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
 
 
