@@ -10,8 +10,6 @@ class NewDrumSong():
 
     def startsong(self):
         print("Little button was clicked")
-        self.win.updatelabel2("You clicked: Little Drummer Boy")
-        self.app.processEvents()
         # comment out below when working on windows
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(25, GPIO.OUT)
@@ -26,3 +24,4 @@ class NewDrumSong():
             sleep(1)
 
         print("done")
+        self.win.updatelabel2("Little button was clicked. Click another!")

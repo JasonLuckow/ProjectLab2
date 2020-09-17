@@ -10,8 +10,6 @@ class NewCarolSong():
 
     def startsong(self):
         print("Carol button was clicked")
-        self.win.updatelabel2("You clicked: Carol of the Bells")
-        self.app.processEvents()
         # comment out below when working on windows
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(23, GPIO.OUT)
@@ -26,3 +24,4 @@ class NewCarolSong():
             sleep(1)
 
         print("done")
+        self.win.updatelabel2("Carol button was clicked. Click another!")

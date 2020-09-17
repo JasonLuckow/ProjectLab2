@@ -10,8 +10,6 @@ class NewJingleSong():
 
     def startsong(self):
         print("Jingle button was clicked")
-        self.win.updatelabel2("You clicked: Jingle Bells")
-        self.app.processEvents()
         # comment out below when working on windows 
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(24, GPIO.OUT)
@@ -26,3 +24,4 @@ class NewJingleSong():
             sleep(1)
 
         print("done")
+        self.win.updatelabel2("Jingle button was clicked. Click another!")
