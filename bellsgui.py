@@ -52,30 +52,35 @@ class MyWindow(QMainWindow):
         self.ui.jinglebtn.setEnabled(logic)
         self.ui.littlebtn.setEnabled(logic)
 
-stylesheet = """
-    QMainWindow {
-        background-image: url("pics/christmasbackground.jpg"); 
-        background-repeat: no-repeat; 
-        background-position: center;
-
-        border: 1px solid black;
-    }
-
-"""
-
-# # use below for Raspberry Pi and make sure file path mirrors the same.
 # stylesheet = """
 #     QMainWindow {
-#         background-image: url("/home/pi/Pictures/christmasbackground.jpg"); 
+#         background-image: url("pics/christmasbackground.jpg"); 
 #         background-repeat: no-repeat; 
 #         background-position: center;
+
 #         border: 1px solid black;
 #     }
+
 # """
+
+# use below for Raspberry Pi and make sure file path mirrors the same.
+stylesheet = """
+    QMainWindow {
+        background-image: url("/home/pi/Pictures/christmasbackground.jpg"); 
+        background-repeat: no-repeat; 
+        background-position: center;
+        border: 1px solid black;
+    }
+"""
 
 def window():
     app = QApplication(sys.argv)
-    QtGui.QFontDatabase.addApplicationFont("SantasSleighFull.ttf")
+
+    #QtGui.QFontDatabase.addApplicationFont("SantasSleighFull.ttf")
+
+    # use below for Raspberry Pi and make sure file path mirrors the same.
+    QtGui.QFontDatabase.addApplicationFont("/home/pi/Documents/HopperAppStyles/SantasSleighFull.ttf")
+    
     app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
     win.showMaximized()
