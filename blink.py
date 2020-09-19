@@ -1,5 +1,5 @@
 from time import sleep
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 # initialize variables/board
 # ledpin = 32
@@ -28,14 +28,17 @@ import RPi.GPIO as GPIO
 
 
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT)
-print("hi")
+# GPIO.setmode(GPIO.BCM)
+# GPIO.setup(24, GPIO.OUT)
+# print("hi")
 
-for i in range(100):
-    GPIO.output(24, True)
-    time.sleep(2)
-    GPIO.output(24, False)
-    time.sleep(2)
+# for i in range(100):
+#     GPIO.output(24, True)
+#     time.sleep(2)
+#     GPIO.output(24, False)
+#     time.sleep(2)
 
-print("done")
+# print("done")
+
+for i in range(5, 0):
+    print(i)
