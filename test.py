@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1020, 576)
-        MainWindow.setMaximumSize(QtCore.QSize(1024, 576))
+        MainWindow.setMaximumSize(QtCore.QSize(1024, 600))
         MainWindow.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         MainWindow.setAcceptDrops(False)
         MainWindow.setToolTip("")
