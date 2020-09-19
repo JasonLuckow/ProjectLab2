@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
 "font: 32pt \"SantasSleighFull\";")
         self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label2.setObjectName("label2")
-        self.gridLayout.addWidget(self.label2, 3, 1, 1, 1)
+        self.gridLayout.addWidget(self.label2, 2, 3, 1, 1)
         self.jinglebtn.raise_()
         self.littlebtn.raise_()
         self.carolbtn.raise_()
