@@ -69,6 +69,7 @@ class MyWindow(QMainWindow):
 # """
 
 # use below for Raspberry Pi and make sure file path mirrors the same.
+
 stylesheet = """
     QMainWindow {
         background-image: url("/home/pi/Pictures/christmasbackground.jpg"); 
