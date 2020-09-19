@@ -24,4 +24,4 @@ class NewDrumSong():
         #     sleep(1)
 
         print("done")
-        self.win.updatelabel2("Little button was clicked. Click another!")
+        self.win.updatelabel2("Little button was clicked.\nClick another!")

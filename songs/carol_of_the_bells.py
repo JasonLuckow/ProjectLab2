@@ -24,4 +24,4 @@ class NewCarolSong():
         #     sleep(1)
 
         print("done")
-        self.win.updatelabel2("Carol button was clicked. Click another!")
+        self.win.updatelabel2("Carol button was clicked.\nClick another!")
