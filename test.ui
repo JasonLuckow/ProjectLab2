@@ -22,8 +22,8 @@
   <widget class="QWidget" name="centralwidget">
    <property name="minimumSize">
     <size>
-     <width>1024</width>
-     <height>600</height>
+     <width>0</width>
+     <height>0</height>
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout">
