@@ -7,6 +7,12 @@ from songs import jingle_bells as jingle
 from songs import little_drummer_boy as drum
 from songs import carol_of_the_bells as carol
 
+if hasattr(QtCore.Qt, 'AA_EnableHighDpiScaling'):
+    PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
+
+if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
+    PyQt5.QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
+
 
 class MyWindow(QMainWindow):
     def __init__(self, app):
