@@ -20,160 +20,138 @@
    <string/>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="littlebtn">
-    <property name="geometry">
-     <rect>
-      <x>688</x>
-      <y>619</y>
-      <width>321</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>SantasSleighFull</family>
-      <pointsize>20</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(9, 18, 27);
-font: 20pt &quot;SantasSleighFull&quot;;
-border: 0.5px green;
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Little Drummer Boy</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="jinglebtn">
-    <property name="geometry">
-     <rect>
-      <x>350</x>
-      <y>620</y>
-      <width>321</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <family>SantasSleighFull</family>
-      <pointsize>20</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(9, 18, 27);
-font: 20pt &quot;SantasSleighFull&quot;;
-border: 0.5px green;
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Jingle Bells</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="carolbtn">
-    <property name="geometry">
-     <rect>
-      <x>9</x>
-      <y>619</y>
-      <width>321</width>
-      <height>36</height>
-     </rect>
-    </property>
-    <property name="sizePolicy">
-     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-      <horstretch>0</horstretch>
-      <verstretch>0</verstretch>
-     </sizepolicy>
-    </property>
-    <property name="font">
-     <font>
-      <family>SantasSleighFull</family>
-      <pointsize>20</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(9, 18, 27);
-font: 20pt &quot;SantasSleighFull&quot;;
-border: 0.5px green;
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>Carol of the Bells</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>203</width>
-      <height>57</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>SantasSleighFull</family>
-      <pointsize>32</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
+   <property name="minimumSize">
+    <size>
+     <width>1024</width>
+     <height>600</height>
+    </size>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <widget class="QLabel" name="label1">
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>32</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 font: 32pt &quot;SantasSleighFull&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Click a button!</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label1">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>471</width>
-      <height>57</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>SantasSleighFull</family>
-      <pointsize>32</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
+      </property>
+      <property name="text">
+       <string>Choose a christmas song to play!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QPushButton" name="carolbtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Carol of the Bells</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label2">
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>32</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
 font: 32pt &quot;SantasSleighFull&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Choose a christmas song to play!</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
+      </property>
+      <property name="text">
+       <string>Click a button!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="jinglebtn">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Jingle Bells</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="littlebtn">
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>20</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
+      </property>
+      <property name="text">
+       <string>Little Drummer Boy</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
    <zorder>jinglebtn</zorder>
    <zorder>littlebtn</zorder>
    <zorder>carolbtn</zorder>
