@@ -114,9 +114,10 @@ class Ui_MainWindow(object):
         self.exitbtn = QtWidgets.QPushButton(self.centralwidget)
         self.exitbtn.setGeometry(QtCore.QRect(10, 480, 91, 36))
         self.exitbtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
-        self.exitbtn.setStyleSheet("background-color: rgb(0, 0, 0);\n"
-"color: rgb(255, 255, 255);\n"
-"font: 20pt \"SantasSleighFull\";")
+        self.exitbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
         self.exitbtn.setObjectName("exitbtn")
         MainWindow.setCentralWidget(self.centralwidget)
 
