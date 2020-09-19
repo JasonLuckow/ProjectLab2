@@ -14,7 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1020, 664)
+        MainWindow.resize(1020, 600)
+        MainWindow.setMaximumSize(QtCore.QSize(1024, 600))
         MainWindow.setAcceptDrops(False)
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -35,7 +36,20 @@ class Ui_MainWindow(object):
 "font: 32pt \"SantasSleighFull\";")
         self.label1.setAlignment(QtCore.Qt.AlignCenter)
         self.label1.setObjectName("label1")
-        self.gridLayout.addWidget(self.label1, 2, 1, 1, 1)
+        self.gridLayout.addWidget(self.label1, 0, 0, 1, 1)
+        self.label2 = QtWidgets.QLabel(self.centralwidget)
+        font = QtGui.QFont()
+        font.setFamily("SantasSleighFull")
+        font.setPointSize(32)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label2.setFont(font)
+        self.label2.setStyleSheet("color: rgb(255, 255, 255);\n"
+"font: 32pt \"SantasSleighFull\";")
+        self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label2.setObjectName("label2")
+        self.gridLayout.addWidget(self.label2, 0, 2, 1, 1)
         self.carolbtn = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -54,7 +68,7 @@ class Ui_MainWindow(object):
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.carolbtn.setObjectName("carolbtn")
-        self.gridLayout.addWidget(self.carolbtn, 4, 1, 1, 1)
+        self.gridLayout.addWidget(self.carolbtn, 1, 0, 1, 1)
         self.jinglebtn = QtWidgets.QPushButton(self.centralwidget)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -73,7 +87,7 @@ class Ui_MainWindow(object):
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.jinglebtn.setObjectName("jinglebtn")
-        self.gridLayout.addWidget(self.jinglebtn, 4, 2, 1, 1)
+        self.gridLayout.addWidget(self.jinglebtn, 1, 1, 1, 1)
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
@@ -87,25 +101,7 @@ class Ui_MainWindow(object):
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.littlebtn.setObjectName("littlebtn")
-        self.gridLayout.addWidget(self.littlebtn, 4, 3, 1, 1)
-        self.label2 = QtWidgets.QLabel(self.centralwidget)
-        font = QtGui.QFont()
-        font.setFamily("SantasSleighFull")
-        font.setPointSize(32)
-        font.setBold(False)
-        font.setItalic(False)
-        font.setWeight(50)
-        self.label2.setFont(font)
-        self.label2.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 32pt \"SantasSleighFull\";")
-        self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
-        self.label2.setObjectName("label2")
-        self.gridLayout.addWidget(self.label2, 2, 3, 1, 1)
-        self.jinglebtn.raise_()
-        self.littlebtn.raise_()
-        self.carolbtn.raise_()
-        self.label1.raise_()
-        self.label2.raise_()
+        self.gridLayout.addWidget(self.littlebtn, 1, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -115,10 +111,10 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "The Bell Hoppers"))
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
+        self.label2.setText(_translate("MainWindow", "Click a button!"))
         self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
         self.jinglebtn.setText(_translate("MainWindow", "Jingle Bells"))
         self.littlebtn.setText(_translate("MainWindow", "Little Drummer Boy"))
-        self.label2.setText(_translate("MainWindow", "Click a button!"))
 
 
 if __name__ == "__main__":
