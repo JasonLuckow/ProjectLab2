@@ -2,6 +2,7 @@ from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 from test import Ui_MainWindow
+import PyQt5
 
 from songs import jingle_bells as jingle
 from songs import little_drummer_boy as drum
