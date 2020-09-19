@@ -22,7 +22,7 @@ class MyWindow(QMainWindow):
         self.app = app
 
     def exitclicked(self):
-        sys.exit(app.exec_())
+        sys.exit()
 
     def carolclicked(self):
         self.songselectbtnsswitch(False)
