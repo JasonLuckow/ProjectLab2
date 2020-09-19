@@ -27,7 +27,7 @@
     </size>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
+    <item row="2" column="1">
      <widget class="QLabel" name="label1">
       <property name="font">
        <font>
@@ -50,7 +50,7 @@ font: 32pt &quot;SantasSleighFull&quot;;</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="0">
+    <item row="4" column="1">
      <widget class="QPushButton" name="carolbtn">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -78,30 +78,7 @@ color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QLabel" name="label2">
-      <property name="font">
-       <font>
-        <family>SantasSleighFull</family>
-        <pointsize>32</pointsize>
-        <weight>50</weight>
-        <italic>false</italic>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);
-font: 32pt &quot;SantasSleighFull&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Click a button!</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
+    <item row="4" column="2">
      <widget class="QPushButton" name="jinglebtn">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -129,7 +106,7 @@ color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="2">
+    <item row="4" column="3">
      <widget class="QPushButton" name="littlebtn">
       <property name="font">
        <font>
@@ -151,12 +128,35 @@ color: rgb(255, 255, 255);</string>
       </property>
      </widget>
     </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="label2">
+      <property name="font">
+       <font>
+        <family>SantasSleighFull</family>
+        <pointsize>32</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);
+font: 32pt &quot;SantasSleighFull&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Click a button!</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
    </layout>
    <zorder>jinglebtn</zorder>
    <zorder>littlebtn</zorder>
    <zorder>carolbtn</zorder>
-   <zorder>label2</zorder>
    <zorder>label1</zorder>
+   <zorder>label2</zorder>
   </widget>
  </widget>
  <resources/>
