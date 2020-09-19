@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setMaximumSize(QtCore.QSize(1024, 16777215))
         self.centralwidget.setObjectName("centralwidget")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.littlebtn.setGeometry(QtCore.QRect(720, 530, 301, 36))
+        self.littlebtn.setGeometry(QtCore.QRect(720, 380, 301, 36))
         self.littlebtn.setMaximumSize(QtCore.QSize(301, 16777215))
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
 "color: rgb(255, 255, 255);")
         self.littlebtn.setObjectName("littlebtn")
         self.jinglebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.jinglebtn.setGeometry(QtCore.QRect(720, 500, 301, 36))
+        self.jinglebtn.setGeometry(QtCore.QRect(720, 350, 301, 36))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
 "color: rgb(255, 255, 255);")
         self.jinglebtn.setObjectName("jinglebtn")
         self.carolbtn = QtWidgets.QPushButton(self.centralwidget)
-        self.carolbtn.setGeometry(QtCore.QRect(720, 470, 301, 36))
+        self.carolbtn.setGeometry(QtCore.QRect(720, 320, 301, 36))
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -72,6 +72,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.carolbtn.setFont(font)
+        self.carolbtn.setMouseTracking(False)
         self.carolbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"

@@ -73,7 +73,7 @@ stylesheet = """
         border: 1px solid black;
     }
     QPushButton::hover{
-        background-color : lightgreen;
+        background-color : white;
     }
 """
 
