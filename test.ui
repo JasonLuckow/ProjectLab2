@@ -38,7 +38,7 @@
    <property name="maximumSize">
     <size>
      <width>1024</width>
-     <height>16777215</height>
+     <height>600</height>
     </size>
    </property>
    <property name="cursor">
@@ -238,7 +238,7 @@ font: 32pt &quot;SantasSleighFull&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>480</y>
+      <y>550</y>
       <width>91</width>
       <height>36</height>
      </rect>

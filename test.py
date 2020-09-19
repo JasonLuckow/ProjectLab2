@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
-        self.centralwidget.setMaximumSize(QtCore.QSize(1024, 16777215))
+        self.centralwidget.setMaximumSize(QtCore.QSize(1024, 600))
         self.centralwidget.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.centralwidget.setObjectName("centralwidget")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
@@ -112,7 +112,7 @@ class Ui_MainWindow(object):
         self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label2.setObjectName("label2")
         self.exitbtn = QtWidgets.QPushButton(self.centralwidget)
-        self.exitbtn.setGeometry(QtCore.QRect(10, 480, 91, 36))
+        self.exitbtn.setGeometry(QtCore.QRect(10, 550, 91, 36))
         self.exitbtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.exitbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
