@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1020, 600)
+        MainWindow.resize(1024, 600)
         MainWindow.setMaximumSize(QtCore.QSize(1024, 600))
         MainWindow.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         MainWindow.setAcceptDrops(False)
