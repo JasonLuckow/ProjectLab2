@@ -84,7 +84,7 @@ def window():
     app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
     #win.showMaximized()
-    win.showFullScreen()
+    win.showNormal()
     sys.exit(app.exec_())
 
 window()
