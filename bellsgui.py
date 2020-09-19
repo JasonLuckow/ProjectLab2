@@ -72,6 +72,9 @@ stylesheet = """
         background-position: center;
         border: 1px solid black;
     }
+    QPushButton::hover{
+        background-color : lightgreen;
+    }
 """
 
 def window():
