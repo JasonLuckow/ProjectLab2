@@ -92,7 +92,7 @@ class Ui_MainWindow(object):
         self.label1.setAlignment(QtCore.Qt.AlignCenter)
         self.label1.setObjectName("label1")
         self.label2 = QtWidgets.QLabel(self.centralwidget)
-        self.label2.setGeometry(QtCore.QRect(40, 210, 203, 57))
+        self.label2.setGeometry(QtCore.QRect(10, 180, 211, 57))
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
         font.setPointSize(32)

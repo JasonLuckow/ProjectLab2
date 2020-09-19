@@ -24,4 +24,4 @@ class NewJingleSong():
         #     sleep(1)
 
         print("done")
-        self.win.updatelabel2("Jingle button was clicked.\nClick another!")
+        self.win.updatelabel2(" Jingle button was clicked.\nClick another!")
