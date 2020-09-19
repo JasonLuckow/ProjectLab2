@@ -13,7 +13,7 @@
   <property name="maximumSize">
    <size>
     <width>1024</width>
-    <height>700</height>
+    <height>1000</height>
    </size>
   </property>
   <property name="cursor">
