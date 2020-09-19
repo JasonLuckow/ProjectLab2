@@ -19,6 +19,7 @@ class Ui_MainWindow(object):
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
+        self.centralwidget.setMaximumSize(QtCore.QSize(1024, 16777215))
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout.setObjectName("gridLayout")
