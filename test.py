@@ -111,6 +111,13 @@ class Ui_MainWindow(object):
 "font: 32pt \"SantasSleighFull\";")
         self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label2.setObjectName("label2")
+        self.exitbtn = QtWidgets.QPushButton(self.centralwidget)
+        self.exitbtn.setGeometry(QtCore.QRect(10, 480, 91, 36))
+        self.exitbtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
+        self.exitbtn.setStyleSheet("background-color: rgb(0, 0, 0);\n"
+"color: rgb(255, 255, 255);\n"
+"font: 20pt \"SantasSleighFull\";")
+        self.exitbtn.setObjectName("exitbtn")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -124,6 +131,7 @@ class Ui_MainWindow(object):
         self.carolbtn.setText(_translate("MainWindow", "Carol of the Bells"))
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
         self.label2.setText(_translate("MainWindow", "Click a button!"))
+        self.exitbtn.setText(_translate("MainWindow", "Exit"))
 
 
 if __name__ == "__main__":

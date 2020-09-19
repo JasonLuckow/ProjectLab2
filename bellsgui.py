@@ -17,8 +17,12 @@ class MyWindow(QMainWindow):
         self.ui.carolbtn.clicked.connect(self.carolclicked)
         self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.littlebtn.clicked.connect(self.littleclicked)
+        self.ui.exitbtn.clicked.connect(self.exitclicked)
         self.win = self
         self.app = app
+
+    def exitclicked(self):
+        sys.exit(app.exec_())
 
     def carolclicked(self):
         self.songselectbtnsswitch(False)
