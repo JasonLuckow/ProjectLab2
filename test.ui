@@ -16,6 +16,9 @@
     <height>576</height>
    </size>
   </property>
+  <property name="cursor">
+   <cursorShape>BlankCursor</cursorShape>
+  </property>
   <property name="acceptDrops">
    <bool>false</bool>
   </property>
@@ -37,6 +40,9 @@
      <width>1024</width>
      <height>16777215</height>
     </size>
+   </property>
+   <property name="cursor">
+    <cursorShape>BlankCursor</cursorShape>
    </property>
    <widget class="QPushButton" name="littlebtn">
     <property name="geometry">
@@ -61,6 +67,9 @@
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(9, 18, 27);
@@ -102,6 +111,9 @@ color: rgb(255, 255, 255);</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(9, 18, 27);
 font: 20pt &quot;SantasSleighFull&quot;;
@@ -142,6 +154,9 @@ color: rgb(255, 255, 255);</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
     <property name="mouseTracking">
      <bool>false</bool>
     </property>
@@ -173,6 +188,9 @@ color: rgb(255, 255, 255);</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
 font: 32pt &quot;SantasSleighFull&quot;;</string>
@@ -201,6 +219,9 @@ font: 32pt &quot;SantasSleighFull&quot;;</string>
       <italic>false</italic>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);

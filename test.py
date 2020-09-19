@@ -16,11 +16,13 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1020, 576)
         MainWindow.setMaximumSize(QtCore.QSize(1024, 576))
+        MainWindow.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         MainWindow.setAcceptDrops(False)
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
         self.centralwidget.setMaximumSize(QtCore.QSize(1024, 16777215))
+        self.centralwidget.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.centralwidget.setObjectName("centralwidget")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
         self.littlebtn.setGeometry(QtCore.QRect(750, 460, 271, 36))
@@ -32,6 +34,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.littlebtn.setFont(font)
+        self.littlebtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.littlebtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"
@@ -52,6 +55,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.jinglebtn.setFont(font)
+        self.jinglebtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.jinglebtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"
@@ -72,6 +76,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.carolbtn.setFont(font)
+        self.carolbtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.carolbtn.setMouseTracking(False)
         self.carolbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
@@ -87,6 +92,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.label1.setFont(font)
+        self.label1.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.label1.setStyleSheet("color: rgb(255, 255, 255);\n"
 "font: 32pt \"SantasSleighFull\";")
         self.label1.setAlignment(QtCore.Qt.AlignCenter)
@@ -100,6 +106,7 @@ class Ui_MainWindow(object):
         font.setItalic(False)
         font.setWeight(50)
         self.label2.setFont(font)
+        self.label2.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.label2.setStyleSheet("color: rgb(255, 255, 255);\n"
 "font: 32pt \"SantasSleighFull\";")
         self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
