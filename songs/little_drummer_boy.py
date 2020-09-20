@@ -16,7 +16,7 @@ class NewDrumSong():
         print("hi")
 
         for i in range(5):
-            self.win.updatelabel2("You clicked: Little Drummer Boy. Iteration {}".format(i + 1))
+            self.win.updatelabel2(" You clicked: Little Drummer Boy.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(25, True)
             sleep(1)
