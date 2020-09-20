@@ -18,9 +18,9 @@ class NewJingleSong():
             self.win.updatelabel2(" You clicked: Jingle Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(24, True)
-            sleep(1)
+            sleep(.5)
             GPIO.output(24, False)
-            sleep(1)
+            sleep(.5)
 
         print("done")
         self.win.updatelabel2(" Jingle button was clicked.\nClick another!")

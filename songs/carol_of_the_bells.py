@@ -18,9 +18,9 @@ class NewCarolSong():
             self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(23, True)
-            sleep(1)
+            sleep(.5)
             GPIO.output(23, False)
-            sleep(1)
+            sleep(.5)
 
         print("done")
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
