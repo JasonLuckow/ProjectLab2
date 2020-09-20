@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1024, 600)
-        MainWindow.setMaximumSize(QtCore.QSize(1024, 600))
+        MainWindow.resize(1920, 1080)
+        MainWindow.setMaximumSize(QtCore.QSize(1920, 1080))
         font = QtGui.QFont()
         font.setKerning(True)
         MainWindow.setFont(font)
@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
-        self.centralwidget.setMaximumSize(QtCore.QSize(1024, 600))
+        self.centralwidget.setMaximumSize(QtCore.QSize(1920, 1080))
         self.centralwidget.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.centralwidget.setObjectName("centralwidget")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
