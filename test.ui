@@ -242,8 +242,8 @@ font: 32pt &quot;SantasSleighFull&quot;;</string>
    <widget class="QPushButton" name="exitbtn">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>560</y>
+      <x>10</x>
+      <y>550</y>
       <width>91</width>
       <height>36</height>
      </rect>

@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
         self.label2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
         self.label2.setObjectName("label2")
         self.exitbtn = QtWidgets.QPushButton(self.centralwidget)
-        self.exitbtn.setGeometry(QtCore.QRect(0, 560, 91, 36))
+        self.exitbtn.setGeometry(QtCore.QRect(10, 550, 91, 36))
         self.exitbtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.exitbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
