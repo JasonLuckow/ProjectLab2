@@ -7,14 +7,13 @@ class NewJingleSong():
     def __init__(self, win, app):
         self.win = win
         self.app = app
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(24, GPIO.OUT)
 
     def startsong(self):
         print("Jingle button was clicked")
         # comment out below when working on windows 
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(24, GPIO.OUT)
-        print("hi")
-
+        
         for i in range(2):
             self.win.updatelabel2(" You clicked: Jingle Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
