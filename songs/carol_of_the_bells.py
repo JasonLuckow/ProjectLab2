@@ -7,12 +7,13 @@ class NewCarolSong():
     def __init__(self, win, app):
         self.win = win
         self.app = app
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(23, GPIO.OUT)
 
     def startsong(self):
         print("Carol button was clicked")
         # comment out below when working on windows
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(23, GPIO.OUT)
+        
         print("hi")
 
         for i in range(2):

@@ -55,7 +55,7 @@ class MyWindow(QMainWindow):
     def songselectbtnsswitch(self, logic):
         self.ui.carolbtn.setEnabled(logic)
         self.ui.jinglebtn.setEnabled(logic)
-        self.ui.littlebtn.setEnabled(logic)
+        self.ui.littlebtn.setEnabled(logic)S
 
 # stylesheet = """
 #     QMainWindow {
