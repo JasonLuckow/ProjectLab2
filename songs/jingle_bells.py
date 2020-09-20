@@ -15,7 +15,7 @@ class NewJingleSong():
         GPIO.setup(24, GPIO.OUT)
         print("hi")
 
-        for i in range(5):
+        for i in range(2):
             self.win.updatelabel2(" You clicked: Jingle Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(24, True)

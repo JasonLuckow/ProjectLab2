@@ -15,7 +15,7 @@ class NewCarolSong():
         GPIO.setup(23, GPIO.OUT)
         print("hi")
 
-        for i in range(5):
+        for i in range(2):
             self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(23, True)

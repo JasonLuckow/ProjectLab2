@@ -15,7 +15,7 @@ class NewDrumSong():
         GPIO.setup(25, GPIO.OUT)
         print("hi")
 
-        for i in range(5):
+        for i in range(2):
             self.win.updatelabel2(" You clicked: Little Drummer Boy.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(25, True)
