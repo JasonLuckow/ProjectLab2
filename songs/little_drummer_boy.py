@@ -14,7 +14,7 @@ class NewDrumSong():
         print("Little button was clicked")
         # comment out below when working on windows
 
-        for i in range(2):
+        for i in range(10):
             self.win.updatelabel2(" You clicked: Little Drummer Boy.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(25, True)

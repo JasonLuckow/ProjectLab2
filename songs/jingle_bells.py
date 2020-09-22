@@ -14,7 +14,7 @@ class NewJingleSong():
         print("Jingle button was clicked")
         # comment out below when working on windows 
         
-        for i in range(2):
+        for i in range(10):
             self.win.updatelabel2(" You clicked: Jingle Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(24, True)

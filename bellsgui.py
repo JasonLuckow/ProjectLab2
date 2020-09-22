@@ -17,6 +17,7 @@ class MyWindow(QMainWindow):
         self.ui.carolbtn.clicked.connect(self.carolclicked)
         self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.littlebtn.clicked.connect(self.littleclicked)
+        self.ui.littlebtn_2.clicked.connect(self.pauseClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
         self.win = self
         self.app = app
@@ -47,6 +48,31 @@ class MyWindow(QMainWindow):
         drumsong.startsong()
 
         self.songselectbtnsswitch(True)
+
+    def pauseClicked(self):
+        self.songselectbtnsswitch(True)
+        x = 1
+        while(x == 1):
+            self.win.updatelabel2("Pause Button Clicked! \nWaiting for another press!")
+            if(self.ui.carolbtn):
+                x = 0
+                self.win.updatelabel2("Playing Carol Of Bells!")
+                self.ui.carolbtn.clicked.connect(self.carolclicked)
+            if(self.ui.jinglebtn):
+                x = 0
+                self.win.updatelabel2("Playing Jingle Bells!")
+                self.ui.jinglebtn.clicked.connect(self.jingleclicked)
+            if(self.ui.littlebtn):
+                x = 0
+                self.win.updatelabel2("Playing Little Drummer Boy!")
+                self.ui.littlebtn.clicked.connect(self.littleclicked)
+            if(self.ui.exitbtn):
+                x = 0
+                self.win.updatelabel2("Exiting Program!")
+                self.ui.exitbtn.clicked.connect(self.exitclicked)
+            if(self.ui.exitbtn):
+                x = 0
+                self.songselectbtnsswitch(False)
 
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
