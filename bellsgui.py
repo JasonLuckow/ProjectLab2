@@ -56,7 +56,7 @@ class MyWindow(QMainWindow):
             self.win.updatelabel2("Pause Button Clicked! \nWaiting for another press!")
             if(self.ui.carolbtn):
                 x = 0
-                self.win.updatelabel2("Playing Carol Of Bells!")
+                self.win.updatelabel2("Playing Carol Of Bells! ")
                 self.ui.carolbtn.clicked.connect(self.carolclicked)
             if(self.ui.jinglebtn):
                 x = 0
