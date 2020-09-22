@@ -15,7 +15,7 @@ class NewCarolSong():
         # comment out below when working on windows
 
         for i in range(2):
-            self.win.updatelabel2(" You : Carol of the Bells.\nIteration {}".format(i + 1))
+            self.win.updatelabel2(" You forgot to click: Carol of the Bells.\nIteration {}".format(i + 1))
             self.app.processEvents()
             GPIO.output(23, True)
             sleep(.5)
