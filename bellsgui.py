@@ -110,7 +110,7 @@ class MyWindow(QMainWindow):
         # worker.signals.finished.connect(self.thread_complete)
         worker.signals.progress.connect(self.carolnotify)
 
-        carolsong.startsong()
+        #carolsong.startsong()
 
         self.songselectbtnsswitch(True)
     def carolnotify(self):
