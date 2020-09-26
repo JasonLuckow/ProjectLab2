@@ -22,7 +22,7 @@ class NewCarolSong():
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(25, GPIO.OUT)
 
-    def startsong(self):
+    def startsong(self, progress_callback):
         print("Carol button was clicked")
         # comment out below when working on windows
 
