@@ -34,13 +34,13 @@ class NewCarolSong():
             # GPIO.output(23, False)
             # sleep(.5)
 
-            x = threading.Thread(target=calc, args=(True, 23, .5, 25,))
+            x = threading.Thread(target=self.calc, args=(True, 23, .5, 25,))
             x.start()
 
-            y = threading.Thread(target=calc, args=(True, 24, .5, 25,))
+            y = threading.Thread(target=self.calc, args=(True, 24, .5, 25,))
             y.start()
 
-            z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
+            z = threading.Thread(target=self.calc, args=(False, 25, 1, 12,))
             z.start()
 
             x.join()
@@ -73,17 +73,17 @@ class NewCarolSong():
 
     def stepsame(self, count, type, bo, t):
         print("working {}".format(count))
-        arr.append([count, type, bo, timenow()])
+        self.arr.append([count, type, bo, self.timenow()])
         time.sleep(t)
 
     def all(self, bo):
-        x = threading.Thread(target=motorswitch, args=(bo, 23, .5,))
+        x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
         x.start()
 
-        y = threading.Thread(target=motorswitch, args=(bo, 24, .5,))
+        y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
         y.start()
 
-        z = threading.Thread(target=motorswitch, args=(bo, 25, .5,))
+        z = threading.Thread(target=self.motorswitch, args=(bo, 25, .5,))
         z.start()
 
         x.join()
