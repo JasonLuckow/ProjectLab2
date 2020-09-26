@@ -118,7 +118,7 @@ i = 1
 while i < 2:
     all(False)
 
-    GPIO.output(23, True)
+    GPIO.output(23, True, 2)
 
     all(False)
     
@@ -168,7 +168,7 @@ while i < 2:
 
     all(False)
 
-    GPIO.output(25, True)
+    GPIO.output(25, True, 2)
 
     all(False)
 
