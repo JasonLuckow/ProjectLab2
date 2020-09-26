@@ -34,20 +34,56 @@ class NewCarolSong():
             # GPIO.output(23, False)
             # sleep(.5)
 
-            x = threading.Thread(target=self.calc, args=(True, 23, .5, 25,))
-            x.start()
+            count = 0
+            while count < 1:
 
-            y = threading.Thread(target=self.calc, args=(True, 24, .5, 25,))
-            y.start()
+                x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+                x.start()
 
-            z = threading.Thread(target=self.calc, args=(False, 25, 1, 12,))
-            z.start()
+                y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+                y.start()
 
-            x.join()
-            y.join()
-            z.join()
+                z = threading.Thread(target=motorswitch, args=(False, 25, 2,))
+                z.start()
 
-            all(self, False)
+                x.join()
+                y.join()
+                z.join()
+
+                all(False)
+
+                x = threading.Thread(target=motorswitch, args=(False, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
+                all(False)
+
+                x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=motorswitch, args=(False, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
+                all(False)
+
+                count += 1
+
 
         print("done")
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
