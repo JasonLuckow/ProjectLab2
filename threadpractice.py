@@ -21,11 +21,11 @@ arr = []
 def timenow():
     return (datetime.now().strftime("%H:%M:%S"))
 
-def calc(bo, pin, n):
-    for i in range(15):
+def calc(bo, pin, t, n):
+    for i in range(n):
         bo = not bo
         GPIO.output(pin, bo)
-        time.sleep(n)
+        time.sleep(t)
 
 
 
@@ -51,13 +51,13 @@ def all(bo):
 
     
 
-x = threading.Thread(target=calc, args=(True, 23, .5,))
+x = threading.Thread(target=calc, args=(True, 23, .5, 15,))
 x.start()
 
-y = threading.Thread(target=calc, args=(True, 24, .5,))
+y = threading.Thread(target=calc, args=(True, 24, .5, 15,))
 y.start()
 
-z = threading.Thread(target=calc, args=(False, 25, 1,))
+z = threading.Thread(target=calc, args=(False, 25, 1, 10,))
 z.start()
 
 x.join()
