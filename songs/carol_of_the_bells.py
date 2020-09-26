@@ -1,5 +1,5 @@
 from time import sleep
-# comment out below when working on windows 
+# comment out below when working on windows app
 import RPi.GPIO as GPIO
 
 import threading
@@ -92,8 +92,6 @@ class NewCarolSong():
     
 
     def motorswitch(self, bo, pin, t):
-        while self.win.getPaused() is True:
-            pass
         GPIO.output(pin, bo)
         time.sleep(t)
 
