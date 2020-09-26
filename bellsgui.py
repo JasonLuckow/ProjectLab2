@@ -121,6 +121,9 @@ class MyWindow(QMainWindow):
     def getCarolWorker(self):
         return self.carolWorker
 
+    def getThreadPool(self):
+        return self.threadpool
+
     def jingleclicked(self):
         print("here1")
         self.songselectbtnsswitch(False)
