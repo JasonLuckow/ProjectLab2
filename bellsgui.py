@@ -95,6 +95,7 @@ class MyWindow(QMainWindow):
         self.ui.exitbtn.clicked.connect(self.exitclicked)
         self.isPaused = False
         self.threadpool = QThreadPool()
+        self.carolWorker = None
         self.win = self
         self.app = app
 
@@ -106,18 +107,19 @@ class MyWindow(QMainWindow):
 
         carolsong = carol.NewCarolSong(self.win, self.app)
 
-        worker = Worker(carolsong.startsong) # Any other args, kwargs are passed to the run function
+        self.carolWorker = Worker(carolsong.startsong) # Any other args, kwargs are passed to the run function
         # worker.signals.result.connect(self.print_output)
         # worker.signals.finished.connect(self.thread_complete)
         #worker.signals.progress.connect(self.carolnotify)
 
-        self.threadpool.start(worker) 
+        self.threadpool.start(self.carolWorker) 
 
         #carolsong.startsong()
 
         self.songselectbtnsswitch(True)
-    def carolnotify(self, n):
-        self.updatelabel2(n)
+
+    def getCarolWorker(self):
+        return self.carolWorker
 
     def jingleclicked(self):
         print("here1")
