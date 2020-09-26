@@ -4,6 +4,10 @@ import sys
 from test import Ui_MainWindow
 import PyQt5
 
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+
 from songs import jingle_bells as jingle
 from songs import little_drummer_boy as drum
 from songs import carol_of_the_bells as carol
