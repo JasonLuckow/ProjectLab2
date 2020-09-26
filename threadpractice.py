@@ -25,7 +25,7 @@ def calc(bo, pin, n):
     for i in range(n):
         bo = not bo
         GPIO.output(pin, bo)
-        time.sleep(t)
+        time.sleep(.1)
 
 
 
