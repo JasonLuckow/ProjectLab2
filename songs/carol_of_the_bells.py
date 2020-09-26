@@ -88,7 +88,7 @@ class NewCarolSong():
 
         print("done")
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
-        self.win.threadpool.stop(worker) 
+        self.win.threadpool.stop(self.win.getCarolWorker()) 
 
     
 
