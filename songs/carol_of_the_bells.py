@@ -37,6 +37,7 @@ class NewCarolSong():
             count = 0
             while count < 1:
 
+                self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
@@ -49,9 +50,11 @@ class NewCarolSong():
                 x.join()
                 y.join()
                 z.join()
-
+                
+                self.app.processEvents()
                 self.all(False)
 
+                self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
                 x.start()
 
@@ -65,8 +68,10 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
+                self.app.processEvents()
                 self.all(False)
 
+                self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
@@ -80,6 +85,7 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
+                self.app.processEvents()
                 self.all(False)
 
                 count += 1
@@ -95,7 +101,7 @@ class NewCarolSong():
         i = 0
         while self.win.getPaused() is True:
             i += 1
-            
+
         GPIO.output(pin, bo)
         time.sleep(t)
 
