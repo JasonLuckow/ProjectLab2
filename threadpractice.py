@@ -25,7 +25,7 @@ def calc(bo, pin, n):
     for i in range(n):
         bo = not bo
         GPIO.output(pin, bo)
-        time.sleep(1)
+        time.sleep(n)
 
 
 
@@ -51,13 +51,13 @@ def all(bo):
 
     
 
-x = threading.Thread(target=calc, args=(True, 23, 10,))
+x = threading.Thread(target=calc, args=(True, 23, 20,))
 x.start()
 
-y = threading.Thread(target=calc, args=(True, 24, 10,))
+y = threading.Thread(target=calc, args=(True, 24, 20,))
 y.start()
 
-z = threading.Thread(target=calc, args=(True, 25, 10,))
+z = threading.Thread(target=calc, args=(False, 25, 20,))
 z.start()
 
 x.join()
