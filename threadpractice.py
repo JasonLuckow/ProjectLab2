@@ -51,13 +51,13 @@ def all(bo):
 
     
 
-x = threading.Thread(target=calc, args=(True, 23, 5,))
+x = threading.Thread(target=calc, args=(True, 23, 10,))
 x.start()
 
-y = threading.Thread(target=calc, args=(True, 23, 5,))
+y = threading.Thread(target=calc, args=(True, 24, 10,))
 y.start()
 
-z = threading.Thread(target=calc, args=(True, 23, 5,))
+z = threading.Thread(target=calc, args=(True, 25, 10,))
 z.start()
 
 x.join()
