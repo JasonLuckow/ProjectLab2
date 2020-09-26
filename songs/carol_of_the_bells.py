@@ -87,7 +87,7 @@ class NewCarolSong():
 
             #     self.all(False)
 
-                count += 1
+                # count += 1
 
 
         print("done")
