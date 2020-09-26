@@ -1,3 +1,12 @@
+"""
+    Project Lab 2 ECE 3332 - Fall 2020
+    File: bellsgui.py
+    Date created: 09/08/2020
+    Author: Jason Luckow - jluckow - R11560069
+    Contributors: Shawn Isbell
+
+    Description: Main file that handles the gui and calling of songs
+"""
 from time import sleep
 # comment out below when working on windows 
 import RPi.GPIO as GPIO
