@@ -68,13 +68,14 @@ all(False)
 
 count = 0
 while count < 1:
-    x = threading.Thread(target=stepsame, args=(count, "x1", True,))
+
+    x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
     x.start()
 
-    y = threading.Thread(target=stepsame, args=(count, "y1", True,))
+    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
     y.start()
 
-    z = threading.Thread(target=stepsame, args=(count, "z1", False,))
+    z = threading.Thread(target=motorswitch, args=(False, 25, 2,))
     z.start()
 
     x.join()
@@ -83,13 +84,13 @@ while count < 1:
 
     all(False)
 
-    x = threading.Thread(target=stepsame, args=(count, "x1", False,))
+    x = threading.Thread(target=motorswitch, args=(False, 23, 2,))
     x.start()
 
-    y = threading.Thread(target=stepsame, args=(count, "y1", True,))
+    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
     y.start()
 
-    z = threading.Thread(target=stepsame, args=(count, "z1", True,))
+    z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
     z.start()
 
     x.join()
@@ -98,13 +99,13 @@ while count < 1:
 
     all(False)
 
-    x = threading.Thread(target=stepsame, args=(count, "x1", True,))
+    x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
     x.start()
 
-    y = threading.Thread(target=stepsame, args=(count, "y1", False,))
+    y = threading.Thread(target=motorswitch, args=(False, 24, 2,))
     y.start()
 
-    z = threading.Thread(target=stepsame, args=(count, "z1", True,))
+    z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
     z.start()
 
     x.join()
