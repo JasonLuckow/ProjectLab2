@@ -13,6 +13,7 @@ class NewDrumSong():
     def startsong(self):
         print("Little button was clicked")
         # comment out below when working on windows
+        self.win.pausePlaySwitch(True)
 
         for i in range(2):
             self.win.updatelabel2(" You clicked: Little Drummer Boy.\nIteration {}".format(i + 1))

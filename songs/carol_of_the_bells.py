@@ -25,6 +25,7 @@ class NewCarolSong():
     def startsong(self, progress_callback):
         print("Carol button was clicked")
         # comment out below when working on windows
+        self.win.pausePlaySwitch(True)
 
         for i in range(2):
             # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
@@ -88,7 +89,7 @@ class NewCarolSong():
 
         print("done")
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
-        self.win.songselectbtnsswitch(True)
+        # self.win.songselectbtnsswitch(True)
     
 
     def motorswitch(self, bo, pin, t):
