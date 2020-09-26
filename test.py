@@ -140,22 +140,22 @@ class Ui_MainWindow(object):
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.playbtn.setObjectName("playbtn")
-        self.pausebtn_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pausebtn_2.setGeometry(QtCore.QRect(760, 500, 131, 36))
-        self.pausebtn_2.setMaximumSize(QtCore.QSize(301, 16777215))
+        self.pausebtn = QtWidgets.QPushButton(self.centralwidget)
+        self.pausebtn.setGeometry(QtCore.QRect(760, 500, 131, 36))
+        self.pausebtn.setMaximumSize(QtCore.QSize(301, 16777215))
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
         font.setPointSize(20)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
-        self.pausebtn_2.setFont(font)
-        self.pausebtn_2.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
-        self.pausebtn_2.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+        self.pausebtn.setFont(font)
+        self.pausebtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
+        self.pausebtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
 "font: 20pt \"SantasSleighFull\";\n"
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
-        self.pausebtn_2.setObjectName("pausebtn_2")
+        self.pausebtn.setObjectName("pausebtn")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -171,7 +171,7 @@ class Ui_MainWindow(object):
         self.label2.setText(_translate("MainWindow", "Click a button!"))
         self.exitbtn.setText(_translate("MainWindow", "Exit"))
         self.playbtn.setText(_translate("MainWindow", "Play"))
-        self.pausebtn_2.setText(_translate("MainWindow", "Pause"))
+        self.pausebtn.setText(_translate("MainWindow", "Pause"))
 
 
 if __name__ == "__main__":

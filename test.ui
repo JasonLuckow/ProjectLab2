@@ -310,7 +310,7 @@ color: rgb(255, 255, 255);</string>
      <string>Play</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pausebtn_2">
+   <widget class="QPushButton" name="pausebtn">
     <property name="geometry">
      <rect>
       <x>760</x>
