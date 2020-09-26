@@ -101,7 +101,7 @@ class MyWindow(QMainWindow):
 
         self.carolWorker = Worker(carolsong.startsong) # Any other args, kwargs are passed to the run function
         # worker.signals.result.connect(self.print_output)
-        worker.signals.finished.connect(self.afterSong)
+        self.carolWorker.signals.finished.connect(self.afterSong)
         #worker.signals.progress.connect(self.carolnotify)
 
         self.threadpool.start(self.carolWorker) 
