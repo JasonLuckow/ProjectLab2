@@ -1,5 +1,5 @@
 from time import sleep
-# comment out below when working on windows app
+# comment out below when working on windows 
 import RPi.GPIO as GPIO
 
 import threading
@@ -36,8 +36,7 @@ class NewCarolSong():
 
             count = 0
             while count < 1:
-
-                self.app.processEvents()
+                self.win.updatelabel2(" PASS {}".format(count))
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
@@ -50,11 +49,9 @@ class NewCarolSong():
                 x.join()
                 y.join()
                 z.join()
-                
-                self.app.processEvents()
+
                 self.all(False)
 
-                self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
                 x.start()
 
@@ -68,10 +65,8 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
-                self.app.processEvents()
                 self.all(False)
 
-                self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
@@ -85,7 +80,6 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
-                self.app.processEvents()
                 self.all(False)
 
                 count += 1
@@ -97,12 +91,8 @@ class NewCarolSong():
     
 
     def motorswitch(self, bo, pin, t):
-        self.app.processEvents()
-        i = 0
         while self.win.getPaused() is True:
-            self.app.processEvents()
-            i += 1
-
+            pass
         GPIO.output(pin, bo)
         time.sleep(t)
 
