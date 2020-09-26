@@ -68,117 +68,117 @@ z.join()
 
 all(False)
 
-# count = 0
-# while count < 1:
+count = 0
+while count < 1:
 
-#     x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
-#     x.start()
+    x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+    x.start()
 
-#     y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
-#     y.start()
+    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+    y.start()
 
-#     z = threading.Thread(target=motorswitch, args=(False, 25, 2,))
-#     z.start()
+    z = threading.Thread(target=motorswitch, args=(False, 25, 2,))
+    z.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    x.join()
+    y.join()
+    z.join()
 
-#     all(False)
+    all(False)
 
-#     x = threading.Thread(target=motorswitch, args=(False, 23, 2,))
-#     x.start()
+    x = threading.Thread(target=motorswitch, args=(False, 23, 2,))
+    x.start()
 
-#     y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
-#     y.start()
+    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+    y.start()
 
-#     z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
-#     z.start()
+    z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+    z.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    x.join()
+    y.join()
+    z.join()
 
-#     all(False)
+    all(False)
 
-#     x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
-#     x.start()
+    x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+    x.start()
 
-#     y = threading.Thread(target=motorswitch, args=(False, 24, 2,))
-#     y.start()
+    y = threading.Thread(target=motorswitch, args=(False, 24, 2,))
+    y.start()
 
-#     z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
-#     z.start()
+    z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+    z.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    x.join()
+    y.join()
+    z.join()
 
-#     all(False)
+    all(False)
 
-#     count += 1
+    count += 1
 
-# i = 1
-# while i < 2:
-#     all(False)
+i = 1
+while i < 2:
+    all(False)
 
-#     motorswitch(True, 23, 2)
-#     motorswitch(False, 23, 2)
+    motorswitch(True, 23, 2)
+    motorswitch(False, 23, 2)
 
-#     all(False)
+    all(False)
     
 
-#     x = threading.Thread(target=motorswitch, args=(True, 23, .75,))
-#     x.start()
+    x = threading.Thread(target=motorswitch, args=(True, 23, .75,))
+    x.start()
 
-#     y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
-#     y.start()
+    y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
+    y.start()
 
-#     z = threading.Thread(target=motorswitch, args=(False, 25, .75,))
-#     z.start()
+    z = threading.Thread(target=motorswitch, args=(False, 25, .75,))
+    z.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    x.join()
+    y.join()
+    z.join()
 
-#     all(False)
+    all(False)
 
-#     x = threading.Thread(target=motorswitch, args=(True, 23, .75,))
-#     x.start()
+    x = threading.Thread(target=motorswitch, args=(True, 23, .75,))
+    x.start()
 
-#     y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
-#     y.start()
+    y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
+    y.start()
 
-#     z = threading.Thread(target=motorswitch, args=(True, 25, .75,))
-#     z.start()
+    z = threading.Thread(target=motorswitch, args=(True, 25, .75,))
+    z.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    x.join()
+    y.join()
+    z.join()
 
-#     all(False)
+    all(False)
 
-#     x = threading.Thread(target=motorswitch, args=(False, 23, .75,))
-#     x.start()
+    x = threading.Thread(target=motorswitch, args=(False, 23, .75,))
+    x.start()
 
-#     y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
-#     y.start()
+    y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
+    y.start()
 
-#     z = threading.Thread(target=motorswitch, args=(True, 25, .75,))
-#     z.start()
+    z = threading.Thread(target=motorswitch, args=(True, 25, .75,))
+    z.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    x.join()
+    y.join()
+    z.join()
 
-#     all(False)
+    all(False)
 
-#     motorswitch(True, 25, 2)
-#     motorswitch(False, 25, 2)
+    motorswitch(True, 25, 2)
+    motorswitch(False, 25, 2)
 
-#     all(False)
+    all(False)
 
-#     i += 1
+    i += 1
 
 prev = 1
 for i in arr:   
