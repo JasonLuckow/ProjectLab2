@@ -2,6 +2,12 @@ from time import sleep
 # comment out below when working on windows 
 import RPi.GPIO as GPIO
 
+import threading
+import os
+import math
+import time
+from datetime import datetime
+
 class NewCarolSong():
 
     def __init__(self, win, app):
