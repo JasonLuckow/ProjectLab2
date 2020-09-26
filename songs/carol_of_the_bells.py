@@ -50,7 +50,7 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
-                all(False)
+                self.all(False)
 
                 x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
                 x.start()
@@ -65,7 +65,7 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
-                all(False)
+                self.all(False)
 
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
@@ -80,7 +80,7 @@ class NewCarolSong():
                 y.join()
                 z.join()
 
-                all(False)
+                self.all(False)
 
                 count += 1
 
