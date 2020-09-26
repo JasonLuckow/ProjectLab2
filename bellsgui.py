@@ -34,7 +34,7 @@ class WorkerSignals(QObject):
     # finished = pyqtSignal()
     # error = pyqtSignal(tuple)
     # result = pyqtSignal(object)
-    progress = pyqtSignal()
+    #progress = pyqtSignal()
 
 
 class Worker(QRunnable):
@@ -61,7 +61,7 @@ class Worker(QRunnable):
         self.signals = WorkerSignals()    
 
         # Add the callback to our kwargs
-        self.kwargs['progress_callback'] = self.signals.progress        
+        #self.kwargs['progress_callback'] = self.signals.progress        
 
     @pyqtSlot()
     def run(self):
@@ -109,7 +109,7 @@ class MyWindow(QMainWindow):
         worker = Worker(carolsong.startsong) # Any other args, kwargs are passed to the run function
         # worker.signals.result.connect(self.print_output)
         # worker.signals.finished.connect(self.thread_complete)
-        worker.signals.progress.connect(self.carolnotify)
+        #worker.signals.progress.connect(self.carolnotify)
 
         self.threadpool.start(worker) 
 
@@ -120,6 +120,7 @@ class MyWindow(QMainWindow):
         self.updatelabel2(n)
 
     def jingleclicked(self):
+        print("here1")
         self.songselectbtnsswitch(False)
 
         jinglesong = jingle.NewJingleSong(self.win, self.app)
