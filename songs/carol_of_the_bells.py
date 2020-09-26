@@ -29,10 +29,10 @@ class NewCarolSong():
         for i in range(2):
             # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
             # self.app.processEvents()
-            # GPIO.output(23, True)
-            # sleep(.5)
-            # GPIO.output(23, False)
-            # sleep(.5)
+            GPIO.output(23, True)
+            sleep(.5)
+            GPIO.output(23, False)
+            sleep(.5)
 
             count = 0
             while count < 1:
