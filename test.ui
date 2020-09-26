@@ -261,7 +261,7 @@ color: rgb(255, 255, 255);</string>
      <string>Exit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="littlebtn_2">
+   <widget class="QPushButton" name="pauseplaybtn">
     <property name="geometry">
      <rect>
       <x>760</x>
