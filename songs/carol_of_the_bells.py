@@ -88,7 +88,7 @@ class NewCarolSong():
 
         print("done")
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
-
+        self.win.songselectbtnsswitch(True)
     
 
     def motorswitch(self, bo, pin, t):
