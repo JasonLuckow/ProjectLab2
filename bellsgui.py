@@ -32,7 +32,7 @@ class WorkerSignals(QObject):
 
     '''
     # finished = pyqtSignal()
-     error = pyqtSignal(tuple)
+    error = pyqtSignal(tuple)
     # result = pyqtSignal(object)
     #progress = pyqtSignal()
 
