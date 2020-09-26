@@ -29,64 +29,69 @@ class NewCarolSong():
         for i in range(2):
             # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
             # self.app.processEvents()
-            GPIO.output(23, True)
-            sleep(.5)
-            GPIO.output(23, False)
-            sleep(.5)
+            # GPIO.output(23, True)
+            # sleep(.5)
+            # GPIO.output(23, False)
+            # sleep(.5)
 
-            count = 0
-            while count < 1:
+            worker = Worker(carolsong.startsong) # Any other args, kwargs are passed to the run function
+            # worker.signals.result.connect(self.print_output)
+            # worker.signals.finished.connect(self.thread_complete)
+            worker.signals.progress.connect(self.win.carolnotify)
 
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
-                x.start()
+            # count = 0
+            # while count < 1:
 
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
+            #     x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+            #     x.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
-                z.start()
+            #     y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+            #     y.start()
 
-                x.join()
-                y.join()
-                z.join()
+            #     z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
+            #     z.start()
 
-                self.all(False)
+            #     x.join()
+            #     y.join()
+            #     z.join()
 
-                x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
-                x.start()
+            #     self.all(False)
 
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
+            #     x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
+            #     x.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
-                z.start()
+            #     y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+            #     y.start()
 
-                x.join()
-                y.join()
-                z.join()
+            #     z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+            #     z.start()
 
-                self.all(False)
+            #     x.join()
+            #     y.join()
+            #     z.join()
 
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
-                x.start()
+            #     self.all(False)
 
-                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
-                y.start()
+            #     x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+            #     x.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
-                z.start()
+            #     y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
+            #     y.start()
 
-                x.join()
-                y.join()
-                z.join()
+            #     z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+            #     z.start()
 
-                self.all(False)
+            #     x.join()
+            #     y.join()
+            #     z.join()
+
+            #     self.all(False)
 
                 count += 1
 
 
         print("done")
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
 
     
 
