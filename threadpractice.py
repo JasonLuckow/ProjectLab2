@@ -25,7 +25,7 @@ def calc(bo, pin, n):
     for i in range(n):
         bo = not bo
         GPIO.output(pin, bo)
-        time.sleep(.1)
+        time.sleep(1)
 
 
 
@@ -126,13 +126,13 @@ while i < 2:
     all(False)
     
 
-    x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+    x = threading.Thread(target=motorswitch, args=(True, 23, .75,))
     x.start()
 
-    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+    y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
     y.start()
 
-    z = threading.Thread(target=motorswitch, args=(False, 25, 2,))
+    z = threading.Thread(target=motorswitch, args=(False, 25, .75,))
     z.start()
 
     x.join()
@@ -141,13 +141,13 @@ while i < 2:
 
     all(False)
 
-    x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+    x = threading.Thread(target=motorswitch, args=(True, 23, .75,))
     x.start()
 
-    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+    y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
     y.start()
 
-    z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+    z = threading.Thread(target=motorswitch, args=(True, 25, .75,))
     z.start()
 
     x.join()
@@ -156,13 +156,13 @@ while i < 2:
 
     all(False)
 
-    x = threading.Thread(target=motorswitch, args=(False, 23, 2,))
+    x = threading.Thread(target=motorswitch, args=(False, 23, .75,))
     x.start()
 
-    y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+    y = threading.Thread(target=motorswitch, args=(True, 24, .75,))
     y.start()
 
-    z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+    z = threading.Thread(target=motorswitch, args=(True, 25, .75,))
     z.start()
 
     x.join()
