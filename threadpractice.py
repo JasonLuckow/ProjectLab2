@@ -5,6 +5,8 @@ import time
 from datetime import datetime
 import RPi.GPIO as GPIO
 
+#threading
+
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(23, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
