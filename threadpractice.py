@@ -21,13 +21,12 @@ arr = []
 def timenow():
     return (datetime.now().strftime("%H:%M:%S"))
 
-def calc(type, bo, n):
+def calc(bo, pin, n):
     for i in range(n):
         bo = not bo
-        arr.append([i, type, bo, timenow()])
-        time.sleep(.1)
+        GPIO.output(pin, bo)
+        time.sleep(t)
 
-    arr.append([5, type, False])
 
 
 def stepsame(count, type, bo, t):
@@ -52,67 +51,69 @@ def all(bo):
 
     
 
-# x = threading.Thread(target=calc, args=("x", False, 3,))
-# x.start()
+x = threading.Thread(target=calc, args=(True, 23, 5,))
+x.start()
 
-# y = threading.Thread(target=calc, args=("y", False, 3,))
-# y.start()
+y = threading.Thread(target=calc, args=(True, 23, 5,))
+y.start()
 
-# z = threading.Thread(target=calc, args=("y", False, 3,))
-# z.start()
+z = threading.Thread(target=calc, args=(True, 23, 5,))
+z.start()
 
-# x.join()
-# y.join()
-# z.join()
+x.join()
+y.join()
+z.join()
 
-# count = 0
-# while count < 1:
-#     x = threading.Thread(target=stepsame, args=(count, "x1", True,))
-#     x.start()
+all(False)
 
-#     y = threading.Thread(target=stepsame, args=(count, "y1", True,))
-#     y.start()
+count = 0
+while count < 1:
+    x = threading.Thread(target=stepsame, args=(count, "x1", True,))
+    x.start()
 
-#     z = threading.Thread(target=stepsame, args=(count, "z1", False,))
-#     z.start()
+    y = threading.Thread(target=stepsame, args=(count, "y1", True,))
+    y.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    z = threading.Thread(target=stepsame, args=(count, "z1", False,))
+    z.start()
 
-#     all(False)
+    x.join()
+    y.join()
+    z.join()
 
-#     x = threading.Thread(target=stepsame, args=(count, "x1", False,))
-#     x.start()
+    all(False)
 
-#     y = threading.Thread(target=stepsame, args=(count, "y1", True,))
-#     y.start()
+    x = threading.Thread(target=stepsame, args=(count, "x1", False,))
+    x.start()
 
-#     z = threading.Thread(target=stepsame, args=(count, "z1", True,))
-#     z.start()
+    y = threading.Thread(target=stepsame, args=(count, "y1", True,))
+    y.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    z = threading.Thread(target=stepsame, args=(count, "z1", True,))
+    z.start()
 
-#     all(False)
+    x.join()
+    y.join()
+    z.join()
 
-#     x = threading.Thread(target=stepsame, args=(count, "x1", True,))
-#     x.start()
+    all(False)
 
-#     y = threading.Thread(target=stepsame, args=(count, "y1", False,))
-#     y.start()
+    x = threading.Thread(target=stepsame, args=(count, "x1", True,))
+    x.start()
 
-#     z = threading.Thread(target=stepsame, args=(count, "z1", True,))
-#     z.start()
+    y = threading.Thread(target=stepsame, args=(count, "y1", False,))
+    y.start()
 
-#     x.join()
-#     y.join()
-#     z.join()
+    z = threading.Thread(target=stepsame, args=(count, "z1", True,))
+    z.start()
 
-#     all(False)
+    x.join()
+    y.join()
+    z.join()
 
-#     count += 1
+    all(False)
+
+    count += 1
 
 i = 1
 while i < 2:
