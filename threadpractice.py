@@ -57,7 +57,7 @@ x.start()
 y = threading.Thread(target=calc, args=(True, 24, .5, 15,))
 y.start()
 
-z = threading.Thread(target=calc, args=(False, 25, 1, 9,))
+z = threading.Thread(target=calc, args=(False, 25, 1, 8,))
 z.start()
 
 x.join()
