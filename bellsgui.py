@@ -115,7 +115,7 @@ class MyWindow(QMainWindow):
         self.threadpool.start(self.carolWorker) 
 
         #carolsong.startsong()
-
+        print("here after threadpool")
         self.songselectbtnsswitch(True)
 
     def getCarolWorker(self):
