@@ -37,6 +37,7 @@ class NewCarolSong():
             count = 0
             while count < 1:
                 self.win.updatelabel2(" PASS {}".format(count))
+                self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
