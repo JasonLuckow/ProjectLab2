@@ -54,16 +54,16 @@ class NewCarolSong():
 
     
 
-    def motorswitch(bo, pin, t):
+    def motorswitch(self, bo, pin, t):
         GPIO.output(pin, bo)
         time.sleep(t)
 
     arr = []
 
-    def timenow():
+    def timenow(self):
         return (datetime.now().strftime("%H:%M:%S"))
 
-    def calc(bo, pin, t, n):
+    def calc(self, bo, pin, t, n):
         for i in range(n):
             bo = not bo
             GPIO.output(pin, bo)
@@ -71,12 +71,12 @@ class NewCarolSong():
 
 
 
-    def stepsame(count, type, bo, t):
+    def stepsame(self, count, type, bo, t):
         print("working {}".format(count))
         arr.append([count, type, bo, timenow()])
         time.sleep(t)
 
-    def all(bo):
+    def all(self, bo):
         x = threading.Thread(target=motorswitch, args=(bo, 23, .5,))
         x.start()
 
