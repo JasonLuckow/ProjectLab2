@@ -108,7 +108,7 @@ stylesheet = """
 def window():
     app = QApplication(sys.argv)
 
-    #QtGui.QFontDatabase.addApplicationFont("SantasSleighFull.ttf")
+    QtGui.QFontDatabase.addApplicationFont("SantasSleighFull.ttf")
 
     # use below for Raspberry Pi and make sure file path mirrors the same.
     QtGui.QFontDatabase.addApplicationFont("/home/pi/Documents/HopperAppStyles/SantasSleighFull.ttf")
