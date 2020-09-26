@@ -169,7 +169,7 @@ class MyWindow(QMainWindow):
         self.isPaused = logic
 
     def getPaused(self):
-        return seld.isPaused
+        return self.isPaused
 
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
