@@ -33,7 +33,7 @@ class NewCarolSong():
             # sleep(.5)
             # GPIO.output(23, False)
             # sleep(.5)
-
+            progress_callback.emit("you clicked carol of bells")
             count = 0
             while count < 1:
                 self.win.updatelabel2(" PASS {}".format(i))
@@ -94,6 +94,7 @@ class NewCarolSong():
     def motorswitch(self, bo, pin, t):
         self.app.processEvents()
         while self.win.getPaused() == True:
+            self.app.processEvents()
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)

@@ -116,8 +116,8 @@ class MyWindow(QMainWindow):
         #carolsong.startsong()
 
         self.songselectbtnsswitch(True)
-    def carolnotify(self):
-        self.updatelabel2(" You clicked: Carol of the Bells")
+    def carolnotify(self, n):
+        self.updatelabel2(n)
 
     def jingleclicked(self):
         self.songselectbtnsswitch(False)
