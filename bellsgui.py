@@ -31,9 +31,9 @@ class WorkerSignals(QObject):
         `int` indicating % progress 
 
     '''
-    finished = pyqtSignal()
-    error = pyqtSignal(tuple)
-    result = pyqtSignal(object)
+    # finished = pyqtSignal()
+    # error = pyqtSignal(tuple)
+    # result = pyqtSignal(object)
     progress = pyqtSignal()
 
 
