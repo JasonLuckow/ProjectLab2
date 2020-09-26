@@ -33,7 +33,7 @@ class NewCarolSong():
             # sleep(.5)
             # GPIO.output(23, False)
             # sleep(.5)
-            progress_callback.emit("you clicked carol of bells")
+            # progress_callback.emit("you clicked carol of bells")
             count = 0
             while count < 1:
                 self.win.updatelabel2(" PASS {}".format(i))
