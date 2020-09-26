@@ -123,7 +123,7 @@ while i < 2:
     all(False)
 
     motorswitch(True, 23, 1)
-    motorswitch(False, 23, 1)
+    #motorswitch(False, 23, 1)
 
     #all(False)
     
@@ -173,8 +173,18 @@ while i < 2:
 
     #all(False)
 
-    motorswitch(True, 25, 1)
-    motorswitch(False, 25, 1)
+    x = threading.Thread(target=motorswitch, args=(False, 23, 1,))
+    x.start()
+
+    y = threading.Thread(target=motorswitch, args=(False, 24, 1,))
+    y.start()
+
+    z = threading.Thread(target=motorswitch, args=(True, 25, 1,))
+    z.start()
+
+    x.join()
+    y.join()
+    z.join()
 
     all(False)
 
