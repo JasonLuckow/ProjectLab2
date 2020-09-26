@@ -1,6 +1,6 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow
-import sys
+import sys, traceback
 from test import Ui_MainWindow
 import PyQt5
 
