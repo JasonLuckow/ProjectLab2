@@ -92,6 +92,8 @@ class NewCarolSong():
     
 
     def motorswitch(self, bo, pin, t):
+        while self.win.getPaused() == True:
+            time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
 
