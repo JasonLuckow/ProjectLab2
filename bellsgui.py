@@ -3,7 +3,7 @@
     File: bellsgui.py
     Date created: 09/08/2020
     Author: Jason Luckow - jluckow - R11560069
-    Contributors: Shawn Isbell
+    Contributors: Shawn Isbell - 
 
     Description: Main file that handles the gui and calling of songs
 """
