@@ -94,6 +94,7 @@ class MyWindow(QMainWindow):
         self.ui.playbtn.clicked.connect(self.playClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
         self.isPaused = False
+        self.threadpool = QThreadPool()
         self.win = self
         self.app = app
 
@@ -105,10 +106,12 @@ class MyWindow(QMainWindow):
 
         carolsong = carol.NewCarolSong(self.win, self.app)
 
-        worker = Worker(carolsong.startsong) # Any other args, kwargs are passed to the run function
+        worker = Worker(self.carolsong.startsong) # Any other args, kwargs are passed to the run function
         # worker.signals.result.connect(self.print_output)
         # worker.signals.finished.connect(self.thread_complete)
         worker.signals.progress.connect(self.carolnotify)
+
+        self.threadpool.start(worker) 
 
         #carolsong.startsong()
 
