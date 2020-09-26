@@ -28,7 +28,7 @@ class WorkerSignals(QObject):
         `object` data returned from processing, anything
 
     progress
-        `int` indicating % progress 
+        `int` indicating % progress  
 
     '''
     # finished = pyqtSignal()
