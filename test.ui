@@ -184,6 +184,12 @@ color: rgb(255, 255, 255);</string>
       <height>57</height>
      </rect>
     </property>
+    <property name="maximumSize">
+     <size>
+      <width>600</width>
+      <height>1024</height>
+     </size>
+    </property>
     <property name="font">
      <font>
       <family>SantasSleighFull</family>
@@ -215,6 +221,12 @@ font: 32pt &quot;SantasSleighFull&quot;;</string>
       <width>211</width>
       <height>57</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>600</width>
+      <height>1024</height>
+     </size>
     </property>
     <property name="font">
      <font>
