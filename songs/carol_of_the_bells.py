@@ -37,13 +37,13 @@ class NewCarolSong():
             count = 0
             while count < 1:
 
-                x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
-                y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
                 y.start()
 
-                z = threading.Thread(target=motorswitch, args=(False, 25, 2,))
+                z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
                 z.start()
 
                 x.join()
@@ -52,13 +52,13 @@ class NewCarolSong():
 
                 all(False)
 
-                x = threading.Thread(target=motorswitch, args=(False, 23, 2,))
+                x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
                 x.start()
 
-                y = threading.Thread(target=motorswitch, args=(True, 24, 2,))
+                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
                 y.start()
 
-                z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
                 z.start()
 
                 x.join()
@@ -67,13 +67,13 @@ class NewCarolSong():
 
                 all(False)
 
-                x = threading.Thread(target=motorswitch, args=(True, 23, 2,))
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
 
-                y = threading.Thread(target=motorswitch, args=(False, 24, 2,))
+                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
                 y.start()
 
-                z = threading.Thread(target=motorswitch, args=(True, 25, 2,))
+                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
                 z.start()
 
                 x.join()
