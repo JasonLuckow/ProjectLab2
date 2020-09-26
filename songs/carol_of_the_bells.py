@@ -47,7 +47,7 @@ class NewCarolSong():
             y.join()
             z.join()
 
-            all(False)
+            all(self, False)
 
         print("done")
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
