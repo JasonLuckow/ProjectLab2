@@ -100,6 +100,7 @@ class NewCarolSong():
         self.app.processEvents()
         i = 0
         while self.win.getPaused() is True:
+            self.app.processEvents()
             i += 1
 
         GPIO.output(pin, bo)
