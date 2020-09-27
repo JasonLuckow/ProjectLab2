@@ -14,8 +14,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1920, 1080)
-        MainWindow.setMaximumSize(QtCore.QSize(1920, 1080))
+        MainWindow.resize(1024, 600)
+        MainWindow.setMaximumSize(QtCore.QSize(1024, 600))
         font = QtGui.QFont()
         font.setKerning(True)
         MainWindow.setFont(font)
@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
         MainWindow.setToolTip("")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
-        self.centralwidget.setMaximumSize(QtCore.QSize(1920, 1080))
+        self.centralwidget.setMaximumSize(QtCore.QSize(1024, 600))
         self.centralwidget.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         self.centralwidget.setObjectName("centralwidget")
         self.littlebtn = QtWidgets.QPushButton(self.centralwidget)
@@ -88,6 +88,7 @@ class Ui_MainWindow(object):
         self.carolbtn.setObjectName("carolbtn")
         self.label1 = QtWidgets.QLabel(self.centralwidget)
         self.label1.setGeometry(QtCore.QRect(10, 100, 471, 57))
+        self.label1.setMaximumSize(QtCore.QSize(600, 1024))
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
         font.setPointSize(32)
@@ -102,6 +103,7 @@ class Ui_MainWindow(object):
         self.label1.setObjectName("label1")
         self.label2 = QtWidgets.QLabel(self.centralwidget)
         self.label2.setGeometry(QtCore.QRect(10, 180, 211, 57))
+        self.label2.setMaximumSize(QtCore.QSize(600, 1024))
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
         font.setPointSize(32)
@@ -122,6 +124,38 @@ class Ui_MainWindow(object):
 "border: 0.5px green;\n"
 "color: rgb(255, 255, 255);")
         self.exitbtn.setObjectName("exitbtn")
+        self.playbtn = QtWidgets.QPushButton(self.centralwidget)
+        self.playbtn.setGeometry(QtCore.QRect(900, 500, 131, 36))
+        self.playbtn.setMaximumSize(QtCore.QSize(301, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("SantasSleighFull")
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.playbtn.setFont(font)
+        self.playbtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
+        self.playbtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
+        self.playbtn.setObjectName("playbtn")
+        self.pausebtn = QtWidgets.QPushButton(self.centralwidget)
+        self.pausebtn.setGeometry(QtCore.QRect(760, 500, 131, 36))
+        self.pausebtn.setMaximumSize(QtCore.QSize(301, 16777215))
+        font = QtGui.QFont()
+        font.setFamily("SantasSleighFull")
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.pausebtn.setFont(font)
+        self.pausebtn.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
+        self.pausebtn.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
+        self.pausebtn.setObjectName("pausebtn")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -136,6 +170,8 @@ class Ui_MainWindow(object):
         self.label1.setText(_translate("MainWindow", "Choose a christmas song to play!"))
         self.label2.setText(_translate("MainWindow", "Click a button!"))
         self.exitbtn.setText(_translate("MainWindow", "Exit"))
+        self.playbtn.setText(_translate("MainWindow", "Play"))
+        self.pausebtn.setText(_translate("MainWindow", "Pause"))
 
 
 if __name__ == "__main__":
