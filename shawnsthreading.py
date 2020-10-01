@@ -13,13 +13,14 @@ class Actuator1:
         t.start()
 
     def run(self):
+        GPOUT = 23
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(23, GPIO.OUT)
+        GPIO.setup(GPOUT, GPIO.OUT)
         while(True):
             if(self.stopped):
-                GPIO.output(23, False)
+                GPIO.output(GPOUT, False)
                 return
-            GPIO.output(23, self.GPON)
+            GPIO.output(GPOUT, self.GPON)
             sleep(0.5)
             self.GPON = not self.GPON
     
@@ -37,13 +38,14 @@ class Actuator2:
         t.start()
 
     def run(self):
+        GPOUT = 24
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(24, GPIO.OUT)
+        GPIO.setup(GPOUT, GPIO.OUT)
         while(True):
             if(self.stopped):
-                GPIO.output(24, False)
+                GPIO.output(GPOUT, False)
                 return
-            GPIO.output(24, self.GPON)
+            GPIO.output(GPOUT, self.GPON)
             sleep(0.5)
             self.GPON = not self.GPON
     
@@ -61,14 +63,15 @@ class Actuator3:
         t.start()
 
     def run(self):
+        GPOUT = 25
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(25, GPIO.OUT)
+        GPIO.setup(GPOUT, GPIO.OUT)
         while(True):
             if(self.stopped):
-                GPIO.output(25, False)
+                GPIO.output(GPOUT, False)
                 return
-            GPIO.output(25, self.GPON)
-            sleep(0.7)
+            GPIO.output(GPOUT, self.GPON)
+            sleep(0.75)
             self.GPON = not self.GPON
     
     def stop(self):
