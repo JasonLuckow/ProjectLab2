@@ -7,6 +7,10 @@ import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(25, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(23, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(24, GPIO.OUT)
 
 #x - 23
 #y - 24
@@ -15,21 +19,21 @@ GPIO.setup(25, GPIO.OUT)
 for i in range(10):
 
     GPIO.output(23, True)
-    sleep(.5)
+    time.sleep(.2)
     GPIO.output(23, False)
-    sleep(1)
+    time.sleep(.4)
 
     GPIO.output(24, True)
-    sleep(.5)
+    time.sleep(.2)
     GPIO.output(24, False)
-    sleep(.5)
+    time.sleep(.2)
 
     GPIO.output(23, True)
-    sleep(.5)
+    time.sleep(.2)
     GPIO.output(23, False)
-    sleep(.5)
+    time.sleep(.2)
 
     GPIO.output(25, True)
-    sleep(.5)
+    time.sleep(.2)
     GPIO.output(25, False)
-    sleep(1)
+    time.sleep(.4)

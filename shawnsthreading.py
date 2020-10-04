@@ -14,12 +14,12 @@ class Actuator1:
 
     def run(self):
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(23, GPIO.OUT)
+        GPIO.setup(22, GPIO.OUT)
         while(True):
             if(self.stopped):
-                GPIO.output(23, False)
+                GPIO.output(22, False)
                 return
-            GPIO.output(23, self.GPON)
+            GPIO.output(22, self.GPON)
             sleep(0.5)
             self.GPON = not self.GPON
     
@@ -68,7 +68,7 @@ class Actuator3:
                 GPIO.output(25, False)
                 return
             GPIO.output(25, self.GPON)
-            sleep(0.7)
+            sleep(0.9)
             self.GPON = not self.GPON
     
     def stop(self):

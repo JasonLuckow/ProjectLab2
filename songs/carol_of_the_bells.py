@@ -23,9 +23,9 @@ class NewCarolSong():
         self.win = win
         self.app = app
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(23, GPIO.OUT)
+        GPIO.setup(27, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(23, GPIO.OUT)
+        GPIO.setup(22, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(24, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
@@ -50,48 +50,22 @@ class NewCarolSong():
             while count < 1:
                 self.win.updatelabel2(" PASS {}".format(i))
                 self.app.processEvents()
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+                x = threading.Thread(target=calc, args=(True, 22, .5, 25,))
                 x.start()
 
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+                y = threading.Thread(target=calc, args=(True, 24, .5, 25,))
                 y.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
+                z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
                 z.start()
+
+                j = threading.Thread(target=calc, args=(False, 27, 1, 12,))
+                j.start()
 
                 x.join()
                 y.join()
                 z.join()
-
-                self.all(False)
-
-                x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
-                x.start()
-
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
-
-                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
-                z.start()
-
-                x.join()
-                y.join()
-                z.join()
-
-                self.all(False)
-
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
-                x.start()
-
-                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
-                y.start()
-
-                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
-                z.start()
-
-                x.join()
-                y.join()
-                z.join()
+                j.join()
 
                 self.all(False)
 
