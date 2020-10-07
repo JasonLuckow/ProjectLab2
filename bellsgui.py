@@ -106,6 +106,25 @@ class MyWindow(QMainWindow):
         self.ui.pausebtn.clicked.connect(self.pauseClicked)
         self.ui.playbtn.clicked.connect(self.playClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
+        """
+        What if we put \/ here for each song and then just call start in the clicked function
+
+        self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
+        self.carolWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
+
+        and then the clicked function could look like \/ for each song
+        
+        self.threadpool.stop(self.jingleWorker) # Stops jingleWorker if playing
+        self.threadpool.stop(self.littleWorker) # Stops littleWorker if playing
+        self.threadpool.start(self.carolWorker) # starts carolWorker with the above requirements
+        
+        This would allow the user to change songs even if puase/play is not pressed and would
+        prevent multiple songs from playing at once
+
+        this would eliminate the need for songselectbtnsswitch and allow pause / play to be 
+        self.pausePlaySwitch(False) or self.pausePlaySwitch(True)
+
+        """
         self.isPaused = False
         self.threadpool = QThreadPool()
         self.win = self
