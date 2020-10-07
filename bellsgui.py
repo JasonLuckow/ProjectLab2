@@ -233,6 +233,8 @@ class MyWindow(QMainWindow):
     def setPaused(self, logic):
         """
         Setter for the pause variable
+
+        logic: boolean
         """
         self.isPaused = logic
 
@@ -249,6 +251,8 @@ class MyWindow(QMainWindow):
     def songselectbtnsswitch(self, logic):
         """
         Switches the song list to clickable or not
+
+        logic: boolean
         """
         self.ui.carolbtn.setEnabled(logic)
         self.ui.jinglebtn.setEnabled(logic)
@@ -257,6 +261,8 @@ class MyWindow(QMainWindow):
     def pausePlaySwitch(self, logic):
         """
         Switches the pause and play buttons to clickable or not
+
+        logic: boolean
         """
         self.ui.pausebtn.setEnabled(logic)
         self.ui.playbtn.setEnabled(logic)

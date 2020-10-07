@@ -76,6 +76,10 @@ class NewCarolSong():
     def motorswitch(self, bo, pin, t):
         """
         Controls the output to the gpio pins that control the actuators
+
+        bo: boolean
+        pin: int
+        t: int
         """
         self.app.processEvents()
         while self.win.getPaused() == True:
@@ -94,6 +98,11 @@ class NewCarolSong():
         """
         This function isn't really all that important. It shows how async and sync operations
         are achieved with multi threading
+
+        bo: boolean
+        pin: int
+        t: int
+        n: int
         """
         for i in range(n):
             bo = not bo
@@ -104,6 +113,8 @@ class NewCarolSong():
         """
         right now this function turns off or on 3 gpio pins depending on the
         boolean variable bo
+
+        bo: int
         """
 
         x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
