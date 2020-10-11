@@ -215,6 +215,7 @@ class MyWindow(QMainWindow):
         Setter for the pause variable
         """
         self.isPaused = logic
+        self.pausePlaySwitch(True)
 
     def getPaused(self):
         """
