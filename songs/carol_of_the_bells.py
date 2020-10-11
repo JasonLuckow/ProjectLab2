@@ -58,11 +58,11 @@ class NewCarolSong():
         """
         Controls the output to the gpio pins that control the actuators
         """
-        print('here1')
+        print(bo, pin, t)
         self.app.processEvents()
         if(self.win.getStopped(1) == True):
             return
-        print('here2')
+
         while self.win.getPaused() == True:
             self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
             time.sleep(.1)
