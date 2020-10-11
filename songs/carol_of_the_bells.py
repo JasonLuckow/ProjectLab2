@@ -144,6 +144,13 @@ class NewCarolSong():
 
     def calc(self, bo, pin, t, n):
         for i in range(n):
+            self.app.processEvents()
+            if(self.win.getStopped(1) == True):
+                self.win.updatelabel2("Carol button was clicked.\nClick another!")
+                return
+            while self.win.getPaused() == True:
+                self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+                time.sleep(.1)
             bo = not bo
             GPIO.output(pin, bo)
             time.sleep(t)
