@@ -108,7 +108,7 @@ class NewJingleSong():
         Controls the output to the gpio pins that control the actuators
         """
         self.app.processEvents()
-        if(self.win.getStopped(1) == True):
+        if(self.win.getStopped(2) == True):
             self.win.updatelabel2("Jingle button was clicked.\nClick another!")
             return
         while self.win.getPaused() == True:
