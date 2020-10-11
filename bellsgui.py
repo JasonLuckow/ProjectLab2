@@ -135,13 +135,13 @@ class MyWindow(QMainWindow):
         self.songselectbtnsswitch(False)
 
         #Turn All Songs Off
-        self.pausePlaySwitch(True)
         self.setPaused(False)
         self.setSongPlaying(1, False)
         self.setSongPlaying(2, False)
         self.setSongPlaying(3, False)
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(1, True) #Turn Carol Song On
+        self.pausePlaySwitch(True)
 
         carolsong = carol.NewCarolSong(self.win, self.app)
         self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
@@ -162,13 +162,13 @@ class MyWindow(QMainWindow):
         self.songselectbtnsswitch(False)
 
         #Turn All Songs Off
-        self.pausePlaySwitch(True)
         self.setPaused(False)
         self.setSongPlaying(1, False)
         self.setSongPlaying(2, False)
         self.setSongPlaying(3, False)
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(2, True) #Turn Jingle Song On
+        self.pausePlaySwitch(True)
 
         jinglesong = jingle.NewJingleSong(self.win, self.app)
         self.jingleWorker = Worker(jinglesong.startsong) # add the function to execute to the worker class
