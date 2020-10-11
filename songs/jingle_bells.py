@@ -16,7 +16,7 @@ import math
 import time
 from datetime import datetime
 
-class NewJingleSong():
+class NewCarolSong():
 
     def __init__(self, win, app):
         self.win = win
