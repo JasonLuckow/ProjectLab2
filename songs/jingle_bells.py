@@ -16,11 +16,13 @@ import math
 import time
 from datetime import datetime
 
-class NewJingleSong():
+class NewCarolSong():
 
     def __init__(self, win, app):
         self.win = win
         self.app = app
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(23, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(23, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
@@ -35,25 +37,70 @@ class NewJingleSong():
         """
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        for i in range(6):
+        for i in range(2):
+            # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
+            # self.app.processEvents()
+            # GPIO.output(23, True)
+            # sleep(.5)
+            # GPIO.output(23, False)
+            # sleep(.5)
 
             count = 0
-            while count < 2:
-                if(self.win.getStopped(2) == True):
-                    count += 1
+            while count < 1:
+                if(self.win.getStopped(1) == True):
+                    self.win.updatelabel2("Jingle button was clicked.\nClick another!")
                     return
-                self.win.updatelabel2("Jingle PASS {}".format(i))
+                self.win.updatelabel2(" PASS {}".format(i))
                 self.app.processEvents()
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 1,))
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
                 x.start()
+
+                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
+                z.start()
+
                 x.join()
+                y.join()
+                z.join()
+
+                self.all(False)
+
+                x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
+                self.all(False)
+
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
                 self.all(False)
 
                 count += 1
-        if(self.win.getStopped(2) == True):
-            self.win.updatelabel2("Jingle button was clicked.\nClick another!")
-            return
-
+            if(self.win.getStopped(1) == True):
+                self.win.updatelabel2("Jingle button was clicked.\nClick another!")
+                return
         self.win.updatelabel2("Jingle button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
@@ -61,11 +108,11 @@ class NewJingleSong():
         Controls the output to the gpio pins that control the actuators
         """
         self.app.processEvents()
-        if(self.win.getStopped(2) == True):
+        if(self.win.getStopped(1) == True):
+            self.win.updatelabel2("Jingle button was clicked.\nClick another!")
             return
         while self.win.getPaused() == True:
             self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
-            print('song paused jingle')
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
@@ -94,4 +141,13 @@ class NewJingleSong():
 
         x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
         x.start()
+
+        y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
+        y.start()
+
+        z = threading.Thread(target=self.motorswitch, args=(bo, 25, .5,))
+        z.start()
+
         x.join()
+        y.join()
+        z.join()

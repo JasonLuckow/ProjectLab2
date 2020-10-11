@@ -24,6 +24,8 @@ class NewCarolSong():
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(23, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
+        GPIO.setup(23, GPIO.OUT)
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(24, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(25, GPIO.OUT)
@@ -35,19 +37,70 @@ class NewCarolSong():
         """
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        for i in range(10):
-            if(self.win.getStopped(1) == True):
-                return
-            self.win.updatelabel2("Carol PASS {}".format(i))
-            self.app.processEvents()
-            x = threading.Thread(target=self.motorswitch, args=(True, 23, 1,))
-            x.start()
-            x.join()
-            self.all(False)
+        for i in range(2):
+            # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
+            # self.app.processEvents()
+            # GPIO.output(23, True)
+            # sleep(.5)
+            # GPIO.output(23, False)
+            # sleep(.5)
 
-        if(self.win.getStopped(1) == True):
-            self.win.updatelabel2("Carol button was clicked.\nClick another!")
-            return
+            count = 0
+            while count < 1:
+                if(self.win.getStopped(1) == True):
+                    self.win.updatelabel2("Carol button was clicked.\nClick another!")
+                    return
+                self.win.updatelabel2(" PASS {}".format(i))
+                self.app.processEvents()
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
+                self.all(False)
+
+                x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
+                self.all(False)
+
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+                x.start()
+
+                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
+                y.start()
+
+                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+                z.start()
+
+                x.join()
+                y.join()
+                z.join()
+
+                self.all(False)
+
+                count += 1
+            if(self.win.getStopped(1) == True):
+                self.win.updatelabel2("Carol button was clicked.\nClick another!")
+                return
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
@@ -56,11 +109,10 @@ class NewCarolSong():
         """
         self.app.processEvents()
         if(self.win.getStopped(1) == True):
+            self.win.updatelabel2("Carol button was clicked.\nClick another!")
             return
-
         while self.win.getPaused() == True:
             self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
-            print('song paused carol')
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
@@ -89,4 +141,13 @@ class NewCarolSong():
 
         x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
         x.start()
+
+        y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
+        y.start()
+
+        z = threading.Thread(target=self.motorswitch, args=(bo, 25, .5,))
+        z.start()
+
         x.join()
+        y.join()
+        z.join()
