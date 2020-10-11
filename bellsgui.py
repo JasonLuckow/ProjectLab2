@@ -275,9 +275,18 @@ class MyWindow(QMainWindow):
 
 # use below for Raspberry Pi and make sure file path mirrors the same.
 
+# stylesheet = """
+#     QMainWindow {
+#         background-image: url("/home/pi/Desktop/PLab02/PLabTest/pics/christmasbackground.jpg"); 
+#         background-repeat: no-repeat; 
+#         background-position: center;
+#         border: 1px solid black;
+#     }
+# """
+
 stylesheet = """
     QMainWindow {
-        background-image: url("/home/pi/Desktop/PLab02/PLabTest/pics/christmasbackground.jpg"); 
+        background-image: url("/home/pi/Documents/Lab2Files/christmasbackground.jpg"); 
         background-repeat: no-repeat; 
         background-position: center;
         border: 1px solid black;
