@@ -4,7 +4,6 @@
     Date created: 09/08/2020
     Author: Jason Luckow - jluckow - R11560069
     Contributors: Shawn Isbell
-
     Description: Main file that handles the gui and calling of songs
 """
 from time import sleep
@@ -23,9 +22,7 @@ class NewCarolSong():
         self.win = win
         self.app = app
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(27, GPIO.OUT)
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(22, GPIO.OUT)
+        GPIO.setup(23, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(24, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
@@ -38,50 +35,32 @@ class NewCarolSong():
         """
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        for i in range(2):
-            # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
-            # self.app.processEvents()
-            # GPIO.output(23, True)
-            # sleep(.5)
-            # GPIO.output(23, False)
-            # sleep(.5)
-
+        for i in range(10):
             count = 0
-            while count < 1:
-                self.win.updatelabel2(" PASS {}".format(i))
+            while count < 2:
+                if(self.win.getStopped(1) == True):
+                    count += 1
+                    return
+                self.win.updatelabel2("Carol PASS {}".format(i))
                 self.app.processEvents()
-                x = threading.Thread(target=calc, args=(True, 22, .5, 25,))
+                x = threading.Thread(target=self.motorswitch, args=(True, 23, 1,))
                 x.start()
-
-                y = threading.Thread(target=calc, args=(True, 24, .5, 25,))
-                y.start()
-
-                z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
-                z.start()
-
-                j = threading.Thread(target=calc, args=(False, 27, 1, 12,))
-                j.start()
-
                 x.join()
-                y.join()
-                z.join()
-                j.join()
-
                 self.all(False)
 
                 count += 1
-
+        if(self.win.getStopped(1) == True):
+            self.win.updatelabel2("Carol button was clicked.\nClick another!")
+            return
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
         """
         Controls the output to the gpio pins that control the actuators
-
-        bo: boolean
-        pin: int
-        t: int
         """
         self.app.processEvents()
+        if(self.win.getStopped(1) == True):
+            return
         while self.win.getPaused() == True:
             self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
             time.sleep(.1)
@@ -98,11 +77,6 @@ class NewCarolSong():
         """
         This function isn't really all that important. It shows how async and sync operations
         are achieved with multi threading
-
-        bo: boolean
-        pin: int
-        t: int
-        n: int
         """
         for i in range(n):
             bo = not bo
@@ -113,19 +87,8 @@ class NewCarolSong():
         """
         right now this function turns off or on 3 gpio pins depending on the
         boolean variable bo
-
-        bo: int
         """
 
         x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
         x.start()
-
-        y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
-        y.start()
-
-        z = threading.Thread(target=self.motorswitch, args=(bo, 25, .5,))
-        z.start()
-
         x.join()
-        y.join()
-        z.join()
