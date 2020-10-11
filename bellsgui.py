@@ -34,27 +34,27 @@ from songs import carol_of_the_bells as carol
 """
 
 class WorkerSignals(QObject):
-    '''
-    Defines the signals available from a running worker thread.
-    Supported signals are:
-    
-    error
-        `tuple` (exctype, value, traceback.format_exc() )
-    '''
+    """
+        Defines the signals available from a running worker thread.
+        Supported signals are:
+        
+        error
+            `tuple` (exctype, value, traceback.format_exc() )
+    """
     finished = pyqtSignal()
     error = pyqtSignal(tuple)
 
 
 class Worker(QRunnable):
-    '''
-    Worker thread
-    Inherits from QRunnable to handler worker thread setup, signals and wrap-up.
-    :param callback: The function callback to run on this worker thread. Supplied args and 
-                     kwargs will be passed through to the runner.
-    :type callback: function
-    :param args: Arguments to pass to the callback function
-    :param kwargs: Keywords to pass to the callback function
-    '''
+    """
+        Worker thread
+        Inherits from QRunnable to handler worker thread setup, signals and wrap-up.
+        :param callback: The function callback to run on this worker thread. Supplied args and 
+                        kwargs will be passed through to the runner.
+        :type callback: function
+        :param args: Arguments to pass to the callback function
+        :param kwargs: Keywords to pass to the callback function
+    """
 
     def __init__(self, fn, *args, **kwargs):
         super(Worker, self).__init__()
@@ -71,9 +71,9 @@ class Worker(QRunnable):
 
     @pyqtSlot()
     def run(self):
-        '''
-        Initialise the runner function with passed args, kwargs.
-        '''
+        """
+            Initialise the runner function with passed args, kwargs.
+        """
         
         # Retrieve args/kwargs here; and fire processing using them
         try:
@@ -92,45 +92,48 @@ class Worker(QRunnable):
 class MyWindow(QMainWindow):
     def __init__(self, app):
         """
-        Initializes all needed variables
+            Initializes all needed variables
         """
         super(MyWindow, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
         self.ui.carolbtn.clicked.connect(self.carolclicked)
         self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.littlebtn.clicked.connect(self.littleclicked)
         self.ui.pausebtn.clicked.connect(self.pauseClicked)
         self.ui.playbtn.clicked.connect(self.playClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
+
         self.setSongPlaying(1, False)#Initialize Carol Playing to False
         self.setSongPlaying(2, False)#Initialize Jingle Playing to False
         self.setSongPlaying(3, False)#Initialize Little Drummer Playing to False
         self.isPaused = False
         self.isSongPlaying = False
+
         self.threadpool = QThreadPool()
         self.win = self
         self.app = app
 
     def exitclicked(self):
         """
-        Exits the application when the exit button is clicked.
-        Is connected to exitbtn
+            Exits the application when the exit button is clicked.
+            Is connected to exitbtn
         """
         sys.exit()
     
     def afterSong(self):
         """
-        Is executed after every song. Is connected to a worker signal.
+            Is executed after every song. Is connected to a worker signal.
         """
         self.songselectbtnsswitch(True)
         #self.pausePlaySwitch(False)
         
     def carolclicked(self):
         """
-        Handles carol of the bells song playing with worker classes, signals, and threadpools.
-        Think of the worker class as a thread that happens in the background while the ui continues 
-        so that pause, play, and exit to work. 
+            Handles carol of the bells song playing with worker classes, signals, and threadpools.
+            Think of the worker class as a thread that happens in the background while the ui continues 
+            so that pause, play, and exit to work. 
         """
         self.songselectbtnsswitch(False)
 
@@ -155,9 +158,9 @@ class MyWindow(QMainWindow):
 
     def jingleclicked(self):
         """
-        Handles jingle bells song playing with worker classes, signals, and threadpools.
-        Think of the worker class as a thread that happens in the background while the ui continues 
-        so that pause, play, and exit to work. 
+            Handles jingle bells song playing with worker classes, signals, and threadpools.
+            Think of the worker class as a thread that happens in the background while the ui continues 
+            so that pause, play, and exit to work. 
         """
         self.songselectbtnsswitch(False)
 
@@ -182,9 +185,9 @@ class MyWindow(QMainWindow):
 
     def littleclicked(self):
         """
-        Handles carol of the bells song playing with worker classes, signals, and threadpools.
-        Think of the worker class as a thread that happens in the background while the ui continues 
-        so that pause, play, and exit to work. 
+            Handles little drummer boy song playing with worker classes, signals, and threadpools.
+            Think of the worker class as a thread that happens in the background while the ui continues 
+            so that pause, play, and exit to work. 
         """
         self.songselectbtnsswitch(False)
         
@@ -195,37 +198,37 @@ class MyWindow(QMainWindow):
 
     def pauseClicked(self):
         """
-        Handles the pause functionality for the app. Could possibly be further devloped 
-        to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
-        pause functionality will disapear since the main thread will be playing the song.
+            Handles the pause functionality for the app. Could possibly be further devloped 
+            to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
+            pause functionality will disapear since the main thread will be playing the song.
         """
         self.setPaused(True) # need to set paused to true so that way the song playing knows to pause
 
     def playClicked(self):
         """
-        Handles the play functionality for the app. Could possibly be further devloped 
-        to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
-        pause functionality will disapear since the main thread will be playing the song.
+            Handles the play functionality for the app. Could possibly be further devloped 
+            to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
+            pause functionality will disapear since the main thread will be playing the song.
         """
         self.setPaused(False) # set paused to false so that the song currently playing knows that it is no longer paused
         self.win.updatelabel2("Play button clicked!\nResuming the song.")
 
     def setPaused(self, logic):
         """
-        Setter for the pause variable
+            Setter for the pause variable
         """
         self.isPaused = logic
         self.pausePlaySwitch(True)
 
     def getPaused(self):
         """
-        Getter for the pause variable
+            Getter for the pause variable
         """
         return self.isPaused
 
     def getStopped(self, song):
         """
-        Getter for the stop variable
+            Getter for the stop variable
         """
         if(song == 1):
             return not self.carolStopper
@@ -237,7 +240,7 @@ class MyWindow(QMainWindow):
 
     def setSongPlaying(self, song, logic):
         """
-        Sets if any of the songs are currently playing
+            Setter for the stop variable
         """
         if(song == 1):
             self.carolStopper = logic
@@ -252,7 +255,7 @@ class MyWindow(QMainWindow):
 
     def songselectbtnsswitch(self, logic):
         """
-        Switches the song list to clickable or not
+            Switches the song list to clickable or not
         """
         self.ui.carolbtn.setEnabled(logic)
         self.ui.jinglebtn.setEnabled(logic)
@@ -260,7 +263,7 @@ class MyWindow(QMainWindow):
     
     def pausePlaySwitch(self, logic):
         """
-        Switches the pause and play buttons to clickable or not
+            Switches the pause and play buttons to clickable or not
         """
         #self.ui.pausebtn.setEnabled(logic)
         self.ui.playbtn.setEnabled(logic)
@@ -278,7 +281,7 @@ class MyWindow(QMainWindow):
 
 # """
 
-# use below for Raspberry Pi and make sure file path mirrors the same.
+# use below for Shawns Raspberry Pi and make sure file path mirrors the same.
 
 # stylesheet = """
 #     QMainWindow {
@@ -288,6 +291,8 @@ class MyWindow(QMainWindow):
 #         border: 1px solid black;
 #     }
 # """
+
+# use below for Raspberry Pi and make sure file path mirrors the same.
 
 stylesheet = """
     QMainWindow {
@@ -305,9 +310,11 @@ def window():
 
     #QtGui.QFontDatabase.addApplicationFont("SantasSleighFull.ttf")
 
-    # use below for Raspberry Pi and make sure file path mirrors the same.
+    # use below for Shawns Raspberry Pi and make sure file path mirrors the same.
 
     #QtGui.QFontDatabase.addApplicationFont("/home/pi/Desktop/PLab02/PLabTest/SantasSleighFull.ttf")
+
+    # use below for Raspberry Pi and make sure file path mirrors the same.
     
     QtGui.QFontDatabase.addApplicationFont("/home/pi/Documents/Lab2Files/SantasSleighFull.ttf")
     

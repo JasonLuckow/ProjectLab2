@@ -51,13 +51,73 @@ class NewCarolSong():
                     self.win.updatelabel2("Carol button was clicked.\nClick another!")
                     self.all(False)
                     return
-                self.win.updatelabel2(" PASS {}".format(i))
-                self.app.processEvents()
-                x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
-                x.start()
-                x.join()
-
-                self.all(False)
+                #First movement: all three actuators move in and out 5 times
+                first_solenoid = threading.Thread(target=calc, args=(True, 22, 0.5, 5))
+                first_solenoid.start()
+                second_solenoid = threading.Thread(target=calc, args=(True, 24, 0.5, 5))
+                second_solenoid.start()
+                third_solenoid = threading.Thread(target=calc, args=(True, 27, 0.5, 5))
+                third_solenoid.start()
+                first_solenoid.join()
+                second_solenoid.join()
+                third_solenoid.join()
+                all(False)
+                #Second movement: the actuators all move at different speeds, but will sometimes move at the same time when the timing matches
+                first_solenoid = threading.Thread(target=calc, args=(True, 22, 1, 5))
+                first_solenoid.start()
+                second_solenoid = threading.Thread(target=calc, args=(True, 24, 0.75, 7))
+                second_solenoid.start()
+                third_solenoid = threading.Thread(target=calc, args=(True, 27, 0.5, 10))
+                third_solenoid.start()
+                first_solenoid.join()
+                second_solenoid.join()
+                third_solenoid.join()
+                all(False)
+                #Third movement: the third actuator will move in and out while the other two are in a resting position
+                first_solenoid = threading.Thread(target=calc, args=(True, 22, 1, 1))
+                first_solenoid.start()
+                second_solenoid = threading.Thread(target=calc, args=(True, 24, 1, 1))
+                second_solenoid.start()
+                third_solenoid = threading.Thread(target=calc, args=(False, 27, 1, 1))
+                third_solenoid.start()
+                first_solenoid.join()
+                second_solenoid.join()
+                third_solenoid.join()
+                all(False)
+                #Fourth movement: the second actuator will move in and out while the other two are in a resting position
+                first_solenoid = threading.Thread(target=calc, args=(True, 22, 1, 1))
+                first_solenoid.start()
+                second_solenoid = threading.Thread(target=calc, args=(False, 24, 1, 1))
+                second_solenoid.start()
+                third_solenoid = threading.Thread(target=calc, args=(True, 27, 1, 1))
+                third_solenoid.start()
+                first_solenoid.join()
+                second_solenoid.join()
+                third_solenoid.join()
+                all(False)
+                #Fifth movement: the first actuator will move in and out while the other two are in a resting position
+                first_solenoid = threading.Thread(target=calc, args=(False, 22, 1, 1))
+                first_solenoid.start()
+                second_solenoid = threading.Thread(target=calc, args=(True, 24, 1, 1))
+                second_solenoid.start()
+                third_solenoid = threading.Thread(target=calc, args=(True, 27, 1, 1))
+                third_solenoid.start()
+                first_solenoid.join()
+                second_solenoid.join()
+                third_solenoid.join()
+                all(False)
+                #Sixth movement: the actuators all move at different speeds, but will sometimes move at the same time when the timing matches. 
+                #Similar to the second movement, but is at a faster speed
+                first_solenoid = threading.Thread(target=calc, args=(True, 22, 0.25, 25))
+                first_solenoid.start()
+                second_solenoid = threading.Thread(target=calc, args=(True, 24, 0.75, 25))
+                second_solenoid.start()
+                third_solenoid = threading.Thread(target=calc, args=(True, 27, 0.5, 25))
+                third_solenoid.start()
+                first_solenoid.join()
+                second_solenoid.join()
+                third_solenoid.join()
+                all(False)
 
                 count += 1
             if(self.win.getStopped(1) == True):
@@ -79,22 +139,6 @@ class NewCarolSong():
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
-
-    def timenow(self):
-        """
-        Returns the current time. Could possibly be used in the project but not a priority
-        """
-        return (datetime.now().strftime("%H:%M:%S"))
-
-    def calc(self, bo, pin, t, n):
-        """
-        This function isn't really all that important. It shows how async and sync operations
-        are achieved with multi threading
-        """
-        for i in range(n):
-            bo = not bo
-            GPIO.output(pin, bo)
-            time.sleep(t)
 
     def all(self, bo):
         """
