@@ -49,56 +49,19 @@ class NewCarolSong():
             while count < 1:
                 if(self.win.getStopped(1) == True):
                     self.win.updatelabel2("Carol button was clicked.\nClick another!")
+                    self.all(False)
                     return
                 self.win.updatelabel2(" PASS {}".format(i))
                 self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
                 x.start()
-
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
-
-                z = threading.Thread(target=self.motorswitch, args=(False, 27, 2,))
-                z.start()
-
                 x.join()
-                y.join()
-                z.join()
-
-                self.all(False)
-
-                x = threading.Thread(target=self.motorswitch, args=(False, 22, 2,))
-                x.start()
-
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
-
-                z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
-                z.start()
-
-                x.join()
-                y.join()
-                z.join()
-
-                self.all(False)
-
-                x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
-                x.start()
-
-                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
-                y.start()
-
-                z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
-                z.start()
-
-                x.join()
-                y.join()
-                z.join()
 
                 self.all(False)
 
                 count += 1
             if(self.win.getStopped(1) == True):
+                self.all(False)
                 self.win.updatelabel2("Carol button was clicked.\nClick another!")
                 return
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
