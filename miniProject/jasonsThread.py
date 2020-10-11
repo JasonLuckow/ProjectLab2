@@ -47,7 +47,7 @@ def all(bo):
     y = threading.Thread(target=motorswitch, args=(bo, 24, .5,))
     y.start()
 
-    z = threading.Thread(target=motorswitch, args=(bo, 5, .5,))
+    z = threading.Thread(target=motorswitch, args=(bo, 27, .5,))
     z.start()
 
     x.join()

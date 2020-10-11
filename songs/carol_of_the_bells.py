@@ -24,11 +24,11 @@ class NewCarolSong():
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(23, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(23, GPIO.OUT)
+        GPIO.setup(22, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(24, GPIO.OUT)
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(25, GPIO.OUT)
+        GPIO.setup(27, GPIO.OUT)
 
     def startsong(self, progress_callback):
         """
@@ -52,13 +52,13 @@ class NewCarolSong():
                     return
                 self.win.updatelabel2(" PASS {}".format(i))
                 self.app.processEvents()
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+                x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
                 x.start()
 
                 y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
                 y.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(False, 25, 2,))
+                z = threading.Thread(target=self.motorswitch, args=(False, 27, 2,))
                 z.start()
 
                 x.join()
@@ -67,13 +67,13 @@ class NewCarolSong():
 
                 self.all(False)
 
-                x = threading.Thread(target=self.motorswitch, args=(False, 23, 2,))
+                x = threading.Thread(target=self.motorswitch, args=(False, 22, 2,))
                 x.start()
 
                 y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
                 y.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+                z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
                 z.start()
 
                 x.join()
@@ -82,13 +82,13 @@ class NewCarolSong():
 
                 self.all(False)
 
-                x = threading.Thread(target=self.motorswitch, args=(True, 23, 2,))
+                x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
                 x.start()
 
                 y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
                 y.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(True, 25, 2,))
+                z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
                 z.start()
 
                 x.join()
@@ -139,13 +139,13 @@ class NewCarolSong():
         boolean variable bo
         """
 
-        x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
+        x = threading.Thread(target=self.motorswitch, args=(bo, 22, .5,))
         x.start()
 
         y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
         y.start()
 
-        z = threading.Thread(target=self.motorswitch, args=(bo, 25, .5,))
+        z = threading.Thread(target=self.motorswitch, args=(bo, 27, .5,))
         z.start()
 
         x.join()
