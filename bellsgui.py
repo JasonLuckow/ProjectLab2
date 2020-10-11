@@ -261,7 +261,7 @@ class MyWindow(QMainWindow):
         """
         Switches the pause and play buttons to clickable or not
         """
-        self.ui.pausebtn.setEnabled(logic)
+        #self.ui.pausebtn.setEnabled(logic)
         self.ui.playbtn.setEnabled(logic)
 
 # use below for windows
