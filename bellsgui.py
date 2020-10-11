@@ -141,7 +141,7 @@ class MyWindow(QMainWindow):
         self.setSongPlaying(3, False)
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(1, True) #Turn Carol Song On
-        self.pausePlaySwitch(True)
+        self.pausePlaySwitch(True) # makes pause and play clickable
 
         carolsong = carol.NewCarolSong(self.win, self.app)
         self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
@@ -149,7 +149,7 @@ class MyWindow(QMainWindow):
         self.songSwitch = False
         self.threadpool.start(self.carolWorker) # starts carolWorker with the above requirements
 
-        self.isSongPlaying = True
+        #self.isSongPlaying = True
 
         self.songselectbtnsswitch(True)
 
@@ -176,7 +176,7 @@ class MyWindow(QMainWindow):
         self.songSwitch = False
         self.threadpool.start(self.jingleWorker) # starts carolWorker with the above requirements
         
-        self.isSongPlaying = True
+        #self.isSongPlaying = True
 
         self.songselectbtnsswitch(True)
 
