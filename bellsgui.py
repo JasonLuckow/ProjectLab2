@@ -135,6 +135,7 @@ class MyWindow(QMainWindow):
         self.songselectbtnsswitch(False)
 
         #Turn All Songs Off
+        self.setPaused(False)
         self.setSongPlaying(1, False)
         self.setSongPlaying(2, False)
         self.setSongPlaying(3, False)
@@ -160,6 +161,7 @@ class MyWindow(QMainWindow):
         self.songselectbtnsswitch(False)
 
         #Turn All Songs Off
+        self.setPaused(False)
         self.setSongPlaying(1, False)
         self.setSongPlaying(2, False)
         self.setSongPlaying(3, False)
