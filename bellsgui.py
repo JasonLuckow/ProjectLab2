@@ -304,7 +304,9 @@ def window():
 
     # use below for Raspberry Pi and make sure file path mirrors the same.
 
-    QtGui.QFontDatabase.addApplicationFont("/home/pi/Desktop/PLab02/PLabTest/SantasSleighFull.ttf")
+    #QtGui.QFontDatabase.addApplicationFont("/home/pi/Desktop/PLab02/PLabTest/SantasSleighFull.ttf")
+    
+    QtGui.QFontDatabase.addApplicationFont("/home/pi/Documents/Lab2Files/SantasSleighFull.ttf")
     
     app.setStyleSheet(stylesheet)   
     win = MyWindow(app)
