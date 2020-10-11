@@ -98,7 +98,7 @@ class NewJingleSong():
                 self.all(False)
 
                 count += 1
-            if(self.win.getStopped(1) == True):
+            if(self.win.getStopped(2) == True):
                 self.win.updatelabel2("Jingle button was clicked.\nClick another!")
                 return
         self.win.updatelabel2("Jingle button was clicked.\nClick another!")
