@@ -38,12 +38,6 @@ class NewJingleSong():
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
         for i in range(2):
-            # self.win.updatelabel2(" You clicked: Carol of the Bells.\nIteration {}".format(i + 1))
-            # self.app.processEvents()
-            # GPIO.output(23, True)
-            # sleep(.5)
-            # GPIO.output(23, False)
-            # sleep(.5)
 
             count = 0
             while count < 1:
@@ -52,6 +46,25 @@ class NewJingleSong():
                     return
                 self.win.updatelabel2(" PASS {}".format(i))
                 self.app.processEvents()
+                x = threading.Thread(target=self.calc, args=(True, 22, .5, 25,))
+                x.start()
+
+                y = threading.Thread(target=self.calc, args=(True, 24, .5, 25,))
+                y.start()
+
+                #z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
+                #z.start()
+
+                j = threading.Thread(target=self.calc, args=(False, 27, 1, 12,))
+                j.start()
+
+                x.join()
+                y.join()
+                #z.join()
+                j.join()
+
+                self.all(False)
+
                 x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
                 x.start()
 
@@ -116,6 +129,19 @@ class NewJingleSong():
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
+
+    def calc(self, bo, pin, t, n):
+        for i in range(n):
+            self.app.processEvents()
+            if(self.win.getStopped(1) == True):
+                self.win.updatelabel2("Carol button was clicked.\nClick another!")
+                return
+            while self.win.getPaused() == True:
+                self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+                time.sleep(.1)
+            bo = not bo
+            GPIO.output(pin, bo)
+            time.sleep(t)
 
     def all(self, bo):
         """
