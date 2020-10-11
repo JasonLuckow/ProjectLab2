@@ -124,7 +124,7 @@ class MyWindow(QMainWindow):
         Is executed after every song. Is connected to a worker signal.
         """
         self.songselectbtnsswitch(True)
-        self.pausePlaySwitch(False)
+        #self.pausePlaySwitch(False)
         
     def carolclicked(self):
         """
