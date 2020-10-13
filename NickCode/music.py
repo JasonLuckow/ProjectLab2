@@ -43,6 +43,14 @@ def hNote(note, noteShh):
   time.sleep(.25) # This line to make sure muffler actuator completely silences ringing
   GPIO.output(noteShh, False)
 
+def dHalfNote(note,noteShh):
+  GPIO.output(note, True)
+  GPIO.output(note, False)
+  time.sleep(qRest+hRest)
+  GPIO.output(noteShh, True)
+  time.sleep(.25) # This line to make sure muffler actuator completely silences ringing
+  GPIO.output(noteShh, False)
+
 def wNote(note, noteShh):
   GPIO.output(note, True)
   GPIO.output(note, False)
