@@ -5,6 +5,8 @@
     Author: Jason Luckow - jluckow - R11560069
     Contributors: Shawn Isbell - 
     Description: Main file that handles the gui and calling of songs
+
+    adding this for master
 """
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtWidgets import QApplication, QMainWindow
