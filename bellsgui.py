@@ -20,7 +20,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
 from songs import jingle_bells as jingle
-from songs import little_drummer_boy as drum
+from songs import little_drummer_boy as drummer
 from songs import carol_of_the_bells as carol
 
 """
@@ -107,11 +107,8 @@ class MyWindow(QMainWindow):
         self.ui.playbtn.clicked.connect(self.playClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
 
-        self.setSongPlaying(1, False)#Initialize Carol Playing to False
-        self.setSongPlaying(2, False)#Initialize Jingle Playing to False
-        self.setSongPlaying(3, False)#Initialize Little Drummer Playing to False
+        self.setSongPlaying(False)#Initialize Song Stopper
         self.isPaused = False
-        self.isSongPlaying = False
 
         self.threadpool = QThreadPool()
         self.win = self
@@ -128,7 +125,7 @@ class MyWindow(QMainWindow):
         """
             Is executed after every song. Is connected to a worker signal.
         """
-        self.songselectbtnsswitch(True)
+        #self.songselectbtnsswitch(True)
         #self.pausePlaySwitch(False)
         
     def carolclicked(self):
@@ -137,26 +134,20 @@ class MyWindow(QMainWindow):
             Think of the worker class as a thread that happens in the background while the ui continues 
             so that pause, play, and exit to work. 
         """
-        self.songselectbtnsswitch(False)
+        #self.songselectbtnsswitch(False)
 
         #Turn All Songs Off
-        self.setPaused(False)
-        self.setSongPlaying(1, False)
-        self.setSongPlaying(2, False)
-        self.setSongPlaying(3, False)
+        self.setPaused(False) #Turn Paused Off
+        self.setSongPlaying(False) #Turn Song Off
         self.threadpool.waitForDone() #Wait for songs to return
-        self.setSongPlaying(1, True) #Turn Carol Song On
-        self.pausePlaySwitch(True) # makes pause and play clickable
+        self.setSongPlaying(True) #Turn Song On
 
         carolsong = carol.NewCarolSong(self.win, self.app)
         self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
         self.carolWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
-        self.songSwitch = False
         self.threadpool.start(self.carolWorker) # starts carolWorker with the above requirements
 
-        #self.isSongPlaying = True
-
-        self.songselectbtnsswitch(True)
+        #self.songselectbtnsswitch(True)
 
     def jingleclicked(self):
         """
@@ -164,26 +155,21 @@ class MyWindow(QMainWindow):
             Think of the worker class as a thread that happens in the background while the ui continues 
             so that pause, play, and exit to work. 
         """
-        self.songselectbtnsswitch(False)
+        #self.songselectbtnsswitch(False)
 
         #Turn All Songs Off
-        self.setPaused(False)
-        self.setSongPlaying(1, False)
-        self.setSongPlaying(2, False)
-        self.setSongPlaying(3, False)
+        #Setup For next Song
+        self.setPaused(False) #Turn Paused Off
+        self.setSongPlaying(False) #Turn Song Off
         self.threadpool.waitForDone() #Wait for songs to return
-        self.setSongPlaying(2, True) #Turn Jingle Song On
-        self.pausePlaySwitch(True)
+        self.setSongPlaying(True) #Turn Song On
 
         jinglesong = jingle.NewJingleSong(self.win, self.app)
         self.jingleWorker = Worker(jinglesong.startsong) # add the function to execute to the worker class
         self.jingleWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
-        self.songSwitch = False
         self.threadpool.start(self.jingleWorker) # starts carolWorker with the above requirements
-        
-        #self.isSongPlaying = True
 
-        self.songselectbtnsswitch(True)
+        #self.songselectbtnsswitch(True)
 
     def littleclicked(self):
         """
@@ -191,12 +177,16 @@ class MyWindow(QMainWindow):
             Think of the worker class as a thread that happens in the background while the ui continues 
             so that pause, play, and exit to work. 
         """
-        self.songselectbtnsswitch(False)
-        
-        drumsong = drum.NewDrumSong(self.win, self.app)
-        drumsong.startsong()
+        #Setup For next Song
+        self.setPaused(False) #Turn Paused Off
+        self.setSongPlaying(False) #Turn Song Off
+        self.threadpool.waitForDone() #Wait for songs to return
+        self.setSongPlaying(True) #Turn Song On
 
-        self.songselectbtnsswitch(True)
+        drummersong = drummer.NewDrummerSong(self.win, self.app)
+        self.drummerWorker = Worker(drummersong.startsong) # add the function to execute to the worker class
+        self.drummerWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
+        self.threadpool.start(self.drummerWorker) # starts carolWorker with the above requirements
 
     def pauseClicked(self):
         """
@@ -220,7 +210,7 @@ class MyWindow(QMainWindow):
             Setter for the pause variable
         """
         self.isPaused = logic
-        self.pausePlaySwitch(True)
+        self.pausePlaySwitch(logic)
 
     def getPaused(self):
         """
@@ -232,36 +222,25 @@ class MyWindow(QMainWindow):
         """
             Getter for the stop variable
         """
-        if(song == 1):
-            return not self.carolStopper
-        if(song == 2):
-            return not self.jingleStopper
-        if(song == 3):
-            return not self.littleStopper
-        return True
+        return self.stopSong
 
     def setSongPlaying(self, song, logic):
         """
             Setter for the stop variable
         """
-        if(song == 1):
-            self.carolStopper = logic
-        if(song == 2):
-            self.jingleStopper = logic
-        if(song == 3):
-            self.littleStopper = logic
+        self.stopSong = not logic
 
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()
 
-    def songselectbtnsswitch(self, logic):
-        """
-            Switches the song list to clickable or not
-        """
-        self.ui.carolbtn.setEnabled(logic)
-        self.ui.jinglebtn.setEnabled(logic)
-        self.ui.littlebtn.setEnabled(logic)
+#    def songselectbtnsswitch(self, logic):
+#        """
+#            Switches the song list to clickable or not
+#        """
+#        self.ui.carolbtn.setEnabled(logic)
+#        self.ui.jinglebtn.setEnabled(logic)
+#        self.ui.littlebtn.setEnabled(logic)
     
     def pausePlaySwitch(self, logic):
         """

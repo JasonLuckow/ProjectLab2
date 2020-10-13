@@ -47,7 +47,7 @@ class NewCarolSong():
 
             count = 0
             while count < 1:
-                if(self.win.getStopped(1) == True):
+                if(self.win.getStopped() == True):
                     self.win.updatelabel2("Carol button was clicked.\nClick another!")
                     self.all(False)
                     return
@@ -122,7 +122,7 @@ class NewCarolSong():
                 self.all(False)
 
                 count += 1
-            if(self.win.getStopped(1) == True):
+            if(self.win.getStopped() == True):
                 self.all(False)
                 self.win.updatelabel2("Carol button was clicked.\nClick another!")
                 return
@@ -133,11 +133,12 @@ class NewCarolSong():
         Controls the output to the gpio pins that control the actuators
         """
         self.app.processEvents()
-        if(self.win.getStopped(1) == True):
+        if(self.win.getStopped() == True):
             self.win.updatelabel2("Carol button was clicked.\nClick another!")
             return
         while self.win.getPaused() == True:
             self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+            self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
@@ -145,11 +146,12 @@ class NewCarolSong():
     def calc(self, bo, pin, t, n):
         for i in range(n):
             self.app.processEvents()
-            if(self.win.getStopped(1) == True):
+            if(self.win.getStopped() == True):
                 self.win.updatelabel2("Carol button was clicked.\nClick another!")
                 return
             while self.win.getPaused() == True:
                 self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+                self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
                 time.sleep(.1)
             bo = not bo
             GPIO.output(pin, bo)
