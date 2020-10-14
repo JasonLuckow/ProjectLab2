@@ -108,6 +108,8 @@ class NewCarolSong():
         third_solenoid.join()
         self.all(False)
 
+        self.win.pausePlaySwitch(False)
+
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):

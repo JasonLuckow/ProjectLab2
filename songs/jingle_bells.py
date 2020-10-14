@@ -104,6 +104,8 @@ class NewJingleSong():
 
         self.all(False)
 
+        self.win.pausePlaySwitch(False)
+
         self.win.updatelabel2(" Jingle button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
@@ -115,7 +117,7 @@ class NewJingleSong():
             return
         while self.win.getPaused() == True:
             self.all(False)
-            self.win.updatelabel2("Jingle Song Paused!\nChoose A new Song or Play to Resume!")
+            self.win.updatelabel2(" Jingle Song Paused!\nChoose A new Song or Play to Resume!")
             time.sleep(.1)
         GPIO.output(pin, bo)
         time.sleep(t)
@@ -127,7 +129,7 @@ class NewJingleSong():
                 return
             while self.win.getPaused() == True:
                 self.all(False)
-                self.win.updatelabel2("Jingle Song Paused!\nChoose A new Song or Play to Resume!")
+                self.win.updatelabel2(" Jingle Song Paused!\nChoose A new Song or Play to Resume!")
                 time.sleep(.1)
             bo = not bo
             GPIO.output(pin, bo)

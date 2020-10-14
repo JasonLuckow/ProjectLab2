@@ -42,6 +42,8 @@ class NewDrummerSong():
         GPIO.output(24, False)
         sleep(.5)
 
+        self.win.pausePlaySwitch(False)
+
         self.win.updatelabel2("Little button was clicked.\nClick another!")
 
     def all(self, bo):
