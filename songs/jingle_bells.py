@@ -37,83 +37,81 @@ class NewJingleSong():
         """
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        for i in range(2):
+        if(self.win.getStopped() == True):
+            self.win.updatelabel2("Jingle button was clicked.\nClick another!")
+            return
 
-            count = 0
-            while count < 1:
-                if(self.win.getStopped() == True):
-                    self.win.updatelabel2("Jingle button was clicked.\nClick another!")
-                    return
-                self.win.updatelabel2(" PASS {}".format(i))
-                self.app.processEvents()
-                x = threading.Thread(target=self.calc, args=(True, 22, .5, 25,))
-                x.start()
+        self.win.updatelabel2(" Jingle Bells is playing)
+        self.app.processEvents()
 
-                y = threading.Thread(target=self.calc, args=(True, 24, .5, 25,))
-                y.start()
+        x = threading.Thread(target=self.calc, args=(True, 22, .5, 25,))
+        x.start()
 
-                #z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
-                #z.start()
+        y = threading.Thread(target=self.calc, args=(True, 24, .5, 25,))
+        y.start()
 
-                j = threading.Thread(target=self.calc, args=(False, 27, 1, 12,))
-                j.start()
+        #z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
+        #z.start()
 
-                x.join()
-                y.join()
-                #z.join()
-                j.join()
+        j = threading.Thread(target=self.calc, args=(False, 27, 1, 12,))
+        j.start()
 
-                self.all(False)
+        x.join()
+        y.join()
+        #z.join()
+        j.join()
 
-                x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
-                x.start()
+        self.all(False)
 
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
+        x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
+        x.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(False, 27, 2,))
-                z.start()
+        y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+        y.start()
 
-                x.join()
-                y.join()
-                z.join()
+        z = threading.Thread(target=self.motorswitch, args=(False, 27, 2,))
+        z.start()
 
-                self.all(False)
+        x.join()
+        y.join()
+        z.join()
 
-                x = threading.Thread(target=self.motorswitch, args=(False, 22, 2,))
-                x.start()
+        self.all(False)
 
-                y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
-                y.start()
+        x = threading.Thread(target=self.motorswitch, args=(False, 22, 2,))
+        x.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
-                z.start()
+        y = threading.Thread(target=self.motorswitch, args=(True, 24, 2,))
+        y.start()
 
-                x.join()
-                y.join()
-                z.join()
+        z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
+        z.start()
 
-                self.all(False)
+        x.join()
+        y.join()
+        z.join()
 
-                x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
-                x.start()
+        self.all(False)
 
-                y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
-                y.start()
+        x = threading.Thread(target=self.motorswitch, args=(True, 22, 2,))
+        x.start()
 
-                z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
-                z.start()
+        y = threading.Thread(target=self.motorswitch, args=(False, 24, 2,))
+        y.start()
 
-                x.join()
-                y.join()
-                z.join()
+        z = threading.Thread(target=self.motorswitch, args=(True, 27, 2,))
+        z.start()
 
-                self.all(False)
+        x.join()
+        y.join()
+        z.join()
 
-                count += 1
-            if(self.win.getStopped() == True):
-                self.win.updatelabel2("Jingle button was clicked.\nClick another!")
-                return
+        self.all(False)
+
+        if(self.win.getStopped() == True):
+            self.win.updatelabel2("Jingle button was clicked.\nClick another!")
+            return
+
         self.win.updatelabel2("Jingle button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
