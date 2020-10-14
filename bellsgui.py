@@ -104,7 +104,6 @@ class MyWindow(QMainWindow):
         self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.littlebtn.clicked.connect(self.littleclicked)
         self.ui.pausebtn.clicked.connect(self.pauseClicked)
-        #self.ui.playbtn.clicked.connect(self.playClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
 
         self.setSongPlaying(False)#Initialize Song Stopper
@@ -119,11 +118,16 @@ class MyWindow(QMainWindow):
             Exits the application when the exit button is clicked.
             Is connected to exitbtn
         """
+        # We need to have a class containing functions that all songs use so that we can call 
+        # the all function here. For now this will do.
+        forPausing = carol.NewCarolSong(self.win, self.app)
+        forPausing.all(False)
         sys.exit()
     
     def afterSong(self):
         """
             Is executed after every song. Is connected to a worker signal.
+            Right now it is not used because it causes bugs in switching songs.
         """
         #self.songselectbtnsswitch(True)
         #self.pausePlaySwitch(False)
@@ -134,8 +138,6 @@ class MyWindow(QMainWindow):
             Think of the worker class as a thread that happens in the background while the ui continues 
             so that pause, play, and exit to work. 
         """
-        #self.songselectbtnsswitch(False)
-
         #Turn All Songs Off
         self.setPaused(False) #Turn Paused Off
         self.setSongPlaying(False) #Turn Song Off
@@ -155,8 +157,6 @@ class MyWindow(QMainWindow):
             Think of the worker class as a thread that happens in the background while the ui continues 
             so that pause, play, and exit to work. 
         """
-        #self.songselectbtnsswitch(False)
-
         #Turn All Songs Off
         #Setup For next Song
         self.setPaused(False) #Turn Paused Off
@@ -169,7 +169,6 @@ class MyWindow(QMainWindow):
         self.jingleWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
         self.threadpool.start(self.jingleWorker) # starts carolWorker with the above requirements
 
-        #self.songselectbtnsswitch(True)
 
     def littleclicked(self):
         """
@@ -200,21 +199,11 @@ class MyWindow(QMainWindow):
         else:
             self.setPaused(True) # need to set paused to true so that way the song playing knows to pause
 
-    # def playClicked(self):
-    #     """
-    #         Handles the play functionality for the app. Could possibly be further devloped 
-    #         to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
-    #         pause functionality will disapear since the main thread will be playing the song.
-    #     """
-    #     self.setPaused(False) # set paused to false so that the song currently playing knows that it is no longer paused
-    #     self.win.updatelabel2("Play button clicked!\nResuming the song.")
-
     def setPaused(self, logic):
         """
             Setter for the pause variable
         """
         self.isPaused = logic
-        self.pausePlaySwitch(logic)
 
     def getPaused(self):
         """
@@ -237,21 +226,12 @@ class MyWindow(QMainWindow):
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()
-
-#    def songselectbtnsswitch(self, logic):
-#        """
-#            Switches the song list to clickable or not
-#        """
-#        self.ui.carolbtn.setEnabled(logic)
-#        self.ui.jinglebtn.setEnabled(logic)
-#        self.ui.littlebtn.setEnabled(logic)
     
     def pausePlaySwitch(self, logic):
         """
             Switches the pause and play buttons to clickable or not
         """
         self.ui.pausebtn.setEnabled(logic)
-        self.ui.playbtn.setEnabled(logic)
 
 # use below for windows
 
