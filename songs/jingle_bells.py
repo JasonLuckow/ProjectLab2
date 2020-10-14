@@ -37,11 +37,7 @@ class NewJingleSong():
         """
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        if(self.win.getStopped() == True):
-            self.win.updatelabel2("Jingle button was clicked.\nClick another!")
-            return
-
-        self.win.updatelabel2(" Jingle Bells is playing)
+        self.win.updatelabel2(" Jingle Bells is playing")
         self.app.processEvents()
 
         x = threading.Thread(target=self.calc, args=(True, 22, .5, 25,))
@@ -108,22 +104,17 @@ class NewJingleSong():
 
         self.all(False)
 
-        if(self.win.getStopped() == True):
-            self.win.updatelabel2("Jingle button was clicked.\nClick another!")
-            return
-
-        self.win.updatelabel2("Jingle button was clicked.\nClick another!")
+        self.win.updatelabel2(" Jingle button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
         """
         Controls the output to the gpio pins that control the actuators
         """
-        self.app.processEvents()
         if(self.win.getStopped() == True):
             self.win.updatelabel2("Jingle button was clicked.\nClick another!")
             return
         while self.win.getPaused() == True:
-            self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+            self.all(False)
             self.win.updatelabel2("Jingle Song Paused!\nChoose A new Song or Play to Resume!")
             time.sleep(.1)
         GPIO.output(pin, bo)
@@ -131,12 +122,11 @@ class NewJingleSong():
 
     def calc(self, bo, pin, t, n):
         for i in range(n):
-            self.app.processEvents()
             if(self.win.getStopped() == True):
                 self.win.updatelabel2("Carol button was clicked.\nClick another!")
                 return
             while self.win.getPaused() == True:
-                self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+                self.all(False)
                 self.win.updatelabel2("Jingle Song Paused!\nChoose A new Song or Play to Resume!")
                 time.sleep(.1)
             bo = not bo
@@ -146,18 +136,8 @@ class NewJingleSong():
     def all(self, bo):
         """
         right now this function turns off or on 3 gpio pins depending on the
-        boolean variable bo
+        boolean variable bo. Would encompass all outputs
         """
-
-        x = threading.Thread(target=self.motorswitch, args=(bo, 23, .5,))
-        x.start()
-
-        y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
-        y.start()
-
-        z = threading.Thread(target=self.motorswitch, args=(bo, 25, .5,))
-        z.start()
-
-        x.join()
-        y.join()
-        z.join()
+        GPIO.output(24, False)
+        GPIO.output(27, False)
+        GPIO.output(22, False)

@@ -37,11 +37,6 @@ class NewCarolSong():
         """
         self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        if(self.win.getStopped() == True):
-            self.win.updatelabel2("Carol button was clicked.\nClick another!")
-            self.all(False)
-            return
-
         self.win.updatelabel2(" Carol of the Bells is playing")
         self.app.processEvents()
 
@@ -113,23 +108,17 @@ class NewCarolSong():
         third_solenoid.join()
         self.all(False)
 
-        if(self.win.getStopped() == True):
-            self.all(False)
-            self.win.updatelabel2("Carol button was clicked.\nClick another!")
-            return
-
         self.win.updatelabel2("Carol button was clicked.\nClick another!")
     
     def motorswitch(self, bo, pin, t):
         """
         Controls the output to the gpio pins that control the actuators
         """
-        self.app.processEvents()
         if(self.win.getStopped() == True):
             self.win.updatelabel2("Carol button was clicked.\nClick another!")
             return
         while self.win.getPaused() == True:
-            self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+            self.all(False)
             self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
             time.sleep(.1)
         GPIO.output(pin, bo)
@@ -137,12 +126,12 @@ class NewCarolSong():
 
     def calc(self, bo, pin, t, n):
         for i in range(n):
-            self.app.processEvents()
+
             if(self.win.getStopped() == True):
                 self.win.updatelabel2("Carol button was clicked.\nClick another!")
                 return
             while self.win.getPaused() == True:
-                self.app.processEvents() # Not really too sure if this line is needed. NEEDS TESTING
+                self.all(False)
                 self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
                 time.sleep(.1)
             bo = not bo
@@ -155,15 +144,6 @@ class NewCarolSong():
         boolean variable bo
         """
 
-        x = threading.Thread(target=self.motorswitch, args=(bo, 22, .5,))
-        x.start()
-
-        y = threading.Thread(target=self.motorswitch, args=(bo, 24, .5,))
-        y.start()
-
-        z = threading.Thread(target=self.motorswitch, args=(bo, 27, .5,))
-        z.start()
-
-        x.join()
-        y.join()
-        z.join()
+        GPIO.output(24, False)
+        GPIO.output(27, False)
+        GPIO.output(22, False)
