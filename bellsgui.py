@@ -218,13 +218,13 @@ class MyWindow(QMainWindow):
         """
         return self.isPaused
 
-    def getStopped(self, song):
+    def getStopped(self):
         """
             Getter for the stop variable
         """
         return self.stopSong
 
-    def setSongPlaying(self, song, logic):
+    def setSongPlaying(self, logic):
         """
             Setter for the stop variable
         """
