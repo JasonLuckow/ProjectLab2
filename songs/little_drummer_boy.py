@@ -11,7 +11,7 @@ from time import sleep
 # comment out below when working on windows 
 import RPi.GPIO as GPIO
 
-class NewDrumerSong():
+class NewDrummerSong():
 
     def __init__(self, win, app):
         self.win = win
