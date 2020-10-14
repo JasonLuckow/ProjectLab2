@@ -104,7 +104,7 @@ class MyWindow(QMainWindow):
         self.ui.jinglebtn.clicked.connect(self.jingleclicked)
         self.ui.littlebtn.clicked.connect(self.littleclicked)
         self.ui.pausebtn.clicked.connect(self.pauseClicked)
-        self.ui.playbtn.clicked.connect(self.playClicked)
+        #self.ui.playbtn.clicked.connect(self.playClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
 
         self.setSongPlaying(False)#Initialize Song Stopper
@@ -194,16 +194,20 @@ class MyWindow(QMainWindow):
             to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
             pause functionality will disapear since the main thread will be playing the song.
         """
-        self.setPaused(True) # need to set paused to true so that way the song playing knows to pause
+        if self.getPaused() is True:
+            self.setPaused(False) # set paused to false so that the song currently playing knows that it is no longer paused
+            self.win.updatelabel2("Play button clicked!\nResuming the song.")
+        else:
+            self.setPaused(True) # need to set paused to true so that way the song playing knows to pause
 
-    def playClicked(self):
-        """
-            Handles the play functionality for the app. Could possibly be further devloped 
-            to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
-            pause functionality will disapear since the main thread will be playing the song.
-        """
-        self.setPaused(False) # set paused to false so that the song currently playing knows that it is no longer paused
-        self.win.updatelabel2("Play button clicked!\nResuming the song.")
+    # def playClicked(self):
+    #     """
+    #         Handles the play functionality for the app. Could possibly be further devloped 
+    #         to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
+    #         pause functionality will disapear since the main thread will be playing the song.
+    #     """
+    #     self.setPaused(False) # set paused to false so that the song currently playing knows that it is no longer paused
+    #     self.win.updatelabel2("Play button clicked!\nResuming the song.")
 
     def setPaused(self, logic):
         """
@@ -246,7 +250,7 @@ class MyWindow(QMainWindow):
         """
             Switches the pause and play buttons to clickable or not
         """
-        #self.ui.pausebtn.setEnabled(logic)
+        self.ui.pausebtn.setEnabled(logic)
         self.ui.playbtn.setEnabled(logic)
 
 # use below for windows
@@ -286,6 +290,8 @@ stylesheet = """
 
 def window():
     app = QApplication(sys.argv)
+
+    
 
     # use below for windows
 
