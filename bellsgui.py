@@ -113,6 +113,8 @@ class MyWindow(QMainWindow):
         self.win = self
         self.app = app
 
+        self.ui.progressBar.setVisible(False)
+
     def exitclicked(self):
         """
             Exits the application when the exit button is clicked.
