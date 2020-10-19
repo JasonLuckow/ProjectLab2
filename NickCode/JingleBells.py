@@ -15,6 +15,8 @@ fS, fSShh = 11
 d, dShh = 13
 c, cShh = 14
 
+music.tempo = music.updateTempo()
+
 def melody():
   #m1
   music.qNote(d)
