@@ -230,7 +230,7 @@ class MyWindow(QMainWindow):
             Updates the global tempo variable and Tempo label
         """
         self.currentTempo = valueChanged
-        self.updateTempoLabel(valueChanged)
+        self.updateTempoLabel(str(valueChanged))
     def updateTempoLabel(self, text):
         self.ui.tempoLabel.setText("Tempo : "+text)
         self.ui.tempoLabel.adjustSize()
