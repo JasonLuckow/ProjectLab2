@@ -131,97 +131,97 @@ def melody():
   music.eNote(C, CShh)
   music.eNote(bF, bFShh)
 
-  #m19
-  music.qNote(D, DShh)
-  music.eNote(D, DShh)
-  music.eNote(D, DShh)
-  music.eNote(C, CShh)
-  music.eNote(bF, bFShh)
+  # #m19
+  # music.qNote(D, DShh)
+  # music.eNote(D, DShh)
+  # music.eNote(D, DShh)
+  # music.eNote(C, CShh)
+  # music.eNote(bF, bFShh)
 
-  #m20
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m20
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
   
-  #m21
-  music.eNote(eF, eFShh)
-  music.eNote(e, eShh)
-  music.eNote(fS, fSShh)
-  music.eNote(g, gShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
+  # #m21
+  # music.eNote(eF, eFShh)
+  # music.eNote(e, eShh)
+  # music.eNote(fS, fSShh)
+  # music.eNote(g, gShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
   
-  #m22
-  music.eNote(C, CShh)
-  music.eNote(D, DShh)
-  music.qNote(C, CShh)
-  music.qNote(bF, bFShh)
+  # #m22
+  # music.eNote(C, CShh)
+  # music.eNote(D, DShh)
+  # music.qNote(C, CShh)
+  # music.qNote(bF, bFShh)
 
-  #m23
-  music.eNote(eF, eFShh)
-  music.eNote(e, eShh)
-  music.eNote(fS, fSShh)
-  music.eNote(g, gShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
+  # #m23
+  # music.eNote(eF, eFShh)
+  # music.eNote(e, eShh)
+  # music.eNote(fS, fSShh)
+  # music.eNote(g, gShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
   
-  #m24
-  music.eNote(C, CShh)
-  music.eNote(D, DShh)
-  music.qNote(C, CShh)
-  music.qNote(bF, bFShh)
+  # #m24
+  # music.eNote(C, CShh)
+  # music.eNote(D, DShh)
+  # music.qNote(C, CShh)
+  # music.qNote(bF, bFShh)
 
-  #m25
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m25
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m26
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m26
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m27
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m27
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m28
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m28
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m29
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m29
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m30
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m30
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m31
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m31
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m32
-  music.qNote(bF, bFShh)
-  music.eNote(a, aShh)
-  music.eNote(bF, bFShh)
-  music.qNote(g, gShh)
+  # #m32
+  # music.qNote(bF, bFShh)
+  # music.eNote(a, aShh)
+  # music.eNote(bF, bFShh)
+  # music.qNote(g, gShh)
 
-  #m33
-  music.dHalfNote(g, gShh)
+  # #m33
+  # music.dHalfNote(g, gShh)
 
 def bass():
   #m1
@@ -331,8 +331,8 @@ def bass():
 high = threading.Thread(target=melody)
 high.start()
 
-low = threading.Thread(target=bass)
-low.start()
+# low = threading.Thread(target=bass)
+# low.start()
 
 high.join()
-low.join()
+# low.join()

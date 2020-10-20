@@ -3,19 +3,19 @@ import time
 import RPi.GPIO as GPIO
 import music
 
-b, bShh = 1
-a, aShh = 2
-g, gShh = 3
-D, DShh = 4
-C, CShh = 5
-e, eShh = 7 
-G, GShh = 8
-E, EShh = 10
-fS, fSShh = 11
-d, dShh = 13
-c, cShh = 14
+b = 17 #d
+a = 16 #d
+g = 22
+D = 5
+C = 27
+e = 26
+G = 6
+E = 24
+fS = 25
+d = 23
+c = 14
 
-music.tempo = music.updateTempo()
+music.updateTempo(120)
 
 def melody():
   #m1
