@@ -22,6 +22,7 @@ class Ui_MainWindow(object):
         MainWindow.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
         MainWindow.setAcceptDrops(False)
         MainWindow.setToolTip("")
+        MainWindow.setLayoutDirection(QtCore.Qt.RightToLeft)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setMinimumSize(QtCore.QSize(0, 0))
         self.centralwidget.setMaximumSize(QtCore.QSize(1024, 600))
@@ -152,19 +153,23 @@ class Ui_MainWindow(object):
         self.tempoSlider.setOrientation(QtCore.Qt.Horizontal)
         self.tempoSlider.setObjectName("tempoSlider")
         self.tempoLabel = QtWidgets.QLabel(self.centralwidget)
-        self.tempoLabel.setGeometry(QtCore.QRect(810, 510, 151, 41))
+        self.tempoLabel.setGeometry(QtCore.QRect(760, 500, 261, 41))
         self.tempoLabel.setMaximumSize(QtCore.QSize(600, 1024))
         font = QtGui.QFont()
         font.setFamily("SantasSleighFull")
-        font.setPointSize(32)
+        font.setPointSize(20)
         font.setBold(False)
         font.setItalic(False)
         font.setWeight(50)
         self.tempoLabel.setFont(font)
         self.tempoLabel.setCursor(QtGui.QCursor(QtCore.Qt.BlankCursor))
-        self.tempoLabel.setStyleSheet("color: rgb(255, 255, 255);\n"
-"font: 32pt \"SantasSleighFull\";")
-        self.tempoLabel.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.tempoLabel.setLayoutDirection(QtCore.Qt.RightToLeft)
+        self.tempoLabel.setAutoFillBackground(False)
+        self.tempoLabel.setStyleSheet("background-color: rgb(9, 18, 27);\n"
+"font: 20pt \"SantasSleighFull\";\n"
+"border: 0.5px green;\n"
+"color: rgb(255, 255, 255);")
+        self.tempoLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.tempoLabel.setObjectName("tempoLabel")
         MainWindow.setCentralWidget(self.centralwidget)
 
