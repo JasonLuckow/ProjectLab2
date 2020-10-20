@@ -326,6 +326,63 @@ color: rgb(255, 255, 255);</string>
      <number>50</number>
     </property>
    </widget>
+   <widget class="QSlider" name="tempoSlider">
+    <property name="geometry">
+     <rect>
+      <x>780</x>
+      <y>550</y>
+      <width>231</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>80</number>
+    </property>
+    <property name="maximum">
+     <number>160</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tempoLabel">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>510</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>600</width>
+      <height>1024</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>SantasSleighFull</family>
+      <pointsize>32</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 32pt &quot;SantasSleighFull&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Tempo : 80</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

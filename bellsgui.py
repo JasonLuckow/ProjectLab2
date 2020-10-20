@@ -105,6 +105,7 @@ class MyWindow(QMainWindow):
         self.ui.littlebtn.clicked.connect(self.littleclicked)
         self.ui.pausebtn.clicked.connect(self.pauseClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
+        self.ui.tempoSlider.valueChanged[int].connect(self.updateTempo)
 
         self.setSongPlaying(False)#Initialize Song Stopper
         self.isPaused = False
@@ -224,7 +225,15 @@ class MyWindow(QMainWindow):
             Setter for the stop variable
         """
         self.stopSong = not logic
-
+    def updateTempo(self, valueChanged):
+        """
+            Updates the global tempo variable and Tempo label
+        """
+        self.currentTempo = valueChanged
+        self.updateTempoLabel(valueChanged)
+    def updateTempoLabel(self, text):
+        self.ui.tempoLabel.setText("Tempo : "+text)
+        self.ui.tempoLabel.adjustSize()
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()
