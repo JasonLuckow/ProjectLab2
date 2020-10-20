@@ -19,9 +19,9 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from songs import jingle_bells as jingle
-from songs import little_drummer_boy as drummer
-from songs import carol_of_the_bells as carol
+from songsTest import jingle_bells as jingle
+from songsTest import little_drummer_boy as drummer
+from songsTest import carol_of_the_bells as carol
 
 """
     Checklist for running the application in Windows and the Raspberry Pi (in no specific order):
@@ -147,6 +147,7 @@ class MyWindow(QMainWindow):
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(True) #Turn Song On
 
+        self.setProgressBarMax(10)
         carolsong = carol.NewCarolSong(self.win, self.app)
         self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
         self.carolWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
@@ -167,6 +168,7 @@ class MyWindow(QMainWindow):
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(True) #Turn Song On
 
+        self.setProgressBarMax(20)
         jinglesong = jingle.NewJingleSong(self.win, self.app)
         self.jingleWorker = Worker(jinglesong.startsong) # add the function to execute to the worker class
         self.jingleWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
@@ -185,6 +187,7 @@ class MyWindow(QMainWindow):
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(True) #Turn Song On
 
+        self.setProgressBarMax(30)
         drummersong = drummer.NewDrummerSong(self.win, self.app)
         self.drummerWorker = Worker(drummersong.startsong) # add the function to execute to the worker class
         self.drummerWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
@@ -225,12 +228,26 @@ class MyWindow(QMainWindow):
             Setter for the stop variable
         """
         self.stopSong = not logic
+
+    def setProgressBarMax(self,value):
+        """
+            Sets Max value for progress bar
+        """
+        self.ui.progressBar.setMaximum(value)
+
     def updateTempo(self, valueChanged):
         """
             Updates the global tempo variable and Tempo label
         """
         self.currentTempo = valueChanged
         self.updateTempoLabel(str(valueChanged))
+
+    def updateProgressBar(self, value):
+        """
+            Updates progress Bar
+        """
+        self.ui.progressBar.setValue(value)
+
     def updateTempoLabel(self, text):
         self.ui.tempoLabel.setText("Tempo : "+text)
         self.ui.tempoLabel.adjustSize()
