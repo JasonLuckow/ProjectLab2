@@ -105,8 +105,10 @@ class MyWindow(QMainWindow):
         self.ui.littlebtn.clicked.connect(self.littleclicked)
         self.ui.pausebtn.clicked.connect(self.pauseClicked)
         self.ui.exitbtn.clicked.connect(self.exitclicked)
-
+        self.ui.tempoSlider.valueChanged.connect(self.updatetempolabel(self.ui.tempoSlider.value))
+        
         self.setSongPlaying(False)#Initialize Song Stopper
+        self.currentTempo = 80
         self.isPaused = False
 
         self.threadpool = QThreadPool()
@@ -146,6 +148,7 @@ class MyWindow(QMainWindow):
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(True) #Turn Song On
 
+        self.ui.progressBar.setMaximum(10)
         carolsong = carol.NewCarolSong(self.win, self.app)
         self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
         self.carolWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
@@ -166,6 +169,7 @@ class MyWindow(QMainWindow):
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(True) #Turn Song On
 
+        self.ui.progressBar.setMaximum(20)
         jinglesong = jingle.NewJingleSong(self.win, self.app)
         self.jingleWorker = Worker(jinglesong.startsong) # add the function to execute to the worker class
         self.jingleWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
@@ -184,6 +188,7 @@ class MyWindow(QMainWindow):
         self.threadpool.waitForDone() #Wait for songs to return
         self.setSongPlaying(True) #Turn Song On
 
+        self.ui.progressBar.setMaximum(30)
         drummersong = drummer.NewDrummerSong(self.win, self.app)
         self.drummerWorker = Worker(drummersong.startsong) # add the function to execute to the worker class
         self.drummerWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
@@ -225,7 +230,17 @@ class MyWindow(QMainWindow):
         """
         self.stopSong = not logic
 
+    def setProgressBar(self, progress):
+        """
+            Set value of the progress bar
+        """
+        self.ui.progressBar.setValue(progress)
+
     def updatelabel2(self, text):
+        self.ui.label2.setText(text)
+        self.ui.label2.adjustSize()
+
+    def updatetempolabel(self, text):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()
     

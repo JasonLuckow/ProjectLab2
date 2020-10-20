@@ -273,15 +273,12 @@ color: rgb(255, 255, 255);</string>
      <string>Exit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pausebtn">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
+   <widget class="QPushButton" name="playbtn">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>550</y>
-      <width>121</width>
+      <x>900</x>
+      <y>500</y>
+      <width>131</width>
       <height>36</height>
      </rect>
     </property>
@@ -310,20 +307,117 @@ border: 0.5px green;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Pause/Play</string>
+     <string>Play</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pausebtn">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>500</y>
+      <width>131</width>
+      <height>36</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>301</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>SantasSleighFull</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(9, 18, 27);
+font: 20pt &quot;SantasSleighFull&quot;;
+border: 0.5px green;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>Pause</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="tempoSlider">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>540</y>
+      <width>160</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="minimum">
+     <number>80</number>
+    </property>
+    <property name="maximum">
+     <number>160</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tempoText">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>560</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>600</width>
+      <height>1024</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>SantasSleighFull</family>
+      <pointsize>32</pointsize>
+      <weight>50</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>BlankCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 32pt &quot;SantasSleighFull&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Click a button!</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
     </property>
    </widget>
    <widget class="QProgressBar" name="progressBar">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>552</y>
-      <width>441</width>
-      <height>31</height>
+      <x>760</x>
+      <y>350</y>
+      <width>261</width>
+      <height>23</height>
      </rect>
     </property>
+    <property name="maximum">
+     <number>10</number>
+    </property>
     <property name="value">
-     <number>50</number>
+     <number>0</number>
     </property>
    </widget>
   </widget>
