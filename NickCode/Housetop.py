@@ -13,7 +13,7 @@ bF = 8
 d = 13
 c = 14
 
-music.tempo = music.updateTempo(120)
+music.tempo = music.updateTempo(140)
 
 def melody():
   #m1
