@@ -3,8 +3,8 @@ import time
 import RPi.GPIO as GPIO
 import music
 
-b = 17 #d
-a = 16 #d
+b = 17 
+a = 16 
 g = 22
 D = 5
 C = 27
@@ -20,8 +20,8 @@ music.updateTempo(120)
 def melody():
   #m1
   music.qNote(d)
-  music.eNote(b)
-  music.eNote(a)
+  music.eNote(B)
+  music.eNote(A)
   music.qNote(g)
 
   #m2
@@ -31,8 +31,8 @@ def melody():
 
   #m3
   music.qNote(d)
-  music.eNote(b)
-  music.eNote(a)
+  music.eNote(B)
+  music.eNote(A)
   music.qNote(g)
 
   #m4
@@ -43,8 +43,8 @@ def melody():
   #m5
   music.qNote(e)
   music.eNote(C)
-  music.eNote(b)
-  music.qNote(a)
+  music.eNote(B)
+  music.qNote(A)
 
   #m6
   music.dHalfNote(fS)
@@ -54,15 +54,15 @@ def melody():
   music.qNote(D)
   music.eNote(D)
   music.eNote(C)
-  music.qNote(a)
+  music.qNote(A)
 
   #m8
-  music.wNote(b)
+  music.wNote(B)
 
   #m9
   music.qNote(d)
-  music.eNote(b)
-  music.eNote(a)
+  music.eNote(B)
+  music.eNote(A)
   music.qNote(g)
 
   #m10
@@ -72,8 +72,8 @@ def melody():
 
   #m11
   music.qNote(d)
-  music.eNote(b)
-  music.eNote(a)
+  music.eNote(B)
+  music.eNote(A)
   music.qNote(g)
 
   #m12
@@ -83,8 +83,8 @@ def melody():
   #m13
   music.qNote(e)
   music.qNote(C)
-  music.qNote(b)
-  music.qNote(a)
+  music.qNote(B)
+  music.qNote(A)
 
   #m14
   music.qNote(D)
@@ -96,29 +96,29 @@ def melody():
   music.qNote(E)
   music.qNote(D)
   music.qNote(C)
-  music.qNote(a) 
+  music.qNote(A) 
 
   #m16
   music.wNote(g)
 
   #m17
-  music.qNote(b)
-  music.qNote(b)
-  music.qNote(b)
+  music.qNote(B)
+  music.qNote(B)
+  music.qNote(B)
 
   #m18
-  music.qNote(b)
-  music.qNote(b)
-  music.qNote(b)
+  music.qNote(B)
+  music.qNote(B)
+  music.qNote(B)
 
   #m19
-  music.qNote(b)
+  music.qNote(B)
   music.qNote(D)
   music.dQuarterNote(g)
-  music.eNote(a)
+  music.eNote(A)
 
   #m20
-  music.dHalfNote(b)
+  music.dHalfNote(B)
 
   #m21
   music.qNote(C)
@@ -128,39 +128,39 @@ def melody():
 
   #m22
   music.qNote(C)
-  music.qNote(b)
-  music.qNote(b)
-  music.eNote(b)
-  music.eNote(b)
+  music.qNote(B)
+  music.qNote(B)
+  music.eNote(B)
+  music.eNote(B)
 
   #m23
-  music.qNote(b)
-  music.qNote(a)
-  music.qNote(a)
-  music.qNote(b)
+  music.qNote(B)
+  music.qNote(A)
+  music.qNote(A)
+  music.qNote(B)
 
   #m24
-  music.hNote(a)
+  music.hNote(A)
   music.hNote(D)
 
   #m17 repeat
-  music.qNote(b)
-  music.qNote(b)
-  music.qNote(b)
+  music.qNote(B)
+  music.qNote(B)
+  music.qNote(B)
 
   #m18 repeat
-  music.qNote(b)
-  music.qNote(b)
-  music.qNote(b)
+  music.qNote(B)
+  music.qNote(B)
+  music.qNote(B)
 
   #m19 repeat
-  music.qNote(b)
+  music.qNote(B)
   music.qNote(D)
   music.dQuarterNote(g)
-  music.eNote(a)
+  music.eNote(A)
 
   #m20 repeat
-  music.dHalfNote(b)
+  music.dHalfNote(B)
 
   #m21 repeat
   music.qNote(C)
@@ -170,16 +170,16 @@ def melody():
 
   #m22 repeat
   music.qNote(C)
-  music.qNote(b)
-  music.qNote(b)
-  music.eNote(b)
-  music.eNote(b)
+  music.qNote(B)
+  music.qNote(B)
+  music.eNote(B)
+  music.eNote(B)
 
   #m23 repeat
   music.qNote(D)
   music.qNote(D)
   music.qNote(C)
-  music.qNote(a)
+  music.qNote(A)
 
   #m24 repeat
   music.hNote(g)
