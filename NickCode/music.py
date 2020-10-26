@@ -33,38 +33,45 @@ def updateTempo(x):
 
 def qNote(note):
   GPIO.output(note, True)
-  time.sleep(qNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(qNoteL)
 
 def dQuarterNote(note):
   GPIO.output(note, True)
-  time.sleep(qNoteL+eNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(qNoteL+eNoteL)
 
 def hNote(note):
   GPIO.output(note, True)
-  time.sleep(hNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(hNoteL)
 
 def dHalfNote(note):
   GPIO.output(note, True)
-  time.sleep(qNoteL+hNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(qNoteL+hNoteL)
 
 def wNote(note):
   GPIO.output(note, True)
-  time.sleep(wNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(wNoteL)
 
 def eNote(note):
   GPIO.output(note, True)
-  time.sleep(eNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(eNoteL)
 
 def sNote(note):
   GPIO.output(note, True)
-  time.sleep(sNoteL)
+  time.sleep(.1)
   GPIO.output(note, False)
+  time.sleep(sNoteL)
 
 def qNoteRest():
   time.sleep(qNoteL)
