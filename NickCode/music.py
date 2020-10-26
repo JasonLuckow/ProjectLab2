@@ -3,9 +3,13 @@ import time
 import RPi.GPIO as GPIO
 
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(23, GPIO.OUT)
+GPIO.setup(9, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT)
+GPIO.setup(12, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(8, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(5, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(25, GPIO.OUT)
 
