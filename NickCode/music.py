@@ -16,69 +16,69 @@ GPIO.setup(25, GPIO.OUT)
 # Have these values modified by GUI 
 tempo = 120
 BPM = 60/tempo
-qNote = BPM
-hNote = BPM*2
-wNote = BPM*4
-eNote = BPM/2
-sNote= BPM/4
+qNoteL = BPM
+hNoteL = BPM*2
+wNoteL = BPM*4
+eNoteL = BPM/2
+sNoteL = BPM/4
 
 def updateTempo(x):
   tempo = x # Where x is the value pulled from the GUI
   BPM = 60/tempo
-  qNote = BPM
-  hNote = BPM*2
-  wNote = BPM*4
-  eNote = BPM/2
-  sNote= BPM/4
+  qNoteL = BPM
+  hNoteL = BPM*2
+  wNoteL = BPM*4
+  eNoteL = BPM/2
+  sNoteL = BPM/4
 
 def qNote(note):
   GPIO.output(note, True)
+  time.sleep(qNoteL)
   GPIO.output(note, False)
-  time.sleep(qNote)
 
 def dQuarterNote(note):
   GPIO.output(note, True)
+  time.sleep(qNoteL+eNoteL)
   GPIO.output(note, False)
-  time.sleep(qNote+eNoteRest)
 
 def hNote(note):
   GPIO.output(note, True)
+  time.sleep(hNoteL)
   GPIO.output(note, False)
-  time.sleep(hNote)
 
 def dHalfNote(note):
   GPIO.output(note, True)
+  time.sleep(qNoteL+hNoteL)
   GPIO.output(note, False)
-  time.sleep(qNote+hNote)
 
 def wNote(note):
   GPIO.output(note, True)
+  time.sleep(wNoteL)
   GPIO.output(note, False)
-  time.sleep(wNote)
 
 def eNote(note):
   GPIO.output(note, True)
+  time.sleep(eNoteL)
   GPIO.output(note, False)
-  time.sleep(eNote)
 
 def sNote(note):
   GPIO.output(note, True)
+  time.sleep(sNoteL)
   GPIO.output(note, False)
-  time.sleep(sNote)
 
 def qNoteRest():
-  time.sleep(qNote)
+  time.sleep(qNoteL)
 
 def hNoteRest():
-  time.sleep(hNote)
+  time.sleep(hNoteL)
 
 def wNoteRest():
-  time.sleep(wNote)
+  time.sleep(wNoteL)
 
 def eNoteRest():
-  time.sleep(eNote)
+  time.sleep(eNoteL)
 
 def sNoteRest():
-  time.sleep(sNote)
+  time.sleep(sNoteL)
 
 ### END OF MUSIC CLASS 
