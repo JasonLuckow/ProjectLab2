@@ -42,7 +42,7 @@ class NewDrummerSong():
                     self.win.updatelabel2("Drummer button was clicked.\nClick another!")
                     return
                 self.win.updatelabel2("DRUMMER SONG PASS {}".format(i))
-                self.win.updateProgressBar(i)
+                self.win.progress = i
                 self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 0.5))
                 x.start()

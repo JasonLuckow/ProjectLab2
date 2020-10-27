@@ -35,14 +35,14 @@ class NewCarolSong():
         """
         #self.win.pausePlaySwitch(True) # must set the pause play buttons to be clickable
 
-        for i in range(10):
+        for i in range(10*(self.win.currentTempo/80)):
             count = 0
             while count < 1:
                 if(self.win.getStopped() == True):
                     self.win.updatelabel2("Carol button was clicked.\nClick another!")
                     return
                 self.win.updatelabel2("CAROL SONG PASS {}".format(i))
-                self.win.updateProgressBar(i)
+                self.win.progress = i
                 self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 22, 0.5))
                 x.start()
