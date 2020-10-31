@@ -12,9 +12,24 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(5, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(25, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(13, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(14, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(7, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(18, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(0, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(16, GPIO.OUT)
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(20, GPIO.OUT)
+
 
 # Have these values modified by GUI 
-tempo = 120
+tempo = 180
 BPM = 60/tempo
 qNoteL = BPM
 hNoteL = BPM*2

@@ -229,27 +229,42 @@ def melody():
 def bass():
   #m1
   music.dHalfNote(g)
+  music.eNoteRest()
 
   #m2
   music.dHalfNote(f)
+  music.eNoteRest()
+  music.eNoteRest()
 
   #m3
   music.dHalfNote(eF)
+  music.eNoteRest()
+  music.eNoteRest()
 
   #m4
   music.dHalfNote(d)
+  music.eNoteRest()
+  music.eNoteRest()
 
   #m5
   music.dHalfNote(g)
+  music.eNoteRest()
+  music.eNoteRest()
 
   #m6
   music.dHalfNote(f)
+  music.eNoteRest()
+  music.eNoteRest()
 
   #m7
   music.dHalfNote(eF)
-
+  music.eNoteRest()
+  music.eNoteRest()
+  
   #m8
   music.dHalfNote(d)
+  music.eNoteRest()
+  music.eNoteRest()
   """
 
   #m9
@@ -336,8 +351,8 @@ def bass():
 high = threading.Thread(target=melody)
 high.start()
 
-# low = threading.Thread(target=bass)
-# low.start()
+low = threading.Thread(target=bass)
+low.start()
 
 high.join()
-# low.join()
+low.join()

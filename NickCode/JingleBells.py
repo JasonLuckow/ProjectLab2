@@ -4,18 +4,20 @@ import RPi.GPIO as GPIO
 import music
 
 b = 17 
+B = 20
+A = 12
 a = 16 
-g = 22
-D = 5
-C = 27
-e = 26
+g = 8
+D = 14
+C = 18
+e = 7
 G = 6
 E = 24
-fS = 25
-d = 23
-c = 14
+fS = 0
+d = 25
+c = 16
 
-music.updateTempo(120)
+#music.updateTempo(180)
 
 def melody():
   #m1
@@ -58,7 +60,7 @@ def melody():
 
   #m8
   music.wNote(B)
-
+"""
   #m9
   music.qNote(d)
   music.eNote(B)
@@ -183,7 +185,7 @@ def melody():
 
   #m24 repeat
   music.hNote(g)
-  music.qNote(G)
+  music.qNote(G)"""
 
 def bass():
   #m1
@@ -208,7 +210,7 @@ def bass():
 
   #m6
   music.hNote(d)
-  music.hNote(a)
+  music.hNote(A)
 
   #m7
   music.hNote(d)
@@ -217,7 +219,7 @@ def bass():
   #m8
   music.hNote(g)
   music.hNote(d)
-
+"""
   #m9
   music.hNote(g)
   music.hNote(d)
@@ -342,14 +344,14 @@ def bass():
 
   #m24 repeat
   music.hNote(G)
-  music.qNote(g)
+  music.qNote(g)"""
 
 # Setting up threads and starting them
 high = threading.Thread(target=melody)
 high.start()
 
-low = threading.Thread(target=bass)
-low.start()
+#low = threading.Thread(target=bass)
+#low.start()
 
 high.join()
-low.join()
+#low.join()

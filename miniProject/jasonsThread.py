@@ -9,14 +9,21 @@ import RPi.GPIO as GPIO
 This is for the mini project. I need to clean it up.
 """
 
+a = 26
+t = 50
+
+b = 28
+c = 13
+d = 6
+
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(22, GPIO.OUT)
+GPIO.setup(a, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(24, GPIO.OUT)
+GPIO.setup(b, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(25, GPIO.OUT)
+GPIO.setup(c, GPIO.OUT)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(27, GPIO.OUT)
+GPIO.setup(d, GPIO.OUT)
 
 def motorswitch(bo, pin, t):
     GPIO.output(pin, bo)
@@ -40,39 +47,39 @@ def stepsame(count, type, bo, t):
     arr.append([count, type, bo, timenow()])
     time.sleep(t)
 
-def all(bo):
-    x = threading.Thread(target=motorswitch, args=(bo, 22, .5,))
-    x.start()
+# def all(bo):
+#     x = threading.Thread(target=motorswitch, args=(bo, a, .5,))
+#     x.start()
 
-    y = threading.Thread(target=motorswitch, args=(bo, 24, .5,))
-    y.start()
+#     y = threading.Thread(target=motorswitch, args=(bo, b, .5,))
+#     y.start()
 
-    z = threading.Thread(target=motorswitch, args=(bo, 27, .5,))
-    z.start()
+#     z = threading.Thread(target=motorswitch, args=(bo, c, .5,))
+#     z.start()
 
-    x.join()
-    y.join()
-    z.join()
+#     x.join()
+#     y.join()
+#     z.join()
+# GPIO.output(b, False)
 
-
-    
-
-x = threading.Thread(target=calc, args=(True, 22, .5, 25,))
+x = threading.Thread(target=calc, args=(True, a, .5, t,))
 x.start()
 
-y = threading.Thread(target=calc, args=(True, 24, .5, 25,))
-y.start()
 
-z = threading.Thread(target=calc, args=(False, 25, 1, 12,))
-z.start()
+# y = threading.Thread(target=calc, args=(True, b, .5, 25,))
+# y.start()
 
-j = threading.Thread(target=calc, args=(False, 27, 1, 12,))
-j.start()
+# z = threading.Thread(target=calc, args=(False, c, 1, 12,))
+# z.start()
+
+# j = threading.Thread(target=calc, args=(False, d, 1, 12,))
+# j.start()
 
 x.join()
-y.join()
-z.join()
-j.join()
+GPIO.output(a, False)
+# y.join()
+# z.join()
+# j.join()
 
 # all(False)
 
