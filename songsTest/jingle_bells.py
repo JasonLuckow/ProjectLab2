@@ -42,7 +42,7 @@ class NewJingleSong():
                     self.win.updatelabel2("Jingle button was clicked.\nClick another!")
                     return
                 self.win.updatelabel2("JINGLE SONG PASS {}".format(i))
-                self.win.updateProgressBar(i)
+                self.win.progress = i
                 self.app.processEvents()
                 x = threading.Thread(target=self.motorswitch, args=(True, 23, 0.5))
                 x.start()

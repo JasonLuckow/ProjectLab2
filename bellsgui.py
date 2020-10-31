@@ -109,6 +109,8 @@ class MyWindow(QMainWindow):
 
         self.setSongPlaying(False)#Initialize Song Stopper
         self.isPaused = False
+        self.progress = 0
+        self.currentTempo = 80
 
         self.threadpool = QThreadPool()
         self.win = self
@@ -148,11 +150,13 @@ class MyWindow(QMainWindow):
         self.setSongPlaying(True) #Turn Song On
 
         self.setProgressBarMax(10)
+        self.progress = 0
+        self.progressBarWorker = Worker(self.updateProgressBar)
         carolsong = carol.NewCarolSong(self.win, self.app)
         self.carolWorker = Worker(carolsong.startsong) # add the function to execute to the worker class
         self.carolWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
         self.threadpool.start(self.carolWorker) # starts carolWorker with the above requirements
-
+        self.threadpool.start(self.progressBarWorker) # starts carolWorker with the above requirements
         #self.songselectbtnsswitch(True)
 
     def jingleclicked(self):
@@ -169,10 +173,13 @@ class MyWindow(QMainWindow):
         self.setSongPlaying(True) #Turn Song On
 
         self.setProgressBarMax(20)
+        self.progress = 0
+        self.progressBarWorker = Worker(self.updateProgressBar)
         jinglesong = jingle.NewJingleSong(self.win, self.app)
         self.jingleWorker = Worker(jinglesong.startsong) # add the function to execute to the worker class
         self.jingleWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
         self.threadpool.start(self.jingleWorker) # starts carolWorker with the above requirements
+        self.threadpool.start(self.progressBarWorker) # starts carolWorker with the above requirements
 
 
     def littleclicked(self):
@@ -188,10 +195,13 @@ class MyWindow(QMainWindow):
         self.setSongPlaying(True) #Turn Song On
 
         self.setProgressBarMax(30)
+        self.progress = 0
+        self.progressBarWorker = Worker(self.updateProgressBar)
         drummersong = drummer.NewDrummerSong(self.win, self.app)
         self.drummerWorker = Worker(drummersong.startsong) # add the function to execute to the worker class
         self.drummerWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
         self.threadpool.start(self.drummerWorker) # starts carolWorker with the above requirements
+        self.threadpool.start(self.progressBarWorker) # starts carolWorker with the above requirements
 
     def pauseClicked(self):
         """
@@ -242,11 +252,14 @@ class MyWindow(QMainWindow):
         self.currentTempo = valueChanged
         self.updateTempoLabel(str(valueChanged))
 
-    def updateProgressBar(self, value):
+    def updateProgressBar(self):
         """
             Updates progress Bar
         """
-        self.ui.progressBar.setValue(value)
+        while(True):
+            if(self.getStopped() == True):
+                return
+            self.ui.progressBar.setValue(self.progress)
 
     def updateTempoLabel(self, text):
         self.ui.tempoLabel.setText("Tempo : "+text)
