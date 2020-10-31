@@ -8,11 +8,11 @@ B = 20
 A = 12
 a = 16 
 g = 8
-D = 14
+D = 24
 C = 18
 e = 7
-G = 6
-E = 24
+G = 21
+E = 1
 fS = 0
 d = 25
 c = 16
@@ -22,19 +22,19 @@ c = 16
 def melody():
   #m1
   music.qNote(d)
-  music.eNote(B)
-  music.eNote(A)
+  music.qNote(B)
+  music.qNote(A)
   music.qNote(g)
 
-  #m2
+  # #m2
   music.dHalfNote(d)
   music.eNote(d)
   music.eNote(d)
 
   #m3
   music.qNote(d)
-  music.eNote(B)
-  music.eNote(A)
+  music.qNote(B)
+  music.qNote(A)
   music.qNote(g)
 
   #m4
@@ -44,8 +44,8 @@ def melody():
 
   #m5
   music.qNote(e)
-  music.eNote(C)
-  music.eNote(B)
+  music.qNote(C)
+  music.qNote(B)
   music.qNote(A)
 
   #m6
@@ -54,12 +54,13 @@ def melody():
 
   #m7
   music.qNote(D)
-  music.eNote(D)
-  music.eNote(C)
+  music.qNote(D)
+  music.qNote(C)
   music.qNote(A)
 
   #m8
   music.wNote(B)
+  time.sleep(.1)
 """
   #m9
   music.qNote(d)
@@ -190,23 +191,31 @@ def melody():
 def bass():
   #m1
   music.hNote(g)
+  time.sleep(.1)
   music.hNote(d)
+  time.sleep(.1)
 
   #m2
   music.hNote(g)
   music.hNote(d)
+  time.sleep(.1)
 
   #m3
   music.hNote(g)
+  time.sleep(.1)
   music.hNote(d)
+  time.sleep(.1)
 
   #m4
   music.hNote(c)
   music.hNote(g)
+  time.sleep(.1)
 
   #m5
   music.hNote(c)
+  time.sleep(.1)
   music.hNote(g)
+  time.sleep(.1)
 
   #m6
   music.hNote(d)
@@ -214,7 +223,9 @@ def bass():
 
   #m7
   music.hNote(d)
+  time.sleep(.1)
   music.hNote(d)
+  time.sleep(.1)
 
   #m8
   music.hNote(g)
@@ -350,8 +361,8 @@ def bass():
 high = threading.Thread(target=melody)
 high.start()
 
-#low = threading.Thread(target=bass)
-#low.start()
+low = threading.Thread(target=bass)
+low.start()
 
 high.join()
-#low.join()
+low.join()
