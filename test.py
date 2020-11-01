@@ -126,7 +126,7 @@ class Ui_MainWindow(object):
 "color: rgb(255, 255, 255);")
         self.exitbtn.setObjectName("exitbtn")
         self.pausebtn = QtWidgets.QPushButton(self.centralwidget)
-        self.pausebtn.setEnabled(False)
+        self.pausebtn.setEnabled(True)
         self.pausebtn.setGeometry(QtCore.QRect(160, 550, 121, 36))
         self.pausebtn.setMaximumSize(QtCore.QSize(301, 16777215))
         font = QtGui.QFont()
