@@ -4,11 +4,11 @@ import RPi.GPIO as GPIO
 from NickCode.music import music
 
 class NewJingleSong():
-  def __init__(self, win, app, 2):
+  def __init__(self, win, app):
       self.win = win  
       self.app = app
-      self.music = music(self.win, app)
-      self.music.setTempo(self.win.getTempoValue()) # sets the default tempo for carol
+      self.music = music(self.win, app, "Jingle Bells ")
+      self.music.setTempo(self.win.getTempoValue()) 
       self.bF = 14
       self.b = 15
       self.c = 16
@@ -392,6 +392,7 @@ class NewJingleSong():
 
   def startsong(self, progress_callback):
     # Setting up threads and starting them
+      self.win.updatelabel2("Jingle Bells is Playing!")
       high = threading.Thread(target=self.melody)
       high.start()
 

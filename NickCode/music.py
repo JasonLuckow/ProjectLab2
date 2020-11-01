@@ -7,6 +7,7 @@ class music():
   def __init__(self, win, app, song):
     self.win = win
     self.app = app
+    self.song = song
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(0, GPIO.OUT)
     GPIO.setmode(GPIO.BCM)
@@ -50,16 +51,7 @@ class music():
 
     # Have these values modified by GUI 
     #Min is 120, Max is 420
-    if song == 1:
-      self.tempo = 300 
-      self.win.updateTempo(self.tempo)
-    elif song == 2:
-      self.tempo = 240
-      self.win.updateTempo(self.tempo)
-    else:
-      self.tempo = 250
-      self.win.updateTempo(self.tempo)
-
+    self.tempo = 290
     self.BPM = 60/self.tempo
     self.qNoteL = self.BPM
     self.hNoteL = self.BPM * 2
@@ -72,7 +64,6 @@ class music():
   def setTempo(self, tempo):
     self.tempo = tempo
     self.win.updateTempo(self.tempo)
-    # self.tempo = self.win.getTempo()
     self.BPM = 60/self.tempo
     self.qNoteL = self.BPM
     self.hNoteL = self.BPM * 2
@@ -82,11 +73,11 @@ class music():
 
   def qNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
@@ -95,11 +86,11 @@ class music():
 
   def dQuarterNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
@@ -108,11 +99,11 @@ class music():
 
   def hNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
@@ -121,11 +112,11 @@ class music():
 
   def dHalfNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
@@ -134,11 +125,11 @@ class music():
 
   def wNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
@@ -147,11 +138,11 @@ class music():
 
   def eNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
@@ -160,11 +151,11 @@ class music():
 
   def sNote(self, note):
     if(self.win.getStopped() == True):
-        self.win.updatelabel2("Carol button was clicked.\nClick another!")
+        # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
     while self.win.getPaused() == True:
         self.all(False)
-        self.win.updatelabel2("Carol Song Paused!\nChoose A new Song or Play to Resume!")
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)

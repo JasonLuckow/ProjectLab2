@@ -7,8 +7,7 @@ class NewCarolSong():
   def __init__(self, win, app):
       self.win = win
       self.app = app
-      self.music = music(win, app, 1)
-      # self.music.setTempo(300) # sets the default tempo for carol
+      self.music = music(win, app, "Carol of the Bells ")
       self.music.setTempo(self.win.getTempoValue())
       self.bF = 14
       self.b = 15
@@ -375,6 +374,7 @@ class NewCarolSong():
 
   def startsong(self, progress_callback):
     # Setting up threads and starting them
+    self.win.updatelabel2("Carol of the Bells is Playing!")
     high = threading.Thread(target=self.melody)
     high.start()
 
