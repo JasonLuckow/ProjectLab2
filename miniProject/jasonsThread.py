@@ -9,8 +9,8 @@ import RPi.GPIO as GPIO
 This is for the mini project. I need to clean it up.
 """
 
-a = 7
-t = 50
+a = 12
+t = 100
 
 b = 28
 c = 13

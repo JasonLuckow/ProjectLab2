@@ -324,7 +324,7 @@ def bass():
 
   #m23
   music.dHalfNote(fS)
-  time.sleep(.3)
+  time.sleep(.5)
 
   #m24
   music.hNote(A)
