@@ -63,6 +63,7 @@ class music():
   def setTempo(self, tempo):
     self.tempo = tempo
     self.win.updateTempo(self.tempo)
+    self.tempo = self.win.getTempo()
     self.BPM = 60/self.tempo
     self.qNoteL = self.BPM
     self.hNoteL = self.BPM * 2

@@ -255,6 +255,9 @@ class MyWindow(QMainWindow):
         self.currentTempo = valueChanged
         self.ui.tempoSlider.setValue(self.currentTempo)
         self.updateTempoLabel(str(valueChanged))
+        
+    def getTempoValue():
+        return self.currentTempo
 
     def updateProgressBar(self, progress_callback):
         """
