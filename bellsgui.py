@@ -112,7 +112,7 @@ class MyWindow(QMainWindow):
         self.isPaused = False
         self.progress = 0
         self.currentTempo = 290
-
+        
         self.threadpool = QThreadPool()
         self.win = self
         self.app = app
@@ -253,6 +253,7 @@ class MyWindow(QMainWindow):
             Updates the global tempo variable and Tempo label
         """
         self.currentTempo = valueChanged
+        self.ui.tempoSlider.setValue(self.currentTempo)
         self.updateTempoLabel(str(valueChanged))
 
     def updateProgressBar(self, progress_callback):

@@ -390,13 +390,13 @@ class NewJingleSong():
     self.music.hNote(self.G)
     self.music.qNote(self.g)
 
-def startsong(self, progress_callback):
-  # Setting up threads and starting them
-    high = threading.Thread(target=self.melody)
-    high.start()
+  def startsong(self, progress_callback):
+    # Setting up threads and starting them
+      high = threading.Thread(target=self.melody)
+      high.start()
 
-    low = threading.Thread(target=self.bass)
-    low.start()
+      low = threading.Thread(target=self.bass)
+      low.start()
 
-    high.join()
-    low.join()
+      high.join()
+      low.join()
