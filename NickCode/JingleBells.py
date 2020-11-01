@@ -4,11 +4,11 @@ import RPi.GPIO as GPIO
 from NickCode.music import music
 
 class NewJingleSong():
-  def __init__(self, win, app):
-      self.music = music(win, app)
-      self.music.setTempo(240) # sets the default tempo for carol
-      self.win = win
+  def __init__(self, win, app, 2):
+      self.win = win  
       self.app = app
+      self.music = music(self.win, app)
+      self.music.setTempo(self.win.getTempoValue()) # sets the default tempo for carol
       self.bF = 14
       self.b = 15
       self.c = 16

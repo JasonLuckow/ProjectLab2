@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 
 
 class music():
-  def __init__(self, win, app):
+  def __init__(self, win, app, song):
     self.win = win
     self.app = app
     GPIO.setmode(GPIO.BCM)
@@ -50,7 +50,16 @@ class music():
 
     # Have these values modified by GUI 
     #Min is 120, Max is 420
-    self.tempo = 240
+    if song == 1:
+      self.tempo = 300 
+      self.win.updateTempo(self.tempo)
+    elif song == 2:
+      self.tempo = 240
+      self.win.updateTempo(self.tempo)
+    else:
+      self.tempo = 250
+      self.win.updateTempo(self.tempo)
+
     self.BPM = 60/self.tempo
     self.qNoteL = self.BPM
     self.hNoteL = self.BPM * 2
@@ -63,7 +72,7 @@ class music():
   def setTempo(self, tempo):
     self.tempo = tempo
     self.win.updateTempo(self.tempo)
-    self.tempo = self.win.getTempo()
+    # self.tempo = self.win.getTempo()
     self.BPM = 60/self.tempo
     self.qNoteL = self.BPM
     self.hNoteL = self.BPM * 2

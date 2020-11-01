@@ -5,10 +5,11 @@ from NickCode.music import music
 
 class NewCarolSong():
   def __init__(self, win, app):
-      self.music = music(win, app)
-      self.music.setTempo(300) # sets the default tempo for carol
       self.win = win
       self.app = app
+      self.music = music(win, app, 1)
+      # self.music.setTempo(300) # sets the default tempo for carol
+      self.music.setTempo(self.win.getTempoValue())
       self.bF = 14
       self.b = 15
       self.c = 16
