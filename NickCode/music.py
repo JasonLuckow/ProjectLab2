@@ -60,7 +60,7 @@ class music():
 
     self.s = .1 # Sleep variable for in between motor on/off
 
-    def setTempo(self, tempo)
+    def setTempo(self, tempo):
       self.tempo = 240
       self.BPM = 60/self.tempo
       self.qNoteL = self.BPM

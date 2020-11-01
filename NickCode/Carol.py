@@ -31,7 +31,7 @@ class NewCarolSong():
 
     #music.tempo = music.updateTempo(120)
 
-  def melody():
+  def melody(self):
     #m1
     self.music.qNote(self.BF)
     self.music.eNote(self.A)
@@ -236,7 +236,7 @@ class NewCarolSong():
     self.music.dHalfNote(self.g)
     
 
-  def bass():
+  def bass(self):
     #m1
     self.music.dHalfNote(self.g)
     time.sleep(.3)
