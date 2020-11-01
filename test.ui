@@ -345,10 +345,10 @@ color: rgb(255, 255, 255);</string>
      <enum>Qt::LeftToRight</enum>
     </property>
     <property name="minimum">
-     <number>80</number>
+     <number>180</number>
     </property>
     <property name="maximum">
-     <number>160</number>
+     <number>400</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>

@@ -61,22 +61,14 @@ class music():
     self.s = .1 # Sleep variable for in between motor on/off
 
   def setTempo(self, tempo):
-    self.tempo = 240
+    self.tempo = tempo
+    self.win.updateTempo(self.tempo)
     self.BPM = 60/self.tempo
     self.qNoteL = self.BPM
     self.hNoteL = self.BPM * 2
     self.wNoteL = self.BPM * 4
     self.eNoteL = self.BPM / 2
     self.sNoteL = self.BPM / 4
-
-  def updateTempo(self, x):
-    self.tempo = x # Where x is the value pulled from the GUI
-    self.BPM = 60 / self.tempo
-    self.qNoteL = self.BPM
-    self.hNoteL = self.BPM*2
-    self.wNoteL = self.BPM*4
-    self.eNoteL = self.BPM/2
-    self.sNoteL = self.BPM/4
 
   def qNote(self, note):
     if(self.win.getStopped() == True):

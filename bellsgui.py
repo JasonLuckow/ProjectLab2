@@ -19,7 +19,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
-from songsTest import jingle_bells as jingle
+from NickCode import JingleBells as jingle
 from songsTest import little_drummer_boy as drummer
 from NickCode import Carol as carol
 from NickCode import music
@@ -111,7 +111,7 @@ class MyWindow(QMainWindow):
         self.setSongPlaying(False)#Initialize Song Stopper
         self.isPaused = False
         self.progress = 0
-        self.currentTempo = 80
+        self.currentTempo = 290
 
         self.threadpool = QThreadPool()
         self.win = self
@@ -267,6 +267,7 @@ class MyWindow(QMainWindow):
     def updateTempoLabel(self, text):
         self.ui.tempoLabel.setText("Tempo : "+text)
         # self.ui.tempoLabel.adjustSize()
+
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()
