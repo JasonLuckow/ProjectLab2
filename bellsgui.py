@@ -21,7 +21,7 @@ from PyQt5.QtCore import *
 
 from songsTest import jingle_bells as jingle
 from songsTest import little_drummer_boy as drummer
-from songsTest import carol_of_the_bells as carol
+from NickCode import Carol as carol
 
 """
     Checklist for running the application in Windows and the Raspberry Pi (in no specific order):
