@@ -44,8 +44,7 @@ def melody():
 
   #m4
   music.dHalfNote(e)
-  music.eNote(e)
-  music.eNote(e)
+  music.qNote(e)
 
   #m5
   music.qNote(e)
@@ -225,7 +224,6 @@ def bass():
   #m4
   music.hNote(c)
   music.hNote(g)
-  time.sleep(.1)
 
   #m5
   music.hNote(c)
@@ -368,7 +366,6 @@ def bass():
   music.qNote(C)
   music.qNote(g)
   music.qNote(C)
-  time.sleep(.5)
 
   #m22 repeat
   music.qNote(g)
