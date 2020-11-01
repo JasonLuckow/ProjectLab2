@@ -1,11 +1,11 @@
 import threading
 import time
 import RPi.GPIO as GPIO
-import music
+from NickCode.music import music
 
 class NewCarolSong():
   def __init__(self, win, app):
-      self.music = music.music(win, app)
+      self.music = music(win, app)
       self.music.setTempo(300) # sets the default tempo for carol
       self.win = win
       self.app = app
@@ -335,7 +335,7 @@ class NewCarolSong():
     #m24
     self.music.hNote(self.A)
     time.sleep(.2)
-    self.music.qNote(g)
+    self.music.qNote(self.g)
 
     #m25
     self.music.dHalfNote(self.g)

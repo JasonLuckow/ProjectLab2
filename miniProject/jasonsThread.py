@@ -10,7 +10,7 @@ This is for the mini project. I need to clean it up.
 """
 
 a = 9
-t = 100
+t = 10
 
 b = 28
 c = 13

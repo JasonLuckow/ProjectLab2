@@ -22,6 +22,7 @@ from PyQt5.QtCore import *
 from songsTest import jingle_bells as jingle
 from songsTest import little_drummer_boy as drummer
 from NickCode import Carol as carol
+from NickCode import music
 
 """
     Checklist for running the application in Windows and the Raspberry Pi (in no specific order):
@@ -125,7 +126,7 @@ class MyWindow(QMainWindow):
         """
         # We need to have a class containing functions that all songs use so that we can call 
         # the all function here. For now this will do.
-        forPausing = carol.NewCarolSong(self.win, self.app)
+        forPausing = music.music(self.win, self.app)
         forPausing.all(False)
         sys.exit()
     
@@ -209,6 +210,8 @@ class MyWindow(QMainWindow):
             to handle pause and play. Must have songs played in a worker class so that it may run in a threadpool or else
             pause functionality will disapear since the main thread will be playing the song.
         """
+        self.updatelabel2('paused')
+        print("\n\npause clicked\n\n")
         if self.getPaused() is True:
             self.setPaused(False) # set paused to false so that the song currently playing knows that it is no longer paused
             self.win.updatelabel2("Play button clicked!\nResuming the song.")
@@ -252,7 +255,7 @@ class MyWindow(QMainWindow):
         self.currentTempo = valueChanged
         self.updateTempoLabel(str(valueChanged))
 
-    def updateProgressBar(self):
+    def updateProgressBar(self, progress_callback):
         """
             Updates progress Bar
         """
@@ -263,7 +266,7 @@ class MyWindow(QMainWindow):
 
     def updateTempoLabel(self, text):
         self.ui.tempoLabel.setText("Tempo : "+text)
-        self.ui.tempoLabel.adjustSize()
+        # self.ui.tempoLabel.adjustSize()
     def updatelabel2(self, text):
         self.ui.label2.setText(text)
         self.ui.label2.adjustSize()

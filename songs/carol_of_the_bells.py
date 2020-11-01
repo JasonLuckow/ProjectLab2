@@ -9,6 +9,7 @@
 from time import sleep
 # comment out below when working on windows app
 import RPi.GPIO as GPIO
+import jingle_bells
 
 import threading
 import os
