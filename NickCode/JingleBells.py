@@ -119,7 +119,7 @@ def melody():
   #m18
   music.qNote(B)
   music.qNote(B)
-  music.qNote(B)
+  music.hNote(B)
   time.sleep(.1)
 
   #m19
@@ -161,13 +161,13 @@ def melody():
   #m17 repeat
   music.qNote(B)
   music.qNote(B)
-  music.qNote(B)
+  music.hNote(B)
   time.sleep(.1)
 
   #m18 repeat
   music.qNote(B)
   music.qNote(B)
-  music.qNote(B)
+  music.hNote(B)
   time.sleep(.1)
 
   #m19 repeat
@@ -178,13 +178,14 @@ def melody():
 
   #m20 repeat
   music.dHalfNote(B)
+  music.qNoteRest()
   time.sleep(.3)
 
   #m21 repeat
   music.qNote(C)
   music.qNote(C)
   music.dQuarterNote(C)
-  music.qNote(C)
+  music.eNote(C)
 
   #m22 repeat
   music.qNote(C)
@@ -201,9 +202,7 @@ def melody():
 
   #m24 repeat
   music.hNote(g)
-  time.sleep(.1)
   music.qNote(G)
-  time.sleep(.1)
 
 def bass():
   #m1

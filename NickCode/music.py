@@ -45,8 +45,9 @@ GPIO.setup(26, GPIO.OUT)
 
 
 # Have these values modified by GUI 
-#Min is 120, Max is 420
-tempo = 120
+#Min is 120, Max is 420 Carol
+#Min
+tempo = 240
 BPM = 60/tempo
 qNoteL = BPM
 hNoteL = BPM * 2
