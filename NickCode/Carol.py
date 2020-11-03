@@ -2,6 +2,7 @@ import threading
 import time
 import RPi.GPIO as GPIO
 from NickCode.music import music
+import math
 
 class NewCarolSong():
   def __init__(self, win, app):
@@ -381,9 +382,9 @@ class NewCarolSong():
 
     #Set progress Bar Max
     #self.win.setProgressBarMax( Time of Song in seconds * (normal song tempo / self.win.getTempoValue))
-    self.win.setProgressBarMax(45*(300/self.win.getTempoValue))
+    self.win.setProgressBarMax(math.floor(1599.09-221.03*math.log(self.win.getTempoValue())))
 
-    timing = 0.0
+    timing = 0
     high = threading.Thread(target=self.melody)
     high.start()
     low = threading.Thread(target=self.bass)
@@ -394,7 +395,7 @@ class NewCarolSong():
         while self.win.getPaused() == True:
           time.sleep(0.1)
         progress_callback.emit(timing)
-        timing = timing + 0.1
+        timing = timing + 1
         time.sleep(0.1)
       else:
         return

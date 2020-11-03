@@ -44,7 +44,7 @@ class WorkerSignals(QObject):
         error
             `tuple` (exctype, value, traceback.format_exc() )
     """
-    progress_callback = pyqtSignal(float)
+    progress_callback = pyqtSignal(int)
     finished = pyqtSignal()
     error = pyqtSignal(tuple)
 

@@ -2,6 +2,7 @@ import threading
 import time
 import RPi.GPIO as GPIO
 import music
+import math
 
 b = 1
 a = 2
