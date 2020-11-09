@@ -11,16 +11,16 @@ class NewCarolSong():
       self.music = music(win, app, "Carol of the Bells ")
       self.music.setTempo(self.win.getTempoValue())
       self.bF = 14
-      self.b = 15
+      self.b = 15#
       self.c = 16
       self.d = 25
-      self.dS = 5
+      self.dS = 4#
       self.e = 7
       self.f = 13
-      self.fS = 0
+      self.fS = 17#
       self.g = 8
       self.A = 12
-      self.BF = 9
+      self.BF = 22#
       self.B = 20
       self.C = 18
       self.D = 24

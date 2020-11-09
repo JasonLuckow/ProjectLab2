@@ -49,6 +49,15 @@ class music():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(26, GPIO.OUT)
 
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(15, GPIO.OUT)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(4, GPIO.OUT)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(17, GPIO.OUT)
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setup(22, GPIO.OUT)
+
     # Have these values modified by GUI 
     #Min is 120, Max is 420
     self.tempo = 290

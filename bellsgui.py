@@ -127,7 +127,7 @@ class MyWindow(QMainWindow):
         """
         # We need to have a class containing functions that all songs use so that we can call 
         # the all function here. For now this will do.
-        forPausing = music.music(self.win, self.app)
+        forPausing = music.music(self.win, self.app, "no song")
         forPausing.all(False)
         sys.exit()
     
