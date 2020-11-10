@@ -6,28 +6,28 @@ import math
 
 class NewCarolSong():
   def __init__(self, win, app):
-      self.win = win
-      self.app = app
-      self.music = music(win, app, "Carol of the Bells ")
-      self.music.setTempo(self.win.getTempoValue())
-      self.bF = 14
-      self.b = 15
-      self.c = 16
-      self.d = 25
-      self.dS = 5
-      self.e = 7
-      self.f = 13
-      self.fS = 0
-      self.g = 8
-      self.A = 12
-      self.BF = 9
-      self.B = 20
-      self.C = 18
-      self.D = 24
-      self.DS = 6
-      self.E = 1
-      self.F = 26
-      self.G = 21
+    self.win = win
+    self.app = app
+    self.music = music(win, app, "Carol of the Bells ")
+    self.music.setTempo(self.win.getTempoValue())
+    self.bF = 14
+    self.b = 15
+    self.c = 16
+    self.d = 25
+    self.dS = 5
+    self.e = 7
+    self.f = 13
+    self.fS = 0
+    self.g = 8
+    self.A = 12
+    self.BF = 9
+    self.B = 20
+    self.C = 18
+    self.D = 24
+    self.DS = 6
+    self.E = 1
+    self.F = 26
+    self.G = 21
 
 
     #music.tempo = music.updateTempo(120)
