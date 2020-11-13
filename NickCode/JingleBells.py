@@ -399,7 +399,7 @@ class NewJingleSong():
     self.win.updatelabel2("Jingle Bells is Playing!")
 
     #Set maximum progress bar value
-    self.win.setProgressBarMax(math.floor(1599.09-221.03*math.log(self.win.getTempoValue())))
+    self.win.setProgressBarMax(math.floor(1995.084-283.78*math.log(self.win.getTempoValue())))
 
     timing = 0
     high = threading.Thread(target=self.melody)

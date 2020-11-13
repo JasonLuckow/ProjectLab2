@@ -84,66 +84,81 @@ class music():
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
-    while self.win.getPaused() == True:
-        self.all(False)
-        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
-        time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
     GPIO.output(note, False)
-    time.sleep(self.qNoteL)
+    i = 0
+    for i in range(2):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
+      # i = i+1
 
   def dQuarterNote(self, note):
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
-    while self.win.getPaused() == True:
-        self.all(False)
-        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
-        time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
     GPIO.output(note, False)
-    time.sleep(self.qNoteL+self.eNoteL)
+    i = 0
+    for i in range(3):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
+      # i = i+1
 
   def hNote(self, note):
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
-    while self.win.getPaused() == True:
-        self.all(False)
-        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
-        time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
     GPIO.output(note, False)
-    time.sleep(self.hNoteL)
+    i = 0
+    for i in range(4):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
+      # i = i+1
 
   def dHalfNote(self, note):
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
-    while self.win.getPaused() == True:
-        self.all(False)
-        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
-        time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
     GPIO.output(note, False)
-    time.sleep(self.qNoteL+self.hNoteL)
+    i = 0
+    for i in range(6):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
+      # i = i+1
 
   def wNote(self, note):
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
-    while self.win.getPaused() == True:
-        self.all(False)
-        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
-        time.sleep(.1)
     GPIO.output(note, True)
     time.sleep(self.s)
     GPIO.output(note, False)
-    time.sleep(self.wNoteL)
+    i = 0
+    for i in range(8):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
+      # i = i+1
 
   def eNote(self, note):
     if(self.win.getStopped() == True):
@@ -172,13 +187,31 @@ class music():
     time.sleep(self.sNoteL)
 
   def qNoteRest(self):
-    time.sleep(self.qNoteL)
+    i = 0
+    for i in range(2):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
 
   def hNoteRest(self):
-    time.sleep(self.hNoteL)
+    i = 0
+    for i in range(4):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
 
   def wNoteRest(self):
-    time.sleep(self.wNoteL)
+    i = 0
+    for i in range(8):
+      while self.win.getPaused() == True:
+        self.all(False)
+        self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
+        time.sleep(.1)
+      time.sleep(self.eNoteL)
 
   def eNoteRest(self):
     time.sleep(self.eNoteL)
