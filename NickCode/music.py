@@ -164,26 +164,27 @@ class music():
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
+    GPIO.output(note, True)
+    time.sleep(self.s)
+    GPIO.output(note, False)
     while self.win.getPaused() == True:
         self.all(False)
         self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
-    GPIO.output(note, True)
-    time.sleep(self.s)
-    GPIO.output(note, False)
     time.sleep(self.eNoteL)
+
 
   def sNote(self, note):
     if(self.win.getStopped() == True):
         # self.win.updatelabel2("Carol button was clicked.\nClick another!")
         return
+    GPIO.output(note, True)
+    time.sleep(self.s)
+    GPIO.output(note, False)
     while self.win.getPaused() == True:
         self.all(False)
         self.win.updatelabel2(self.song + "is Paused!\nChoose A new Song or Play to Resume!")
         time.sleep(.1)
-    GPIO.output(note, True)
-    time.sleep(self.s)
-    GPIO.output(note, False)
     time.sleep(self.sNoteL)
 
   def qNoteRest(self):

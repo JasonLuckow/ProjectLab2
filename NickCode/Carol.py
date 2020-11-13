@@ -11,7 +11,7 @@ class NewCarolSong():
       self.music = music(win, app, "Carol of the Bells ")
       self.music.setTempo(self.win.getTempoValue())
       self.bF = 14
-      self.b = 15#
+      self.b = 24#
       self.c = 16
       self.d = 25
       self.dS = 4#
@@ -23,7 +23,7 @@ class NewCarolSong():
       self.BF = 22#
       self.B = 20
       self.C = 18
-      self.D = 24
+      self.D = 25
       self.DS = 6
       self.E = 1
       self.F = 26
@@ -391,7 +391,7 @@ class NewCarolSong():
     low.start()
 
     while(True):
-      if(high.isAlive() & low.isAlive()):
+      if(high.isAlive() or low.isAlive()):
         while self.win.getPaused() == True:
           time.sleep(0.1)
         progress_callback.emit(timing)
