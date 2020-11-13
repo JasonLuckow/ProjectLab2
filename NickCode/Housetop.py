@@ -218,7 +218,7 @@ high = threading.Thread(target=melody)
 high.start()
 
 low = threading.Thread(target=bass)
-low.start()
+#low.start()
 
 high.join()
-low.join()
+#low.join()

@@ -10,7 +10,7 @@ This is for the mini project. I need to clean it up.
 """
 
 a = 25
-t = 10
+t = 70
 
 
 b = 28
