@@ -1,224 +1,241 @@
 import threading
 import time
 import RPi.GPIO as GPIO
-import music1
+import self.music
 import math
 
-bF = 14
-b = 24
-c = 16
-d = 25
-dS = 4
-e = 7
-f = 19
-fS = 17
-g = 8
-A = 12
-BF = 22
-B = 20
-C = 18
-D = 15
-DS = 13
-E = 1
-F = 6
-G = 21
+class NewHousetopSong():
+  def __init__(self, win, app):
+    bF = 14
+    b = 24
+    c = 16
+    d = 25
+    dS = 4
+    e = 7
+    f = 19
+    fS = 17
+    g = 8
+    A = 12
+    BF = 22
+    B = 20
+    C = 18
+    D = 15
+    DS = 13
+    E = 1
+    F = 6
+    G = 21
 
-#music1.tempo = music1.updateTempo(140)
+  def melody():
+    self.music.setTempo(self.win.getTempoValue())
+    #m1
+    self.music.qNote(g)
+    self.music.eNote(g)
+    self.music.eNote(A)
+    self.music.qNote(g)
+    self.music.qNote(e)
 
-def melody():
-  #m1
-  music1.qNote(g)
-  music1.eNote(g)
-  music1.eNote(A)
-  music1.qNote(g)
-  music1.qNote(e)
+    #m2s
+    self.music.qNote(c)
+    self.music.qNote(e)
+    self.music.hNote(g)
 
-  #m2s
-  music1.qNote(c)
-  music1.qNote(e)
-  music1.hNote(g)
+    #m3
+    self.music.qNote(A)
+    self.music.qNote(A)
+    self.music.qNote(g)
+    self.music.qNote(e)
 
-  #m3
-  music1.qNote(A)
-  music1.qNote(A)
-  music1.qNote(g)
-  music1.qNote(e)
+    #m4
+    self.music.qNote(d)
+    self.music.qNote(g)
+    self.music.hNote(g)
+    time.sleep(.1)
 
-  #m4
-  music1.qNote(d)
-  music1.qNote(g)
-  music1.hNote(g)
-  time.sleep(.1)
+    #m5
+    self.music.qNote(g)
+    self.music.eNote(g)
+    self.music.eNote(A)
+    self.music.qNote(g)
+    self.music.eNote(e)
+    self.music.eNote(d)
 
-  #m5
-  music1.qNote(g)
-  music1.eNote(g)
-  music1.eNote(A)
-  music1.qNote(g)
-  music1.eNote(e)
-  music1.eNote(d)
+    #m6
+    self.music.qNote(c)
+    self.music.qNote(e)
+    self.music.hNote(g)
 
-  #m6
-  music1.qNote(c)
-  music1.qNote(e)
-  music1.hNote(g)
+    #m7
+    self.music.qNote(A)
+    self.music.eNote(A)
+    self.music.eNote(A)
+    self.music.eNote(g)
+    self.music.eNote(g)
+    self.music.qNote(e)
 
-  #m7
-  music1.qNote(A)
-  music1.eNote(A)
-  music1.eNote(A)
-  music1.eNote(g)
-  music1.eNote(g)
-  music1.qNote(e)
+    #m8
+    self.music.qNote(d)
+    self.music.qNote(g)
+    self.music.hNote(c)
+    time.sleep(.1)
 
-  #m8
-  music1.qNote(d)
-  music1.qNote(g)
-  music1.hNote(c)
-  time.sleep(.1)
+    #m9
+    self.music.qNote(f)
+    self.music.qNote(f)
+    self.music.hNote(A)
 
-  #m9
-  music1.qNote(f)
-  music1.qNote(f)
-  music1.hNote(A)
+    #m10
+    self.music.qNote(g)
+    self.music.eNote(g)
+    self.music.eNote(g)
+    self.music.hNote(e)
 
-  #m10
-  music1.qNote(g)
-  music1.eNote(g)
-  music1.eNote(g)
-  music1.hNote(e)
+    #m11
+    self.music.qNote(d)
+    self.music.qNote(d)
+    self.music.hNote(f)
 
-  #m11
-  music1.qNote(d)
-  music1.qNote(d)
-  music1.hNote(f)
+    #m12
+    self.music.qNote(e)
+    self.music.eNote(g)
+    self.music.eNote(g)
+    self.music.qNote(c)
+    self.music.qNote(e)
 
-  #m12
-  music1.qNote(e)
-  music1.eNote(g)
-  music1.eNote(g)
-  music1.qNote(c)
-  music1.qNote(e)
+    #m13
+    self.music.qNote(g)
+    self.music.eNote(g)
+    self.music.eNote(A)
+    self.music.qNote(g)
+    self.music.qNote(e)
 
-  #m13
-  music1.qNote(g)
-  music1.eNote(g)
-  music1.eNote(A)
-  music1.qNote(g)
-  music1.qNote(e)
+    #m14
+    self.music.qNote(f)
+    self.music.qNote(g)
+    self.music.qNote(A)
+    self.music.qNoteRest()
 
-  #m14
-  music1.qNote(f)
-  music1.qNote(g)
-  music1.qNote(A)
-  music1.qNoteRest()
+    #m15
+    self.music.qNote(g)
+    self.music.eNote(g)
+    self.music.eNote(A)
+    self.music.qNote(g)
+    self.music.eNote(e)
+    self.music.eNote(e)
 
-  #m15
-  music1.qNote(g)
-  music1.eNote(g)
-  music1.eNote(A)
-  music1.qNote(g)
-  music1.eNote(e)
-  music1.eNote(e)
+    #m16
+    self.music.qNote(d)
+    self.music.qNote(g)
+    self.music.hNote(c)
+    
 
-  #m16
-  music1.qNote(d)
-  music1.qNote(g)
-  music1.hNote(c)
-  
+  def bass():
+    #m1
+    self.music.hNote(c)
+    time.sleep(.2)
+    self.music.hNote(g)
+    time.sleep(.1)
 
-def bass():
-  #m1
-  music1.hNote(c)
-  time.sleep(.2)
-  music1.hNote(g)
-  time.sleep(.1)
+    #m2
+    self.music.hNote(c)
+    time.sleep(.1)
+    self.music.hNote(e)
 
-  #m2
-  music1.hNote(c)
-  time.sleep(.1)
-  music1.hNote(e)
+    #m3
+    self.music.hNote(f)
+    time.sleep(.1)
+    self.music.hNote(e)
+    time.sleep(.1)
 
-  #m3
-  music1.hNote(f)
-  time.sleep(.1)
-  music1.hNote(e)
-  time.sleep(.1)
+    #m4
+    self.music.qNote(b)
+    self.music.qNote(A)
+    self.music.qNote(g)
+    self.music.qNote(b)
 
-  #m4
-  music1.qNote(b)
-  music1.qNote(A)
-  music1.qNote(g)
-  music1.qNote(b)
+    #m5
+    self.music.hNote(c)
+    time.sleep(.2)
+    self.music.hNote(g)
+    time.sleep(.2)
 
-  #m5
-  music1.hNote(c)
-  time.sleep(.2)
-  music1.hNote(g)
-  time.sleep(.2)
+    #m6
+    self.music.hNote(c)
+    time.sleep(.1)
+    self.music.hNote(e)
 
-  #m6
-  music1.hNote(c)
-  time.sleep(.1)
-  music1.hNote(e)
+    #m7
+    self.music.hNote(f)
+    time.sleep(.2)
+    self.music.hNote(e)
+    time.sleep(.2)
 
-  #m7
-  music1.hNote(f)
-  time.sleep(.2)
-  music1.hNote(e)
-  time.sleep(.2)
+    #m8
+    self.music.hNote(f)
+    time.sleep(.1)
+    self.music.qNote(e)
+    self.music.qNote(c)
 
-  #m8
-  music1.hNote(f)
-  time.sleep(.1)
-  music1.qNote(e)
-  music1.qNote(c)
+    #m9
+    self.music.wNote(f)
+    time.sleep(.2)
 
-  #m9
-  music1.wNote(f)
-  time.sleep(.2)
+    #m10
+    self.music.wNote(e)
+    time.sleep(.3)
 
-  #m10
-  music1.wNote(e)
-  time.sleep(.3)
+    #m11
+    self.music.wNote(d)
+    time.sleep(.2)
 
-  #m11
-  music1.wNote(d)
-  time.sleep(.2)
+    #m12
+    self.music.wNote(c)
+    time.sleep(.4)
 
-  #m12
-  music1.wNote(c)
-  time.sleep(.4)
+    #m13
+    self.music.hNote(c)
+    time.sleep(.2)
+    self.music.hNote(bF)
+    time.sleep(.1)
 
-  #m13
-  music1.hNote(c)
-  time.sleep(.2)
-  music1.hNote(bF)
-  time.sleep(.1)
+    #m14
+    self.music.qNote(A)
+    self.music.qNote(g)
+    self.music.qNote(f)
+    self.music.qNoteRest()
+    
+    #m15
+    self.music.hNote(c)
+    time.sleep(.2)
+    self.music.hNote(g)
+    time.sleep(.2)
 
-  #m14
-  music1.qNote(A)
-  music1.qNote(g)
-  music1.qNote(f)
-  music1.qNoteRest()
-  
-  #m15
-  music1.hNote(c)
-  time.sleep(.2)
-  music1.hNote(g)
-  time.sleep(.2)
+    #m16
+    self.music.hNote(b)
+    time.sleep(.1)
+    self.music.hNote(c)
 
-  #m16
-  music1.hNote(b)
-  time.sleep(.1)
-  music1.hNote(c)
+ def startsong(self, progress_callback):
+    # Setting up threads and starting them
+    self.win.updatelabel2("Up on the Housetop is Playing!")
 
-# Setting up threads and starting them
-high = threading.Thread(target=melody)
-high.start()
+    #Set maximum progress bar value
+    self.win.setProgressBarMax(math.floor(1995.084-283.78*math.log(self.win.getTempoValue())))
 
-low = threading.Thread(target=bass)
-#low.start()
+    timing = 0
+    high = threading.Thread(target=self.melody)
+    high.start()
+    low = threading.Thread(target=self.bass)
+    low.start()
 
-high.join()
-#low.join()
+    while(True):
+      if(high.isAlive() or low.isAlive()):
+        while self.win.getPaused() == True:
+          time.sleep(0.1)
+        progress_callback.emit(timing)
+        timing = timing + 1
+        time.sleep(0.1)
+      else:
+        return
+
+    high.join()
+    low.join()
