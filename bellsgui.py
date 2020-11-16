@@ -20,7 +20,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 
 from NickCode import JingleBells as jingle
-from songsTest import little_drummer_boy as drummer
+from NickCode import Housetop as drummer
 from NickCode import Carol as carol
 from NickCode import music
 
@@ -193,7 +193,7 @@ class MyWindow(QMainWindow):
         self.setSongPlaying(True) #Turn Song On
         self.ui.progressBar.setVisible(True)
 
-        drummersong = drummer.NewDrummerSong(self.win, self.app)
+        drummersong = drummer.NewHousetopSong(self.win, self.app)
         self.drummerWorker = Worker(drummersong.startsong) # add the function to execute to the worker class
         self.drummerWorker.signals.finished.connect(self.afterSong) # function that will execute after carolWorker is done
         self.drummerWorker.signals.progress_callback.connect(self.updateProgressBar) # function that will execute when carolWorker sends a signal
