@@ -6,24 +6,28 @@ import math
 
 class NewHousetopSong():
   def __init__(self, win, app):
-    bF = 14
-    b = 24
-    c = 16
-    d = 25
-    dS = 4
-    e = 7
-    f = 19
-    fS = 17
-    g = 8
-    A = 12
-    BF = 22
-    B = 20
-    C = 18
-    D = 15
-    DS = 13
-    E = 1
-    F = 6
-    G = 21
+    self.win = win  
+    self.app = app
+    self.music = music(self.win, app, "Jingle Bells ")
+    self.music.setTempo(self.win.getTempoValue()) 
+    self.bF = 14
+    self.b = 24
+    self.c = 16
+    self.d = 25
+    self.dS = 4
+    self.e = 7
+    self.f = 19
+    self.fS = 17
+    self.g = 8
+    self.A = 12
+    self.BF = 22
+    self.B = 20
+    self.C = 18
+    self.D = 15
+    self.DS = 13
+    self.E = 1
+    self.F = 6
+    self.G = 21
 
   def melody():
     self.music.setTempo(self.win.getTempoValue())
