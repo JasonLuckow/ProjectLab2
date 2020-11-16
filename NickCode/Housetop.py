@@ -8,7 +8,7 @@ class NewHousetopSong():
   def __init__(self, win, app):
     self.win = win  
     self.app = app
-    self.music = music(self.win, app, "Jingle Bells ")
+    self.music = music(self.win, app, "Up on the Housetop")
     self.music.setTempo(self.win.getTempoValue()) 
     self.bF = 14
     self.b = 24

@@ -56,9 +56,9 @@
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>430</y>
+      <y>390</y>
       <width>271</width>
-      <height>36</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -86,16 +86,16 @@ border: 0.5px green;
 color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
-     <string>Little Drummer Boy</string>
+     <string>Up on the Housetop</string>
     </property>
    </widget>
    <widget class="QPushButton" name="jinglebtn">
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>390</y>
+      <y>320</y>
       <width>271</width>
-      <height>36</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -136,9 +136,9 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>350</y>
+      <y>250</y>
       <width>271</width>
-      <height>36</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -258,9 +258,9 @@ font: 32pt &quot;SantasSleighFull&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>550</y>
-      <width>91</width>
-      <height>36</height>
+      <y>505</y>
+      <width>111</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="cursor">
@@ -283,9 +283,9 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>550</y>
+      <y>505</y>
       <width>121</width>
-      <height>36</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="maximumSize">
@@ -320,7 +320,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>290</x>
-      <y>552</y>
+      <y>530</y>
       <width>441</width>
       <height>31</height>
      </rect>
@@ -361,7 +361,7 @@ color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>470</y>
+      <y>460</y>
       <width>271</width>
       <height>36</height>
      </rect>
