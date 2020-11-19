@@ -218,7 +218,7 @@ class NewHousetopSong():
     time.sleep(.1)
     self.music.hNote(self.c)
 
- def startsong(self, progress_callback):
+  def startsong(self, progress_callback):
     # Setting up threads and starting them
     self.win.updatelabel2("Up on the Housetop is Playing!")
 
